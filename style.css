@@ -1,0 +1,745 @@
+/* ============================================
+   PORTFOLIO – Nathan Livingstone
+   LUXURY EDITORIAL DESIGN
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+:root{--navy-900:#06101F;--navy-800:#0C1A30;--navy-700:#132440;--navy-600:#1A2F55;--navy-500:#233F70;--navy-400:#36608F;--navy-300:#5686B5;--navy-200:#8BB2D8;--navy-100:#BDD5EE;--navy-50:#E6EFF8;--white:#fff;--off-white:#F3F1EB;--cream:#E8E1D1;--light-gray:#E2E5EA;--gray:#8190A2;--dark-gray:#2D3748;--gold:#B8914C;--gold-light:#CEAA68;--gold-pale:#EDE0C4;--gold-shine:#E2CC7A;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--shadow-sm:0 1px 3px rgba(6,16,31,.05),0 1px 2px rgba(6,16,31,.07);--shadow-md:0 4px 16px rgba(6,16,31,.08),0 2px 6px rgba(6,16,31,.04);--shadow-lg:0 16px 48px rgba(6,16,31,.10),0 4px 16px rgba(6,16,31,.05);--shadow-xl:0 28px 72px rgba(6,16,31,.14);--shadow-gold:0 8px 32px rgba(184,145,76,.22);--shadow-glow:0 0 60px rgba(184,145,76,.09);--radius-sm:8px;--radius-md:14px;--radius-lg:22px;--radius-xl:32px;--ease:cubic-bezier(.4,0,.2,1);--ease-out:cubic-bezier(0,0,.2,1);--ease-spring:cubic-bezier(.34,1.56,.64,1);--transition:.32s var(--ease);--transition-slow:.6s var(--ease-out)}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px;scroll-padding-top:80px}
+body{font-family:var(--font-body);font-weight:400;color:var(--navy-800);background:var(--off-white);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:var(--gold-pale);color:var(--navy-900)}
+a{text-decoration:none;color:inherit;transition:var(--transition)}
+img{max-width:100%;display:block}
+
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;line-height:1.15;color:var(--navy-900);letter-spacing:-.01em}
+h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:400;letter-spacing:-.025em}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:400;letter-spacing:-.02em}
+h3{font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:500;letter-spacing:-.01em}
+h4{font-size:1.15rem;font-weight:600;font-family:var(--font-body)}
+p{font-size:1rem;color:var(--dark-gray);max-width:680px;line-height:1.78}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(7,13,26,.88);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid rgba(255,255,255,.05);transition:var(--transition)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--white);letter-spacing:.02em}
+.nav-logo span{color:var(--gold);font-style:italic}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.5rem 1.1rem;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.6);border-radius:var(--radius-sm);letter-spacing:.04em;text-transform:uppercase}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:var(--white)}
+.nav-links>li>a.active{color:var(--gold)}
+.dropdown-trigger{cursor:pointer}
+.dropdown-trigger::after{content:'';display:inline-block;width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-left:5px;margin-bottom:2px;transition:var(--transition)}
+.dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:240px;background:var(--navy-800);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-md);padding:.6rem;opacity:0;visibility:hidden;transition:var(--transition);box-shadow:var(--shadow-xl)}
+.nav-links>li:hover>.dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dropdown a{display:block;padding:.55rem 1rem;font-size:.82rem;font-weight:400;color:rgba(255,255,255,.55);border-radius:var(--radius-sm);transition:var(--transition);text-transform:none;letter-spacing:0}
+.dropdown a:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.dropdown .dropdown-label{padding:.5rem 1rem .15rem;font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);pointer-events:none}
+.nav-hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:8px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--white);border-radius:2px;transition:var(--transition)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;background:var(--navy-900);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(39,70,114,.35) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 20% 80%,rgba(184,150,78,.06) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 50% 20%,rgba(90,139,190,.12) 0%,transparent 50%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black,transparent);pointer-events:none;animation:gridFloat 20s linear infinite}
+@keyframes gridFloat{0%{transform:translate(0,0)}100%{transform:translate(80px,80px)}}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:860px;animation:heroReveal 1.2s var(--ease-out) forwards}
+@keyframes heroReveal{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{display:inline-block;font-family:var(--font-body);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);margin-bottom:2rem;padding:.5rem 1.6rem;border:1px solid rgba(184,150,78,.25);border-radius:50px;animation:heroReveal 1.2s var(--ease-out) .2s both}
+.hero h1{color:var(--white);margin-bottom:.6rem;font-weight:300;letter-spacing:-.02em;line-height:1.1;animation:heroReveal 1.2s var(--ease-out) .3s both}
+.hero h1 .highlight{color:var(--gold);font-style:italic;font-weight:400}
+.hero-subtitle{font-family:var(--font-display);font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:300;color:var(--navy-200);margin-bottom:1.8rem;font-style:italic;animation:heroReveal 1.2s var(--ease-out) .4s both}
+.hero-description{font-size:1.05rem;color:var(--navy-300);max-width:580px;margin:0 auto 3rem;line-height:1.85;animation:heroReveal 1.2s var(--ease-out) .5s both}
+.hero-cta{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 2.4rem;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);background-size:200% auto;color:var(--navy-900);font-family:var(--font-body);font-weight:600;font-size:.88rem;border-radius:50px;letter-spacing:.05em;text-transform:uppercase;transition:var(--transition);box-shadow:0 4px 24px rgba(184,145,76,.22);animation:heroReveal 1.2s var(--ease-out) .6s both}
+.hero-cta:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold);background-position:right center}
+.hero-cta svg{width:16px;height:16px;transition:var(--transition)}
+.hero-cta:hover svg{transform:translateX(5px)}
+.hero-scroll-indicator{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;color:var(--navy-400);font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;animation:float 3.5s ease-in-out infinite}
+.hero-scroll-indicator .line{width:1px;height:48px;background:linear-gradient(to bottom,var(--navy-400),transparent)}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+/* SECTIONS */
+.section{padding:7rem 2.5rem;max-width:1240px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:4.5rem}
+.section-header .eyebrow{display:inline-block;font-family:var(--font-body);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:1rem;position:relative}
+.section-header .eyebrow::before,.section-header .eyebrow::after{content:'';position:absolute;top:50%;width:40px;height:1px;background:var(--gold);opacity:.3}
+.section-header .eyebrow::before{right:calc(100% + 14px)}
+.section-header .eyebrow::after{left:calc(100% + 14px)}
+.section-header h2{margin-bottom:1rem}
+.section-header p{margin:0 auto;color:var(--gray)}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
+.card{background:var(--white);border-radius:var(--radius-lg);padding:2.2rem;border:1px solid rgba(6,16,31,.05);transition:var(--transition);position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--navy-600),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:var(--transition-slow)}
+.card:hover{box-shadow:var(--shadow-lg),var(--shadow-glow);transform:translateY(-5px);border-color:rgba(184,145,76,.1)}
+.card:hover::before{transform:scaleX(1)}
+.card-icon{width:52px;height:52px;border-radius:var(--radius-md);background:linear-gradient(135deg,var(--navy-50),var(--gold-pale));display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;color:var(--navy-600);transition:var(--transition)}
+.card:hover .card-icon{background:linear-gradient(135deg,var(--gold-pale),var(--cream));box-shadow:0 4px 14px rgba(184,145,76,.15)}
+.card h3{margin-bottom:.7rem}
+.card p{font-size:.92rem;line-height:1.75;color:var(--gray)}
+.card-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;font-size:.8rem;font-weight:600;color:var(--navy-600);text-transform:uppercase;letter-spacing:.06em;transition:var(--transition)}
+.card-link:hover{color:var(--gold);gap:.7rem}
+.card-link svg{width:14px;height:14px;transition:var(--transition)}
+.card-link:hover svg{transform:translateX(4px)}
+.competence-badge{display:inline-block;padding:.32rem .9rem;background:var(--navy-50);color:var(--navy-600);font-size:.7rem;font-weight:600;border-radius:50px;letter-spacing:.05em;text-transform:uppercase}
+/* Card with media (image at top) */
+.card.has-media{padding:0}
+.card-media{width:100%;height:190px;overflow:hidden;border-radius:var(--radius-lg) var(--radius-lg) 0 0;position:relative;flex-shrink:0}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .65s var(--ease)}
+.card:hover .card-media img{transform:scale(1.05)}
+.card-media-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.card-body{padding:1.8rem 2.2rem 2.2rem;display:flex;flex-direction:column;flex:1}
+.card-body h3{margin-bottom:.65rem}
+.card-body p{font-size:.92rem;line-height:1.75;color:var(--gray);flex:1}
+/* Date / label chip */
+.card-chip{display:inline-flex;align-items:center;gap:.45rem;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);margin-top:1.2rem}
+.card-chip::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* PAGE HEADER */
+.page-header{background:var(--navy-900);padding:9rem 2.5rem 4.5rem;text-align:center;position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(39,70,114,.2),transparent 70%),radial-gradient(ellipse 40% 40% at 80% 30%,rgba(184,150,78,.05),transparent);pointer-events:none}
+.page-header .eyebrow{display:inline-block;font-family:var(--font-body);font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.22em;color:var(--gold);margin-bottom:1.2rem;position:relative}
+.page-header h1{color:var(--white);margin-bottom:1rem;position:relative;font-weight:300}
+.page-header p{color:var(--navy-300);margin:0 auto;font-size:1.1rem;position:relative;font-style:italic;font-family:var(--font-display)}
+
+/* BREADCRUMBS */
+.breadcrumbs{max-width:1240px;margin:0 auto;padding:1.4rem 2.5rem;display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);border-bottom:1px solid var(--light-gray)}
+.breadcrumbs a{color:var(--navy-500)}
+.breadcrumbs a:hover{color:var(--gold)}
+.breadcrumbs .separator{color:var(--light-gray);font-size:.7rem}
+
+/* UE CONTENT */
+.ue-content{max-width:920px;margin:0 auto;padding:3.5rem 2.5rem 6rem}
+.ue-block{background:var(--white);border-radius:var(--radius-lg);padding:2.8rem;margin-bottom:2rem;border:1px solid rgba(0,0,0,.04);transition:var(--transition)}
+.ue-block:hover{box-shadow:var(--shadow-md)}
+.ue-block h2{margin-bottom:1.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--light-gray);font-size:1.6rem}
+.ue-block h3{margin:1.5rem 0 .8rem;color:var(--navy-700)}
+.ue-block ul{list-style:none;padding:0}
+.ue-block ul li{position:relative;padding:.6rem 0 .6rem 1.6rem;font-size:.95rem;color:var(--dark-gray);line-height:1.7}
+.ue-block ul li::before{content:'';position:absolute;left:0;top:1.05rem;width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,var(--navy-400),var(--gold))}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.skill-tag{display:flex;align-items:center;gap:.8rem;padding:1.1rem 1.5rem;background:var(--white);border:1px solid rgba(0,0,0,.04);border-radius:var(--radius-md);font-size:.92rem;font-weight:500;color:var(--navy-800);transition:var(--transition);cursor:default}
+.skill-tag:hover{border-color:var(--gold-pale);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.skill-tag .dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--navy-400),var(--gold));flex-shrink:0}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.contact-info-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.3rem 0;border-bottom:1px solid var(--light-gray)}
+.contact-info-item:last-child{border-bottom:none}
+.contact-icon{width:46px;height:46px;border-radius:var(--radius-md);background:linear-gradient(135deg,var(--navy-50),var(--gold-pale));display:flex;align-items:center;justify-content:center;color:var(--navy-600);flex-shrink:0}
+.contact-info-item h4{font-family:var(--font-body);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray);margin-bottom:.25rem}
+.contact-info-item p{font-size:1rem;color:var(--navy-800)}
+
+/* FOOTER */
+.footer{background:var(--navy-900);padding:3.5rem 2.5rem;text-align:center;position:relative}
+.footer::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(184,150,78,.2),transparent)}
+.footer-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.footer p{font-size:.82rem;color:var(--navy-400)}
+.footer-links{display:flex;gap:2rem;list-style:none}
+.footer-links a{font-size:.82rem;color:var(--navy-400);text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+.footer-links a:hover{color:var(--gold)}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(26px);filter:blur(4px);transition:opacity .75s var(--ease-out),transform .75s var(--ease-out),filter .75s var(--ease-out)}
+.fade-in.visible{opacity:1;transform:translateY(0);filter:blur(0)}
+.stagger-1{transition-delay:.07s}.stagger-2{transition-delay:.14s}.stagger-3{transition-delay:.21s}.stagger-4{transition-delay:.28s}.stagger-5{transition-delay:.35s}
+
+/* RESPONSIVE - Tablet */
+@media(max-width:1024px){.section{padding:5rem 2rem}.card-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}.contact-grid{gap:2.5rem}.ue-block{padding:2rem}}
+/* RESPONSIVE - Mobile */
+@media(max-width:768px){html{font-size:15px}.nav-inner{padding:0 1.5rem;height:68px}.nav-links{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;flex-direction:column;background:var(--navy-900);padding:2rem 1.5rem;overflow-y:auto;gap:.25rem;z-index:999}.nav-links.open{display:flex}.nav-links>li>a{font-size:.95rem;padding:.8rem 1rem}.nav-hamburger{display:flex}.dropdown{position:static;transform:none!important;opacity:1;visibility:visible;background:rgba(255,255,255,.03);border:none;box-shadow:none;margin-top:.25rem;padding-left:1.2rem;min-width:0;display:none}.hero-content{padding:1.5rem}.hero h1{font-size:clamp(2rem,8vw,3rem)}.hero-description{font-size:.95rem}.section{padding:4rem 1.5rem}.section-header{margin-bottom:3rem}.section-header .eyebrow::before,.section-header .eyebrow::after{display:none}.card-grid{grid-template-columns:1fr;gap:1.2rem}.card{padding:1.8rem}.page-header{padding:7rem 1.5rem 3rem}.breadcrumbs{padding:1rem 1.5rem;font-size:.78rem}.ue-content{padding:2.5rem 1.5rem 4rem}.ue-block{padding:1.8rem;border-radius:var(--radius-md)}.contact-grid{grid-template-columns:1fr;gap:2rem}.footer-inner{flex-direction:column;gap:1.2rem}.footer-links{gap:1.2rem}.skills-grid{grid-template-columns:1fr}}
+/* RESPONSIVE - Small mobile */
+@media(max-width:420px){html{font-size:14px}.hero-eyebrow{font-size:.65rem;padding:.4rem 1.2rem}.hero-cta{padding:.85rem 1.8rem;font-size:.82rem}.card{padding:1.5rem}.ue-block{padding:1.4rem}.nav-inner{padding:0 1rem}}
+/* Large screens */
+@media(min-width:1400px){.section{max-width:1360px}.hero-content{max-width:940px}.card-grid{grid-template-columns:repeat(3,1fr)}}
+/* Print */
+@media print{.nav,.footer,.hero-scroll-indicator,.hero-cta{display:none}.hero{min-height:auto;padding:3rem 2rem}.card{break-inside:avoid;box-shadow:none;border:1px solid #ddd}body::after{display:none}}
+
+/* ============================================
+   PHOTO FRAMES
+   ============================================ */
+.photo-frame{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(135deg,var(--navy-50),var(--cream));border:1px solid var(--light-gray)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.photo-frame:hover img{transform:scale(1.03)}
+.photo-frame-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;color:var(--gray);font-size:.8rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;width:100%;height:100%;min-height:260px}
+.photo-frame-placeholder svg{opacity:.35;color:var(--navy-400)}
+.photo-frame-placeholder span{opacity:.5}
+.photo-frame.portrait{aspect-ratio:3/4}
+.photo-frame.landscape{aspect-ratio:16/9}
+.photo-frame.square{aspect-ratio:1}
+/* Gold corner accent */
+.photo-frame::after{content:'';position:absolute;bottom:1rem;right:1rem;width:40px;height:40px;border-bottom:2px solid rgba(184,150,78,.4);border-right:2px solid rgba(184,150,78,.4);border-radius:0 0 var(--radius-sm) 0;pointer-events:none}
+.photo-frame::before{content:'';position:absolute;top:1rem;left:1rem;width:40px;height:40px;border-top:2px solid rgba(184,150,78,.4);border-left:2px solid rgba(184,150,78,.4);border-radius:var(--radius-sm) 0 0 0;pointer-events:none;z-index:1}
+
+/* ============================================
+   DESIGN GLOBAL — AMÉLIORATIONS
+   ============================================ */
+
+/* Cards — accent left bar on hover */
+.card{border-left:3px solid transparent;transition:var(--transition),border-color .3s}
+.card:hover{border-left-color:var(--gold-pale)}
+
+/* UE blocks — left accent */
+.ue-block{border-left:3px solid transparent;transition:var(--transition),border-left-color .3s}
+.ue-block:hover{border-left-color:var(--gold-pale)}
+
+/* Section divider ornement */
+.section-divider{display:flex;align-items:center;gap:1.5rem;margin:5rem auto;max-width:320px}
+.section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--light-gray))}
+.section-divider::before{background:linear-gradient(90deg,transparent,var(--light-gray))}
+.section-divider::after{background:linear-gradient(90deg,var(--light-gray),transparent)}
+.section-divider-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex-shrink:0;opacity:.6}
+
+/* Hero photo split layout */
+.hero-split{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4rem;text-align:left;max-width:1000px}
+.hero-split .hero-photo{width:260px;flex-shrink:0}
+.hero-split .hero-photo .photo-frame{border:2px solid rgba(184,150,78,.25);box-shadow:0 0 60px rgba(184,150,78,.12)}
+
+/* About section with photo */
+.about-grid{display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:start;margin-bottom:4rem}
+.about-photo .photo-frame{height:380px}
+.about-text h2{margin-bottom:1.2rem}
+.about-text p{margin-bottom:1rem}
+
+/* Stage photo layout */
+.stage-layout{display:grid;grid-template-columns:1fr 360px;gap:3rem;align-items:start}
+.stage-layout .photo-frame{height:280px}
+
+/* Skill card icon — larger */
+.skill-card-icon{width:60px;height:60px;border-radius:var(--radius-md);background:linear-gradient(135deg,var(--navy-50),var(--gold-pale));display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;transition:var(--transition)}
+.card:hover .skill-card-icon{background:linear-gradient(135deg,var(--gold-pale),var(--gold-pale));box-shadow:0 4px 16px rgba(184,150,78,.15)}
+
+/* Page header — subtle bottom border */
+.page-header{border-bottom:1px solid rgba(255,255,255,.04)}
+
+/* Eyebrow lines on non-section contexts */
+.eyebrow-line{display:inline-flex;align-items:center;gap:.8rem;font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--gold)}
+.eyebrow-line::before{content:'';width:32px;height:1px;background:var(--gold);opacity:.4}
+
+/* Responsive adjustments */
+@media(max-width:900px){
+  .hero-split{grid-template-columns:1fr;text-align:center}
+  .hero-split .hero-photo{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{display:none}
+  .stage-layout{grid-template-columns:1fr}
+  .stage-layout .photo-frame{height:220px;order:-1}
+}
+
+/* ============================================
+   GRILLE 2 COLONNES — SYMÉTRIE PARFAITE
+   ============================================ */
+.card-grid-2{grid-template-columns:repeat(2,1fr)}
+
+/* Dernier élément seul dans une rangée de 2 → pleine largeur */
+.card-grid-2>.card:last-child:nth-child(odd){grid-column:1/-1}
+
+/* Dernier élément seul dans une rangée de 3 → centré sur 2 colonnes */
+.card-grid>.card:last-child:nth-child(3n+1){grid-column:2/3}
+
+@media(max-width:768px){
+  .card-grid-2{grid-template-columns:1fr}
+  .card-grid-2>.card:last-child:nth-child(odd){grid-column:1}
+  .card-grid>.card:last-child:nth-child(3n+1){grid-column:1}
+}
+
+/* ============================================
+   AC GRID — PAGES UE REDESIGN
+   ============================================ */
+.ue-content{max-width:1240px}
+.ac-section-title{font-family:var(--font-display);font-size:1.8rem;font-weight:400;color:var(--navy-900);margin:3rem 0 1.8rem;padding-bottom:1.2rem;border-bottom:1px solid var(--light-gray)}
+.ac-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-bottom:3rem}
+.ac-card{background:var(--white);border-radius:var(--radius-lg);padding:2.5rem;border:1px solid rgba(0,0,0,.05);transition:var(--transition);display:flex;flex-direction:column;border-left:3px solid transparent}
+.ac-card:hover{box-shadow:var(--shadow-md);border-left-color:var(--gold-pale);transform:translateY(-3px)}
+.ac-num{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem}
+.ac-num::after{content:'';width:30px;height:1px;background:var(--gold-pale)}
+.ac-card h3{font-family:var(--font-body);font-size:.93rem;font-weight:600;color:var(--navy-700);margin-bottom:.9rem;line-height:1.55}
+.ac-card>p{font-size:.9rem;color:var(--dark-gray);line-height:1.8;flex:1;margin-bottom:1.2rem}
+.ac-doc{display:inline-flex;align-items:center;gap:.5rem;margin-top:auto;padding:.5rem 1.1rem;background:var(--navy-50);border:1px solid var(--navy-100);border-radius:var(--radius-sm);font-size:.82rem;font-weight:600;color:var(--navy-600);transition:var(--transition);align-self:flex-start}
+.ac-doc:hover{background:var(--gold-pale);border-color:rgba(184,150,78,.3);color:var(--navy-800)}
+.ac-grid>.ac-card:last-child:nth-child(odd){grid-column:1/-1}
+@media(max-width:768px){.ac-grid{grid-template-columns:1fr}.ac-grid>.ac-card:last-child:nth-child(odd){grid-column:1}}
+
+/* ============================================
+   PHOTO INTÉGRÉE — SANS ESPACE VIDE
+   Avatar héro, bannière, carte photo
+   ============================================ */
+
+/* Avatar circulaire dans le héro */
+.hero-avatar{width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 2rem;border:2px solid rgba(184,150,78,.35);box-shadow:0 0 50px rgba(184,150,78,.12)}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Bannière photo landscape (BUT 3, stage) */
+.photo-banner{border-radius:var(--radius-lg);overflow:hidden;margin-bottom:3rem;position:relative;height:280px}
+.photo-banner img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.photo-banner:hover img{transform:scale(1.03)}
+.photo-banner::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,13,26,.25),transparent 60%);pointer-events:none}
+
+/* Photo en haut d'une card (mad-skills) */
+.card-photo{width:100%;height:160px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1.4rem}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+.card:hover .card-photo img{transform:scale(1.06)}
+
+/* ============================================
+   MOBILE NAV OVERLAY
+   ============================================ */
+.nav-overlay{position:fixed;inset:0;top:68px;background:rgba(6,16,31,.65);z-index:998;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s var(--ease);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.nav-overlay.open{opacity:1;visibility:visible}
+@media(min-width:769px){.nav-overlay{display:none}}
+
+/* ============================================
+   SECTION ACCENT LINE
+   ============================================ */
+.section-accent{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.section-accent-line{height:1px;width:48px;background:linear-gradient(90deg,var(--gold),transparent);flex-shrink:0}
+.section-accent-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold)}
+
+/* ============================================
+   EXPERIENCE CARDS — palette finance
+   ============================================ */
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
+.exp-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(6,16,31,.05);transition:var(--transition);display:flex;flex-direction:column}
+.exp-card:hover{box-shadow:var(--shadow-lg),var(--shadow-glow);transform:translateY(-5px);border-color:rgba(184,145,76,.12)}
+.exp-card-header{padding:2.4rem 2.2rem 1.8rem;background:var(--navy-900);position:relative;overflow:hidden}
+.exp-card-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 0% 100%,rgba(184,145,76,.12),transparent);pointer-events:none}
+.exp-card-header::after{content:'';position:absolute;top:1rem;right:1rem;width:36px;height:36px;border-top:1.5px solid rgba(184,145,76,.25);border-right:1.5px solid rgba(184,145,76,.25);border-radius:0 var(--radius-sm) 0 0}
+.exp-tag{display:inline-block;padding:.28rem .8rem;background:rgba(184,145,76,.15);color:var(--gold-light);font-size:.65rem;font-weight:700;border-radius:50px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;border:1px solid rgba(184,145,76,.2)}
+.exp-card-header h3{color:var(--white);font-family:var(--font-display);font-size:1.4rem;font-weight:400;margin-bottom:.4rem;position:relative}
+.exp-card-header p{color:var(--navy-300);font-size:.85rem;font-style:italic;font-family:var(--font-display);position:relative;margin:0}
+.exp-card-body{padding:1.6rem 2.2rem 2rem;flex:1;display:flex;flex-direction:column}
+.exp-card-body p{font-size:.9rem;color:var(--dark-gray);line-height:1.78;flex:1;margin:0;max-width:100%}
+.exp-card-footer{margin-top:1.4rem;display:flex;align-items:center;justify-content:space-between;padding-top:1.2rem;border-top:1px solid var(--light-gray)}
+.exp-card-date{font-size:.72rem;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.07em}
+.exp-card-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--navy-600);text-transform:uppercase;letter-spacing:.05em;transition:var(--transition)}
+.exp-card-link:hover{color:var(--gold)}
+.exp-card-link svg{width:13px;height:13px;transition:var(--transition)}
+.exp-card-link:hover svg{transform:translateX(4px)}
+@media(max-width:768px){.exp-grid{grid-template-columns:1fr}}
+
+/* ============================================
+   AMÉLIORATIONS BOUTONS & LIENS GLOBAUX
+   ============================================ */
+/* Smooth underline sur les liens du footer */
+.footer-links a{position:relative}
+.footer-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+.footer-links a:hover::after{width:100%}
+/* Breadcrumbs hover */
+.breadcrumbs a{transition:var(--transition)}
+.breadcrumbs a:hover{color:var(--gold)}
+/* Dropdown arrow rotate on open */
+.nav-links>li.open .dropdown-trigger::after{transform:rotate(-135deg)}
+/* Active nav item — gold underline */
+.nav-links>li>a.active{color:var(--gold)}
+/* Scroll to top — hidden until scrolled */
+.scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--navy-800);border:1px solid rgba(184,145,76,.25);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--gold);opacity:0;transform:translateY(12px);transition:var(--transition);z-index:900}
+.scroll-top.visible{opacity:1;transform:translateY(0)}
+.scroll-top:hover{background:var(--navy-700);box-shadow:var(--shadow-gold)}
+@media(max-width:768px){.scroll-top{bottom:1.2rem;right:1.2rem;width:40px;height:40px}}
+
+/* ============================================
+   HERO "LIVING PORTRAIT" — Step 2
+   Char reveal · Breathing avatar · Mouse parallax · Scroll-fade
+   ============================================ */
+
+/* Variables héro — alimentées par JS */
+.hero{--mx:0;--my:0}
+
+/* ── A. Char-by-char reveal ─────────────────── */
+.hero h1.char-split{animation:none;opacity:1}
+.hero h1 .char{display:inline-block;opacity:0;transform:translateY(24px);filter:blur(6px);animation:charReveal .85s var(--ease-out) forwards;animation-delay:calc(var(--i,0)*30ms + .3s);will-change:opacity,transform,filter}
+@keyframes charReveal{to{opacity:1;transform:translateY(0);filter:blur(0)}}
+
+/* ── B. Avatar breathing + halo pulsant ──────── */
+.hero-avatar{animation:avatarBreathe 6s ease-in-out infinite;will-change:transform,box-shadow}
+@keyframes avatarBreathe{0%,100%{transform:scale(1);box-shadow:0 0 50px rgba(184,150,78,.12)}50%{transform:scale(1.018);box-shadow:0 0 78px rgba(184,150,78,.22)}}
+
+/* ── C. Parallax gradients — override du ::before existant ── */
+.hero::before{background:
+  radial-gradient(ellipse 80% 60% at calc(70% + var(--mx)*4%) calc(40% + var(--my)*4%), rgba(39,70,114,.35) 0%, transparent 70%),
+  radial-gradient(ellipse 60% 80% at calc(20% - var(--mx)*5%) calc(80% - var(--my)*5%), rgba(184,150,78,.06) 0%, transparent 60%),
+  radial-gradient(ellipse 40% 40% at calc(50% + var(--mx)*6%) calc(20% + var(--my)*6%), rgba(90,139,190,.12) 0%, transparent 50%)
+}
+
+/* Respect reduced-motion */
+@media(prefers-reduced-motion:reduce){
+  .hero-avatar{animation:none}
+  .hero h1 .char{animation:none;opacity:1;transform:none;filter:none}
+}
+
+/* ============================================
+   NAV SCROLL — solid bg + hide/show + progress bar
+   ============================================ */
+.nav{transition:var(--transition),transform .4s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
+.nav.nav-scrolled{background:rgba(7,13,26,.96);box-shadow:0 8px 40px rgba(0,0,0,.18);border-bottom-color:rgba(184,145,76,.08)}
+.nav.nav-hidden{transform:translateY(-100%)}
+.nav-progress{position:absolute;left:0;bottom:-1px;height:2px;width:var(--progress,0%);background:linear-gradient(90deg,transparent,var(--gold-light) 30%,var(--gold) 70%,transparent);transition:width .12s linear;pointer-events:none;box-shadow:0 0 12px rgba(184,145,76,.5)}
+
+/* ============================================
+   PAGE TRANSITIONS — fade discret
+   ============================================ */
+html{background:var(--off-white)}
+body{opacity:0;animation:pageIn .35s var(--ease-out) forwards}
+body.page-leaving{animation:pageOut .22s var(--ease) forwards;pointer-events:none}
+@keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pageOut{to{opacity:0;transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){
+  body{opacity:1;animation:none;transform:none}
+  body.page-leaving{animation:none;opacity:1;transform:none}
+}
+
+/* ============================================
+   PREMIUM POLISH — détails luxe (CSS pur, zéro JS)
+   ============================================ */
+
+/* Cartes — accent gold subtil + glow gradient au hover (pseudo-élément, z-index:-1 sous isolation) */
+.card,.ac-card,.exp-card,.ue-block,.soft-cat,.intro-card,.project-card{isolation:isolate;position:relative}
+.card::after,.ac-card::after,.exp-card::after,.ue-block::after,.intro-card::after,.project-card::after,.soft-cat::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(ellipse 140% 100% at 50% -20%,rgba(184,145,76,.09),transparent 55%);opacity:0;transition:opacity .5s var(--ease);z-index:-1}
+.card:hover::after,.ac-card:hover::after,.exp-card:hover::after,.ue-block:hover::after,.intro-card:hover::after,.project-card:hover::after,.soft-cat:hover::after{opacity:1}
+
+/* Lift + glow plus marqués */
+.card{transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .35s var(--ease)}
+.card:hover{transform:translateY(-6px)}
+.ac-card{transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .35s var(--ease),border-left-color .35s var(--ease)}
+.exp-card{transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .35s var(--ease)}
+.exp-card:hover{transform:translateY(-6px)}
+
+/* Liens nav — underline animé fin */
+.nav-links>li>a{position:relative}
+.nav-links>li>a::after{content:'';position:absolute;left:1.1rem;right:1.1rem;bottom:.3rem;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:center;transition:transform .35s var(--ease);opacity:.7}
+.nav-links>li>a:hover::after,.nav-links>li>a.active::after{transform:scaleX(1)}
+
+/* Logo nav — accent doré qui pulse subtilement */
+.nav-logo span{display:inline-block;animation:logoPulse 4s ease-in-out infinite}
+@keyframes logoPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.78;transform:scale(.94)}}
+
+/* Boutons CTA — shimmer doré au survol */
+.hero-cta{position:relative;overflow:hidden}
+.hero-cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transition:left .85s var(--ease)}
+.hero-cta:hover::before{left:100%}
+
+/* Cards — gold corner ornament au hover */
+.card,.exp-card,.ac-card{position:relative}
+.card>.corner-ornament,.exp-card>.corner-ornament,.ac-card>.corner-ornament{display:none}
+
+/* Section header — eyebrow plus aérien */
+.section-header .eyebrow{transition:letter-spacing .35s var(--ease)}
+.section-header:hover .eyebrow{letter-spacing:.22em}
+
+/* Footer links — élégance */
+.footer-links a{transition:color .25s var(--ease),letter-spacing .35s var(--ease)}
+.footer-links a:hover{letter-spacing:.09em}
+
+/* Scroll-top — touche premium */
+.scroll-top{box-shadow:0 8px 24px rgba(6,16,31,.18);transition:transform .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease),opacity .3s var(--ease)}
+.scroll-top:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(184,145,76,.3)}
+.scroll-top.visible:hover{transform:translateY(-4px)}
+
+/* Typo — subtle gradient sur titres de pages sombres (hors hero pour préserver char-split) */
+.page-header h1,.exp-card-header h3{background:linear-gradient(180deg,var(--white) 0%,#dde6f1 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+
+/* Liens texte — underline doré progressif */
+.card-link,.exp-card-link{position:relative}
+.card-link::after,.exp-card-link::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.card-link:hover::after,.exp-card-link:hover::after{transform:scaleX(1)}
+
+/* Hamburger — animation X premium */
+.nav-hamburger span{transition:transform .35s var(--ease),opacity .25s var(--ease),background .25s var(--ease)}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);background:var(--gold)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:translateX(-10px)}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);background:var(--gold)}
+
+/* Image hover — cinematic zoom + filter */
+.photo-frame img,.photo-banner img,.card-media img,.card-photo img{transition:transform .8s var(--ease),filter .8s var(--ease)}
+.photo-frame:hover img,.photo-banner:hover img,.card:hover .card-media img,.card:hover .card-photo img{filter:saturate(1.05) contrast(1.02)}
+
+/* Selection — luxe */
+::selection{background:var(--gold);color:var(--white);text-shadow:0 1px 2px rgba(0,0,0,.15)}
+
+/* Focus visible — accessibilité élégante */
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.nav-links a:focus-visible,.dropdown a:focus-visible{outline-color:var(--gold-light)}
+
+/* Skill tag — micro-shine au hover */
+.skill-tag{position:relative;overflow:hidden}
+.skill-tag::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(184,145,76,.08) 50%,transparent 70%);transform:translateX(-100%);transition:transform .7s var(--ease)}
+.skill-tag:hover::after{transform:translateX(100%)}
+
+/* Hero-eyebrow — bordure animée */
+.hero-eyebrow{position:relative;overflow:hidden}
+.hero-eyebrow::before{content:'';position:absolute;inset:-1px;border-radius:50px;padding:1px;background:linear-gradient(120deg,transparent 30%,rgba(184,145,76,.6) 50%,transparent 70%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s var(--ease);background-size:200% 100%;animation:eyebrowShine 4s linear infinite}
+.hero:hover .hero-eyebrow::before{opacity:1}
+@keyframes eyebrowShine{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* Smooth shadow stacking pour les cartes — luxe */
+.card:hover{box-shadow:0 20px 50px -12px rgba(6,16,31,.18),0 8px 16px -8px rgba(184,145,76,.18),0 0 0 1px rgba(184,145,76,.08)}
+.exp-card:hover{box-shadow:0 24px 60px -16px rgba(6,16,31,.22),0 10px 20px -10px rgba(184,145,76,.22),0 0 0 1px rgba(184,145,76,.1)}
+.ac-card:hover{box-shadow:0 14px 36px -10px rgba(6,16,31,.14),0 4px 12px -6px rgba(184,145,76,.16)}
+
+/* Refinement: dropdown menu — animation entrée */
+.dropdown a{transition:color .25s var(--ease),background .25s var(--ease),padding-left .25s var(--ease)}
+.dropdown a:hover{padding-left:1.3rem}
+
+/* Reduced motion — désactiver toutes les animations décoratives */
+@media(prefers-reduced-motion:reduce){
+  .nav-logo span,.hero-cta::before,.skill-tag::after,.hero-eyebrow::before{animation:none!important}
+  .card,.ac-card,.exp-card,.scroll-top{transition:none!important}
+  .photo-frame img,.photo-banner img,.card-media img,.card-photo img{transition:none!important}
+}
+
+/* ============================================
+   LIQUID EDITORIAL v2 — Design System Pro Max
+   Recommandations ui-ux-pro-max appliquées :
+   • Pattern : Portfolio Grid (visuel-first)
+   • Style : Liquid Glass cherry-picked (perf-first)
+   • Effects : morphing fluide 400-600ms, dynamic blur
+   • Typo editorial : hierarchie renforcée, italiques expressives
+   ============================================ */
+
+:root{
+  /* Easings fluides additionnels */
+  --ease-fluid:cubic-bezier(.22,.61,.36,1);
+  --ease-soft:cubic-bezier(.16,1,.3,1);
+  --ease-back:cubic-bezier(.34,1.32,.64,1);
+  /* Stone-warm undertone (subtil) */
+  --stone-50:#FAF7F0;
+  --stone-100:#F1ECE0;
+  --stone-200:#E5DECC;
+  /* Shadows raffinés multi-couches */
+  --shadow-editorial:0 1px 0 rgba(255,255,255,.06) inset,0 1px 2px rgba(6,16,31,.04),0 8px 24px -8px rgba(6,16,31,.08);
+  --shadow-float:0 1px 0 rgba(255,255,255,.4) inset,0 24px 60px -16px rgba(6,16,31,.22),0 10px 20px -10px rgba(184,145,76,.18);
+  /* Hairline gold pour liserés */
+  --hairline-gold:linear-gradient(90deg,transparent,rgba(184,145,76,.35) 30%,rgba(184,145,76,.6) 50%,rgba(184,145,76,.35) 70%,transparent);
+}
+
+/* ── A. TYPOGRAPHY — hierarchy editorial renforcée ───────── */
+h1{font-weight:300;letter-spacing:-.035em}
+.hero h1{font-size:clamp(2.8rem,7vw,5.2rem);line-height:1.05;font-weight:300;letter-spacing:-.04em}
+.hero h1 .highlight{font-weight:400;font-style:italic;letter-spacing:-.03em}
+.hero-subtitle{letter-spacing:.005em}
+.page-header h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:300;letter-spacing:-.03em}
+h2{font-weight:400;letter-spacing:-.025em}
+h3{font-weight:500;letter-spacing:-.012em}
+p{font-feature-settings:"liga" on,"calt" on,"kern" on}
+.hero h1,.page-header h1,h2{font-feature-settings:"liga" on,"dlig" on,"kern" on}
+
+/* ── B. NAV — Liquid Glass renforcée ─────────────────────── */
+.nav{backdrop-filter:blur(28px) saturate(1.6) brightness(.96);-webkit-backdrop-filter:blur(28px) saturate(1.6) brightness(.96);background:rgba(7,13,26,.72);border-bottom:1px solid rgba(255,255,255,.04)}
+.nav.nav-scrolled{background:rgba(6,12,24,.92);backdrop-filter:blur(32px) saturate(1.7);-webkit-backdrop-filter:blur(32px) saturate(1.7);border-bottom-color:rgba(184,145,76,.12)}
+.nav::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(184,145,76,.18),transparent);pointer-events:none;opacity:0;transition:opacity .5s var(--ease-fluid)}
+.nav.nav-scrolled::before{opacity:1}
+
+/* ── C. DROPDOWN — Liquid Glass + entrée fluide ──────────── */
+.dropdown{background:rgba(12,26,48,.78);backdrop-filter:blur(24px) saturate(1.5);-webkit-backdrop-filter:blur(24px) saturate(1.5);border:1px solid rgba(184,145,76,.1);box-shadow:0 24px 60px -16px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.05) inset;transition:opacity .4s var(--ease-fluid),visibility .4s var(--ease-fluid),transform .4s var(--ease-fluid)}
+
+/* ── D. HERO — gradient mesh enrichi ─────────────────────── */
+.hero{background:radial-gradient(ellipse at top,#0C1A30 0%,var(--navy-900) 60%)}
+.hero::before{background:
+  radial-gradient(ellipse 90% 70% at calc(70% + var(--mx,0)*4%) calc(40% + var(--my,0)*4%),rgba(39,70,114,.42) 0%,transparent 70%),
+  radial-gradient(ellipse 60% 80% at calc(20% - var(--mx,0)*5%) calc(82% - var(--my,0)*5%),rgba(184,150,78,.09) 0%,transparent 60%),
+  radial-gradient(ellipse 45% 45% at calc(50% + var(--mx,0)*6%) calc(15% + var(--my,0)*6%),rgba(90,139,190,.16) 0%,transparent 50%),
+  radial-gradient(ellipse 30% 30% at calc(85% - var(--mx,0)*8%) calc(60% - var(--my,0)*8%),rgba(232,225,209,.05) 0%,transparent 60%)}
+.hero-content{max-width:920px}
+.hero-description{font-size:1.08rem;line-height:1.9;letter-spacing:.005em}
+.hero-eyebrow{padding:.55rem 1.8rem;font-size:.7rem;letter-spacing:.28em}
+
+/* ── E. CARDS — morph fluide + edge highlight (durées UX-rec) ─ */
+/* skill ui-ux-pro-max : 150-300ms pour micro-interactions, jamais > 500ms */
+.card,.ac-card,.exp-card{transition:transform .35s var(--ease-fluid),box-shadow .35s var(--ease-fluid),border-color .25s var(--ease-fluid)}
+.card:hover,.exp-card:hover{transform:translateY(-8px)}
+.ac-card:hover{transform:translateY(-4px)}
+/* Top edge highlight au hover (liquid feel) */
+.card::before{height:1px;background:var(--hairline-gold);opacity:0;transform:none;transition:opacity .3s var(--ease-fluid)}
+.card:hover::before{opacity:1;transform:none}
+.exp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--hairline-gold);opacity:0;pointer-events:none;transition:opacity .3s var(--ease-fluid);z-index:2}
+.exp-card:hover::before{opacity:1}
+/* Inner top shine sur card hover (pseudo glass) */
+.card,.exp-card,.ac-card{box-shadow:var(--shadow-editorial)}
+.card:hover{box-shadow:var(--shadow-float)}
+.exp-card:hover{box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 28px 70px -18px rgba(6,16,31,.28),0 12px 24px -12px rgba(184,145,76,.24)}
+
+/* ── F. SECTIONS — hairline ornement entre blocs ─────────── */
+.section{position:relative}
+.section+.section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(560px,80%);height:1px;background:var(--hairline-gold);opacity:.5}
+
+/* ── G. SECTION HEADER — éveil ornemental ────────────────── */
+.section-header .eyebrow{font-weight:600;letter-spacing:.22em}
+.section-header .eyebrow::before,.section-header .eyebrow::after{width:48px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.6;height:1px}
+.section-header .eyebrow::after{background:linear-gradient(90deg,transparent,var(--gold))}
+.section-header h2{margin-top:.6rem;font-size:clamp(2rem,4.4vw,3rem)}
+.section-header p{font-size:1.05rem;line-height:1.85;color:var(--gray);font-style:italic;font-family:var(--font-display);font-weight:400}
+
+/* ── H. CTA — shimmer + lift (skill rec : button hover scale 1.05) ── */
+.hero-cta{transition:transform .25s var(--ease-fluid),box-shadow .35s var(--ease-fluid),background-position .8s var(--ease-fluid)}
+.hero-cta::before{transition:left .9s var(--ease-fluid);background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.55) 50%,transparent 80%)}
+.hero-cta:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 42px rgba(184,145,76,.36),0 6px 16px rgba(184,145,76,.22)}
+
+/* ── I. NAV LINKS — hover refinement (italic accent) ─────── */
+.nav-links>li>a{transition:color .35s var(--ease-fluid),background .35s var(--ease-fluid)}
+.nav-links>li>a.active{position:relative}
+.nav-links>li>a.active::before{content:'';position:absolute;left:50%;top:.2rem;transform:translateX(-50%);width:3px;height:3px;border-radius:50%;background:var(--gold);box-shadow:0 0 6px rgba(184,145,76,.6)}
+
+/* ── J. PHOTO FRAMES — corner ornaments raffinés ─────────── */
+.photo-frame::before,.photo-frame::after{transition:opacity .5s var(--ease-fluid),width .5s var(--ease-fluid),height .5s var(--ease-fluid)}
+.photo-frame:hover::before,.photo-frame:hover::after{width:56px;height:56px;border-color:rgba(184,150,78,.7)}
+
+/* ── K. PAGE HEADER — gradient mesh subtil ───────────────── */
+.page-header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(184,150,78,.04),transparent 60%);pointer-events:none}
+
+/* ── L. SCROLL REVEAL — courbe plus fluide ───────────────── */
+.fade-in{transition:opacity 1s var(--ease-fluid),transform 1s var(--ease-fluid),filter 1s var(--ease-fluid)}
+
+/* ── M. FOOTER — hairline gold en haut ───────────────────── */
+.footer::before{height:1px;background:var(--hairline-gold);opacity:.6}
+
+/* ── N. AVATAR HERO — halo doré pulsant raffiné ──────────── */
+.hero-avatar{width:108px;height:108px;border-width:2px}
+@keyframes avatarBreathe{0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(184,150,78,.14),0 0 0 1px rgba(184,150,78,.18) inset}50%{transform:scale(1.022);box-shadow:0 0 100px rgba(184,150,78,.26),0 0 0 1px rgba(184,150,78,.32) inset}}
+
+/* ── O. SCROLLBAR — discret et luxe ──────────────────────── */
+@media(pointer:fine){
+  ::-webkit-scrollbar{width:10px;height:10px}
+  ::-webkit-scrollbar-track{background:transparent}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,rgba(184,145,76,.25),rgba(184,145,76,.45));border-radius:10px;border:2px solid var(--off-white)}
+  ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,rgba(184,145,76,.45),rgba(184,145,76,.7))}
+}
+
+/* ── P. BUTTON FOCUS — ring doré halo (accessibility luxe) ─ */
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;box-shadow:0 0 0 6px rgba(184,145,76,.12);border-radius:6px}
+
+/* ── Q. CARD-LINK — flèche qui glisse ────────────────────── */
+.card-link svg,.exp-card-link svg{transition:transform .45s var(--ease-fluid)}
+.card-link:hover svg,.exp-card-link:hover svg{transform:translateX(6px)}
+
+/* ── R. EYEBROW SECTION — padding micro pour les ornements ─ */
+.section-header .eyebrow{position:relative;display:inline-block;padding:0 .2em}
+
+/* ── S. RESPECTER reduced-motion (compléments) ───────────── */
+@media(prefers-reduced-motion:reduce){
+  .hero-cta:hover,.card:hover,.exp-card:hover,.ac-card:hover{transform:none!important}
+  .nav,.dropdown{backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+
+/* ── T. CARDS — clipping interne propre (les ::after gradient restent contenus) ─ */
+.card{overflow:hidden}
+.exp-card{overflow:hidden}
+
+/* ============================================
+   HOMEPAGE — HERO-CENTRIC PATTERN
+   Pattern recommandé par ui-ux-pro-max design system
+   ============================================ */
+
+/* ── 0. MARQUEE BAND — signature horizontale infinite ───── */
+/* Pattern issu MCP magic 21st.dev — adapté vanilla CSS, GPU-accelerated */
+.marquee-band{position:relative;background:linear-gradient(180deg,var(--navy-900) 0%,#080F1F 100%);padding:1.6rem 0;overflow:hidden;border-top:1px solid rgba(184,150,78,.08);border-bottom:1px solid rgba(184,150,78,.08)}
+.marquee-band::before,.marquee-band::after{content:'';position:absolute;top:0;bottom:0;width:14%;z-index:2;pointer-events:none}
+.marquee-band::before{left:0;background:linear-gradient(90deg,var(--navy-900),transparent)}
+.marquee-band::after{right:0;background:linear-gradient(-90deg,var(--navy-900),transparent)}
+.marquee-track{display:flex;align-items:center;gap:3rem;width:max-content;animation:marqueeScroll 38s linear infinite;will-change:transform}
+.marquee-item{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,1.85rem);font-style:italic;font-weight:400;color:rgba(189,213,238,.78);letter-spacing:-.012em;white-space:nowrap;display:inline-flex;align-items:center;gap:3rem;line-height:1}
+.marquee-item::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px rgba(184,150,78,.5);flex-shrink:0;display:inline-block}
+.marquee-band:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{animation:none;justify-content:center;flex-wrap:wrap;gap:1.5rem}
+  .marquee-band::before,.marquee-band::after{display:none}
+}
+@media(max-width:768px){.marquee-band{padding:1.2rem 0}.marquee-track{gap:2rem}.marquee-item{gap:2rem}}
+
+/* ── 1. VALUE-PROP STRIP — bandeau navy 3 chiffres ──────── */
+.value-strip{background:linear-gradient(180deg,var(--navy-900) 0%,#0A1626 100%);position:relative;padding:4.5rem 2.5rem;overflow:hidden}
+.value-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(184,150,78,.08),transparent 60%),radial-gradient(ellipse 50% 40% at 20% 0%,rgba(39,70,114,.25),transparent 60%);pointer-events:none}
+.value-strip::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(640px,80%);height:1px;background:var(--hairline-gold);opacity:.45}
+.value-strip-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:2rem;position:relative;z-index:1}
+.value-stat{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.35rem;padding:.5rem 1rem}
+.value-stat-num{font-family:var(--font-display);font-size:clamp(3rem,6vw,4.6rem);font-weight:300;color:var(--white);line-height:1;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 0%,#cfdcec 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.value-stat-num sup{font-size:.45em;font-weight:400;letter-spacing:0;vertical-align:top;margin-left:.05em}
+.value-stat-arrow{color:var(--gold);margin:0 .15em;font-weight:300;-webkit-text-fill-color:var(--gold)}
+.value-stat-unit{font-family:var(--font-display);font-size:1rem;font-style:italic;color:var(--gold);letter-spacing:.02em;margin-top:.2rem}
+.value-stat-label{font-size:.72rem;color:var(--navy-300);letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-top:.6rem;line-height:1.5;max-width:230px}
+.value-stat-divider{width:1px;height:80px;background:linear-gradient(180deg,transparent,rgba(184,150,78,.3) 30%,rgba(184,150,78,.3) 70%,transparent);justify-self:center}
+@media(max-width:900px){
+  .value-strip{padding:3rem 1.5rem}
+  .value-strip-inner{grid-template-columns:1fr;gap:.5rem}
+  .value-stat-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,rgba(184,150,78,.3) 30%,rgba(184,150,78,.3) 70%,transparent);margin:1rem auto}
+  .value-stat-label{max-width:none}
+}
+
+/* ── 2. TRIPTYQUE — grid 3 colonnes forcé + chip Acte ───── */
+.card-grid-triple{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+@media(max-width:1024px){.card-grid-triple{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.card-grid-triple{grid-template-columns:1fr}}
+.card-chip-label{display:inline-block;font-family:var(--font-body);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:.7rem;padding:.25rem .7rem;background:var(--gold-pale);border-radius:50px;border:1px solid rgba(184,145,76,.2)}
+
+/* ── 3. PHILOSOPHIE — citation centrée ──────────────────── */
+.philosophy{max-width:920px;margin:0 auto;padding:7rem 2.5rem;text-align:center;position:relative}
+.philosophy-rule{width:1px;height:64px;background:linear-gradient(180deg,transparent,rgba(184,145,76,.6),transparent);margin:0 auto 2.5rem}
+.philosophy-rule:last-child{margin:2.5rem auto 0}
+.philosophy-quote{font-family:var(--font-display);font-style:italic;font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:400;color:var(--navy-800);line-height:1.4;letter-spacing:-.015em}
+.philosophy-quote p{font-family:inherit;font-size:inherit;color:inherit;font-style:inherit;line-height:inherit;letter-spacing:inherit;max-width:none;margin:0 auto}
+.philosophy-quote em{color:var(--gold);font-style:italic;font-weight:500}
+.philosophy-cite{font-family:var(--font-body);font-style:normal;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-top:2rem;display:block}
+@media(max-width:768px){.philosophy{padding:4.5rem 1.5rem}.philosophy-rule{height:48px;margin-bottom:1.8rem}.philosophy-rule:last-child{margin:1.8rem auto 0}}
+
+/* ── 4. CTA-BAND — full-bleed navy gradient mesh ────────── */
+.cta-band{background:linear-gradient(135deg,var(--navy-900) 0%,#0E1E38 50%,var(--navy-800) 100%);padding:6rem 2.5rem;position:relative;overflow:hidden;text-align:center}
+.cta-band::before{content:'';position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 60% at 30% 30%,rgba(39,70,114,.4),transparent 60%),
+  radial-gradient(ellipse 50% 70% at 80% 80%,rgba(184,150,78,.1),transparent 60%),
+  radial-gradient(ellipse 40% 40% at 50% 0%,rgba(90,139,190,.18),transparent 50%);pointer-events:none;z-index:0}
+.cta-band::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(560px,80%);height:1px;background:var(--hairline-gold);opacity:.5}
+.cta-band-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+.cta-band-eyebrow{display:inline-block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);margin-bottom:1.4rem;padding:.45rem 1.5rem;border:1px solid rgba(184,150,78,.3);border-radius:50px;background:rgba(184,150,78,.04);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.cta-band-title{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:300;color:var(--white);letter-spacing:-.03em;line-height:1.1;margin-bottom:1.2rem;background:linear-gradient(180deg,#fff 0%,#cfdcec 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.cta-band-title em{font-style:italic;font-weight:400;-webkit-text-fill-color:var(--gold);background:none;color:var(--gold)}
+.cta-band-subtitle{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:var(--navy-200);max-width:580px;margin:0 auto 2.6rem;line-height:1.7}
+.cta-band-cta{margin-top:.5rem}
+@media(max-width:768px){.cta-band{padding:4.5rem 1.5rem}.cta-band-subtitle{font-size:1rem;margin-bottom:2rem}}
+
+/* ── 5. INVALIDER l'override section+section sur la home ── */
+.value-strip+.section::before,.philosophy+.cta-band::before,.cta-band+*::before,.proof-section+.cta-band::before{display:none}
+
+/* ============================================
+   SUBPAGE-HERO — composant générique sous-pages
+   (Hard/Soft/Mad Skills, BUT 1/2/3, etc.)
+   Hero compact mais éditorial, factorisé global.
+   ============================================ */
+.subpage-hero{background:linear-gradient(180deg,var(--navy-900) 0%,#0A1626 75%,var(--navy-800) 100%);position:relative;overflow:hidden;padding:6rem 2.5rem 3.8rem;isolation:isolate}
+.subpage-hero::before{content:'';position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(184,150,78,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(184,150,78,.05) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black,transparent 80%);pointer-events:none}
+.subpage-hero::after{content:'';position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 50% 60% at 80% 20%,rgba(184,150,78,.10),transparent 60%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(39,70,114,.40),transparent 60%);pointer-events:none}
+.subpage-hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+.subpage-hero-meta{display:flex;justify-content:space-between;align-items:baseline;gap:1.2rem;margin-bottom:2.4rem;font-family:var(--font-body);font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.subpage-hero-meta-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(184,145,76,.35),transparent)}
+.subpage-hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,4.6rem);font-weight:300;color:var(--white);line-height:1;letter-spacing:-.04em;margin:0;background:linear-gradient(180deg,#fff 0%,#b9c8da 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.subpage-hero h1 em{font-style:italic;font-weight:400;color:var(--gold);-webkit-text-fill-color:var(--gold);background:none}
+.subpage-hero-tagline{font-family:var(--font-display);font-style:italic;font-size:clamp(1rem,1.8vw,1.4rem);color:var(--navy-200);max-width:660px;margin-top:1.6rem;line-height:1.55;letter-spacing:-.005em}
+.subpage-hero-back{display:inline-flex;align-items:center;gap:.5rem;margin-top:2.4rem;padding:.6rem 1.4rem;font-family:var(--font-body);font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,145,76,.3);border-radius:50px;background:rgba(184,145,76,.05);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:var(--transition)}
+.subpage-hero-back:hover{background:rgba(184,145,76,.14);border-color:rgba(184,145,76,.55);transform:translateX(-2px);color:var(--gold-light)}
+.subpage-hero-back svg{width:12px;height:12px;transition:transform .35s var(--ease-fluid)}
+.subpage-hero-back:hover svg{transform:translateX(-3px)}
+@media(max-width:768px){
+  .subpage-hero{padding:4.5rem 1.5rem 3rem}
+  .subpage-hero-meta{margin-bottom:1.8rem;flex-wrap:wrap}
+  .subpage-hero-meta-line{display:none}
+  .subpage-hero-tagline{margin-top:1.2rem}
+  .subpage-hero-back{margin-top:1.8rem}
+}
+
+/* ── 6. PROOF SECTION — fond stone-warm pour distinguer ───── */
+/* skill : "Light bg #F5F5F5" pour social-proof / "proof avant CTA" */
+.proof-section{background:linear-gradient(180deg,transparent 0%,var(--stone-50) 30%,var(--stone-50) 100%);position:relative}
+.proof-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(560px,80%);height:1px;background:var(--hairline-gold);opacity:.5;display:block!important}
+.proof-grid{max-width:1100px;margin:0 auto;grid-template-columns:repeat(2,1fr)}
+@media(max-width:768px){.proof-grid{grid-template-columns:1fr}}
+
+/* ── 7. H2 avec <em> — italic gold accent (skill : hero-centric italic emphasis) ── */
+h2 em,.section-header h2 em,.cta-band-title em{font-family:var(--font-display);font-style:italic;font-weight:400;color:var(--gold);-webkit-text-fill-color:var(--gold);background:none;letter-spacing:-.015em}
+
+/* ── 8. CTA-band CTA override — gardons cohérence ────────── */
+.cta-band-cta{transform:none}
+.cta-band-cta:hover{transform:translateY(-3px) scale(1.03)}

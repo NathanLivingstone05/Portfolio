@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compétences techniques et professionnelles de Nathan Livingstone : marketing digital, SEO, négociation commerciale, modélisation financière, outils digitaux et IA.">
+  <meta name="author" content="Nathan Livingstone">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <title>Hard Skills — Compétences Techniques | Nathan Livingstone</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Grille de catégories ── */
+    .hard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:2rem}
+
+    /* ── Bloc catégorie ── */
+    .soft-cat{background:var(--white);border-radius:var(--radius-lg);border:1px solid rgba(0,0,0,.05);overflow:hidden}
+    .soft-cat-header{display:flex;align-items:center;gap:1rem;padding:1.8rem 2rem;border-bottom:1px solid var(--light-gray)}
+    .soft-cat-icon{width:46px;height:46px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .soft-cat-icon.blue{background:linear-gradient(135deg,var(--navy-50),#dce8f5);color:var(--navy-600)}
+    .soft-cat-icon.gold{background:linear-gradient(135deg,var(--navy-50),var(--gold-pale));color:var(--navy-700)}
+    .soft-cat-icon.green{background:linear-gradient(135deg,var(--navy-50),#e0ede0);color:#3a6b3a}
+    .soft-cat-title{font-family:var(--font-display);font-size:1.3rem;font-weight:500;color:var(--navy-900)}
+    .soft-cat-count{margin-left:auto;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--gray)}
+
+    /* ── Liste d'items accordéon ── */
+    .skill-list{list-style:none;padding:0;margin:0}
+    .skill-item{}
+    .skill-item:not(:last-child){border-bottom:1px solid var(--light-gray)}
+
+    .skill-trigger{width:100%;background:none;border:none;cursor:pointer;padding:1.1rem 2rem;display:flex;align-items:center;gap:.9rem;text-align:left;transition:background .25s}
+    .skill-trigger:hover{background:var(--navy-50)}
+    .skill-trigger.open{background:var(--navy-50)}
+
+    .skill-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--navy-400),var(--gold));flex-shrink:0}
+    .skill-name{font-family:var(--font-body);font-size:.92rem;font-weight:600;color:var(--navy-800);flex:1}
+    .skill-chevron{width:16px;height:16px;flex-shrink:0;color:var(--gray);transition:transform .3s var(--ease)}
+    .skill-trigger.open .skill-chevron{transform:rotate(180deg)}
+
+    .skill-panel{max-height:0;overflow:hidden;transition:max-height .4s var(--ease-out)}
+    .skill-panel.open{max-height:220px}
+    .skill-panel-inner{padding:.2rem 2rem 1.3rem calc(2rem + 8px + .9rem);font-size:.88rem;color:var(--dark-gray);line-height:1.75;border-left:2px solid var(--gold-pale);margin-left:2rem}
+
+    /* ── Bloc langues ── */
+    .lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+    .lang-card{background:var(--white);border:1px solid rgba(0,0,0,.05);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:center;gap:1.5rem}
+    .lang-flag{font-size:2rem;line-height:1}
+    .lang-info{}
+    .lang-name{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--navy-900)}
+    .lang-level{font-size:.82rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-top:.2rem}
+    .lang-note{font-size:.82rem;color:var(--gray);margin-top:.4rem;line-height:1.5}
+    .lang-bar{margin-top:.8rem;height:4px;border-radius:2px;background:var(--light-gray);overflow:hidden}
+    .lang-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--navy-400),var(--gold))}
+
+    @media(max-width:900px){.hard-grid{grid-template-columns:1fr}.lang-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       SUBPAGE HERO — composant global éditorial
+       ═══════════════════════════════════════════ -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-inner">
+      <div class="subpage-hero-meta">
+        <span>/ Compétences techniques</span>
+        <span class="subpage-hero-meta-line" aria-hidden="true"></span>
+        <span>Hard Skills · 01/03</span>
+      </div>
+      <h1>Hard <em>Skills</em></h1>
+      <p class="subpage-hero-tagline">Les savoir-faire opérationnels — marketing, digital, vente, modélisation financière et outils — acquis au fil de la formation et des expériences professionnelles.</p>
+      <a href="skills.html" class="subpage-hero-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Retour aux skills
+      </a>
+    </div>
+  </section>
+
+  <div class="breadcrumbs">
+    <a href="index.html">Accueil</a>
+    <span class="separator">›</span>
+    <a href="skills.html">Skills</a>
+    <span class="separator">›</span>
+    <span>Hard Skills</span>
+  </div>
+
+  <section class="section">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Savoir-faire mesurables</span>
+      <h2>Compétences techniques & métier</h2>
+      <p>Construites à travers trois ans de BUT TC, deux stages, un service civique et des projets concrets. Clique sur chaque compétence pour voir d'où elle vient.</p>
+    </div>
+
+    <div class="hard-grid">
+
+      <!-- ── MARKETING & ANALYSE ── -->
+      <div class="soft-cat fade-in stagger-1">
+        <div class="soft-cat-header">
+          <div class="soft-cat-icon blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/><line x1="2" x2="22" y1="20" y2="20"/></svg>
+          </div>
+          <div>
+            <div class="soft-cat-title">Marketing</div>
+            <div style="font-size:.75rem;color:var(--gray);margin-top:.1rem">& Analyse</div>
+          </div>
+          <span class="soft-cat-count">5 skills</span>
+        </div>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Études de marché</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">PESTEL complet pour l'auto-école AZUR 83 (6 facteurs macro-environnementaux analysés). Veille sur 6 041 tweets SHEIN/BHV révélant une variation de +33 316 % des mentions entre octobre et novembre — utilisé comme signal de tendance pour orienter une stratégie de communication.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Stratégie de communication</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Conception de plans de communication multi-canaux de BUT 1 à BUT 3 : segmentation cible, choix des supports (digital, événementiel, print), définition des messages clés. Campagnes réalisées pour des marques réelles (BANGA, AdopteUnMec en Espagne) et des projets fictifs structurés.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">SEO & Marketing digital</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Audit SEO de toulon.fr : taux de crawl 99,2 %, analyse des balises, maillage interne et recommandations d'optimisation on-page. Construction d'un cahier des charges CRM complet pour TechSolutions incluant la segmentation client et les KPIs de performance digitale.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Community management</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Analyse de corpus de 6 041 tweets pour décrypter les dynamiques de conversation autour de SHEIN/BHV. Conception de lignes éditoriales et de calendriers de contenu, mesure de la performance par KPIs (reach, engagement, share of voice) pour différents contextes de marque.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Analyse de données</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Traitement quantitatif de données marketing (veilles, panels, KPIs), interprétation de résultats statistiques et présentation de synthèses actionnables. Scoring qualitatif de tons rédactionnels sur 5 dimensions (dossier IA Tons : Gemini / Claude, note maximale 28/30 pour le ton dénigrant).</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── VENTE & NÉGOCIATION ── -->
+      <div class="soft-cat fade-in stagger-2">
+        <div class="soft-cat-header">
+          <div class="soft-cat-icon gold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div>
+            <div class="soft-cat-title">Vente</div>
+            <div style="font-size:.75rem;color:var(--gray);margin-top:.1rem">& Négociation</div>
+          </div>
+          <span class="soft-cat-count">5 skills</span>
+        </div>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Négociation commerciale</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Finaliste des Négociales 2025 (36e édition) — 212e sur 600 finalistes au niveau national. Simulations de négociation B2B acheteur/fournisseur en contexte réel : Klean Kanteen × Patagonia (2 600 gourdes, taux de marque objectif 30 %, paiement à 60 jours). Maîtrise des tactiques d'achat et des contre-stratégies de vente.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Argumentation de vente</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Maîtrise des phases de la vente consultative : découverte des besoins, traitement des objections, closing et gestion des concessions. Pratiquée en entretiens réels à la SEMLORE et lors des Négociales face à des acheteurs professionnels. Capacité à adapter le pitch au profil et au secteur de l'interlocuteur.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Prospection commerciale</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Campagnes de prospection téléphonique en SAÉ BUT TC : conception de scripts, gestion des objections à froid, tenue d'un reporting. Initiation à la prospection digitale (LinkedIn, email). La répétition des appels infructueux a forgé une vraie résistance au refus, directement transférable à la vente de solutions patrimoniales.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Gestion de la relation client</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Suivi de portefeuille client en stage à la SEMLORE (station des Orres) : gestion des demandes, fidélisation, relances. En parallèle, conception d'un cahier des charges CRM complet pour TechSolutions : segmentation, règles de gestion, KPIs de fidélisation et roadmap d'intégration outil.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Outils de gestion commerciale</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Élaboration de factures pro forma conformes aux mentions légales (Time on Target × KOOI : séminaire 50 personnes, N°F-2026-02-KOOI-001), devis multi-lignes et calcul de taux de marque par référence produit (Klean Kanteen : calcul global et produit par produit). Maîtrise des documents contractuels de la vente complexe.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── OUTILS & TECHNOLOGIE ── -->
+      <div class="soft-cat fade-in stagger-3">
+        <div class="soft-cat-header">
+          <div class="soft-cat-icon green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          </div>
+          <div>
+            <div class="soft-cat-title">Outils</div>
+            <div style="font-size:.75rem;color:var(--gray);margin-top:.1rem">& Technologie</div>
+          </div>
+          <span class="soft-cat-count">5 skills</span>
+        </div>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Excel & modélisation financière</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Construction de tableaux de bord financiers dans le jeu d'entreprise Vélix et du business model FISY (CA an1 ≈ 282 k€, an5 ≈ 4,2 M€) avec analyses de sensibilité multi-scénarios. Maîtrise des formules avancées, tableaux croisés dynamiques et graphiques de pilotage.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Suite Office & Google Workspace</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Rédaction de rapports professionnels (Word), construction de présentations jury et pitchs (PowerPoint, Google Slides), gestion documentaire collaborative (Drive, Docs, Sheets). Utilisés quotidiennement tout au long du BUT TC pour produire livrables écrits et supports oraux.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">WordPress & CMS</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Création et déploiement du site RoseRouge sous WordPress : structuration de l'arborescence, intégration de contenu, personnalisation du thème et optimisation de l'expérience utilisateur. Compétence complétée par la conception de ce portfolio entièrement codé en HTML/CSS vanilla.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Canva & design de présentation</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Conception de supports visuels professionnels pour pitchs, SAÉ et présentations jury : charte graphique cohérente, hiérarchie visuelle, mockups produit. Utilisé notamment pour le pitch NutriShot (30 slides) et les présentations de SAÉ e-business.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">IA & outils digitaux</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Utilisation de Gemini et Claude en contexte professionnel pour le dossier IA Tons : évaluation comparative sur 5 dimensions, scoring sur 30 points, analyse des biais de génération selon le ton (dénigrant, neutre, laudatif). Maîtrise des outils de productivité digitale : Trello, Notion, rétroplannings, cahiers des charges.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /hard-grid -->
+
+    <!-- ── LANGUES ── -->
+    <div class="section-header fade-in" style="margin-top:1rem">
+      <span class="eyebrow">Langues</span>
+      <h2>Maîtrise linguistique</h2>
+    </div>
+    <div class="lang-grid fade-in">
+      <div class="lang-card">
+        <div class="lang-flag">🇫🇷</div>
+        <div class="lang-info" style="flex:1">
+          <div class="lang-name">Français</div>
+          <div class="lang-level">Langue maternelle</div>
+          <div class="lang-bar" style="margin-top:.7rem"><div class="lang-fill" style="width:100%"></div></div>
+        </div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-flag">🇬🇧</div>
+        <div class="lang-info" style="flex:1">
+          <div class="lang-name">Anglais</div>
+          <div class="lang-level">Niveau B2 — Écrit & Oral</div>
+          <div class="lang-note">Séjour linguistique à Malte du 5 juillet au 29 août (EF Education First) — cours intensifs et expérience professionnelle sur place.</div>
+          <div class="lang-bar" style="margin-top:.7rem"><div class="lang-fill" style="width:72%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="soft-skills.html" class="hero-cta" style="display:inline-flex;">
+        Soft Skills
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="mad-skills.html" class="hero-cta" style="display:inline-flex;background:var(--navy-700);color:var(--white);box-shadow:var(--shadow-md);">
+        Mad Skills
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+  <script>
+    createNav('hard');
+    createFooter();
+
+    function toggleSkill(btn) {
+      const panel = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      btn.classList.toggle('open', !isOpen);
+      panel.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez le parcours BUT TC de Nathan Livingstone à l'IUT de Toulon : 3 ans de formation en marketing, vente, marketing digital et e-business & entrepreneuriat (parcours MDEE).">
+  <meta name="author" content="Nathan Livingstone">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <title>BUT Techniques de Commercialisation — Parcours MDEE | Nathan Livingstone</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Stats strip */
+    .stats-strip{background:var(--navy-900);border-radius:var(--radius-xl);padding:3rem 3.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin:0 0 5rem;position:relative;overflow:hidden}
+    .stats-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(184,150,78,.07),transparent);pointer-events:none}
+    .stat-item{text-align:center;position:relative}
+    .stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:15%;bottom:15%;width:1px;background:rgba(255,255,255,.08)}
+    .stat-num{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:var(--gold);line-height:1;margin-bottom:.4rem}
+    .stat-label{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--navy-300)}
+
+    /* Program intro */
+    .program-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:6rem}
+    .program-intro-text h2{margin-bottom:1.2rem}
+    .program-intro-text p{margin-bottom:1rem}
+    .program-visual{background:var(--navy-900);border-radius:var(--radius-xl);padding:3rem;position:relative;overflow:hidden}
+    .program-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 20% 80%,rgba(39,70,114,.2),transparent);pointer-events:none}
+    .pv-item{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    .pv-item:last-child{border-bottom:none}
+    .pv-num{font-family:var(--font-display);font-size:1.5rem;color:var(--gold);opacity:.4;width:32px;flex-shrink:0;font-weight:300}
+    .pv-label{font-size:.9rem;color:var(--navy-200)}
+
+    /* Year cards — 3 colonnes symétriques */
+    .year-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    .yc{background:var(--white);border-radius:var(--radius-xl);padding:3rem 2.5rem;border:1px solid rgba(0,0,0,.05);position:relative;overflow:hidden;transition:var(--transition);display:flex;flex-direction:column}
+    .yc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold-pale),transparent);opacity:0;transition:var(--transition)}
+    .yc:hover{box-shadow:var(--shadow-xl);transform:translateY(-6px)}
+    .yc:hover::after{opacity:1}
+    .yc-bg-num{font-family:var(--font-display);font-size:7rem;font-weight:300;color:var(--navy-50);line-height:1;position:absolute;top:1rem;right:1.5rem;pointer-events:none;user-select:none;transition:var(--transition)}
+    .yc:hover .yc-bg-num{color:var(--gold-pale)}
+    .yc-badge{display:inline-block;padding:.3rem .9rem;background:var(--navy-50);color:var(--navy-600);font-size:.7rem;font-weight:600;border-radius:50px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.4rem;position:relative}
+    .yc-title{font-family:var(--font-display);font-size:2rem;font-weight:500;color:var(--navy-900);margin-bottom:.3rem;position:relative}
+    .yc-sub{font-size:.85rem;color:var(--gray);font-style:italic;font-family:var(--font-display);margin-bottom:1.6rem;position:relative}
+    .yc-ues{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem;position:relative;flex:1}
+    .yc-ue{padding:.22rem .7rem;background:var(--navy-50);color:var(--navy-600);font-size:.68rem;font-weight:600;border-radius:50px;letter-spacing:.03em;text-transform:uppercase}
+    .yc-stage{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .9rem .3rem .7rem;background:var(--gold-pale);color:var(--navy-800);font-size:.7rem;font-weight:600;border-radius:50px;margin-bottom:1.8rem;position:relative}
+    .yc-stage::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+    .yc-link{display:inline-flex;align-items:center;gap:.45rem;font-size:.8rem;font-weight:600;color:var(--navy-600);text-transform:uppercase;letter-spacing:.05em;transition:var(--transition);margin-top:auto;position:relative}
+    .yc-link:hover{color:var(--gold)}
+    .yc-link svg{width:13px;height:13px;transition:var(--transition)}
+    .yc-link:hover svg{transform:translateX(4px)}
+
+    @media(max-width:1024px){.program-intro{grid-template-columns:1fr;gap:2.5rem}}
+    @media(max-width:768px){
+      .year-cards{grid-template-columns:1fr}
+      .stats-strip{grid-template-columns:repeat(2,1fr)}
+      .stat-item:nth-child(2)::after,.stat-item:nth-child(4)::after{display:none}
+    }
+    @media(max-width:600px){.stats-strip{padding:2rem 1.5rem;border-radius:var(--radius-lg)}}
+
+    /* ═══════════════════════════════════════════
+       BUT-TC HERO ÉDITORIAL — typographie monumentale empilée
+       Pattern issu MCP magic 21st.dev (Hero 03 stacked)
+    ═══════════════════════════════════════════ */
+    .but-hero {
+      background: linear-gradient(180deg, var(--navy-900) 0%, #0A1626 75%, var(--navy-800) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 7rem 2.5rem 4.5rem;
+      isolation: isolate;
+    }
+    .but-hero::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(184,150,78,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,150,78,.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black, transparent 80%);
+      pointer-events: none;
+    }
+    .but-hero::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 55% 60% at 75% 30%, rgba(184,150,78,.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 25% 80%, rgba(39,70,114,.40), transparent 60%);
+      pointer-events: none;
+    }
+    .but-hero-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .but-hero-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+      font-family: var(--font-body);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .but-hero-meta-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,145,76,.35), transparent);
+    }
+    .but-hero-stack {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 9vw, 7.5rem);
+      font-weight: 300;
+      line-height: .92;
+      letter-spacing: -.045em;
+      color: var(--white);
+    }
+    .but-hero-stack .line {
+      display: block;
+      background: linear-gradient(180deg, #fff 0%, #b9c8da 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .but-hero-stack .line-tc {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+      -webkit-text-fill-color: var(--gold);
+      background: none;
+      padding-left: clamp(.5rem, 4vw, 4rem);
+    }
+    .but-hero-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.05rem, 1.9vw, 1.5rem);
+      color: var(--navy-200);
+      max-width: 700px;
+      margin-top: 2.4rem;
+      line-height: 1.55;
+      letter-spacing: -.005em;
+    }
+    .but-hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .but-hero-bottom-left {
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      font-family: var(--font-body);
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--navy-300);
+      font-weight: 500;
+    }
+    .but-hero-bottom-left strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    @media(max-width: 768px){
+      .but-hero { padding: 5rem 1.5rem 3.5rem; }
+      .but-hero-meta { margin-bottom: 2rem; flex-wrap: wrap; }
+      .but-hero-meta-line { display: none; }
+      .but-hero-tagline { margin-top: 1.6rem; }
+      .but-hero-bottom { margin-top: 2.4rem; }
+    }
+
+    /* ═══════════════════════════════════════════
+       STATS-STRIP — count-up gradient gold
+    ═══════════════════════════════════════════ */
+    .stat-num {
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 70%, #8B6A33 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 12px rgba(184,145,76,.18));
+    }
+
+    /* ═══════════════════════════════════════════
+       YEAR CARDS UPGRADE — corner decorators + premium lift
+       Pattern issu MCP magic Features 10
+    ═══════════════════════════════════════════ */
+    .yc {
+      transition: transform .35s var(--ease-fluid), box-shadow .45s var(--ease-fluid), border-color .35s var(--ease-fluid);
+    }
+    .yc:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.5) inset,
+        0 24px 60px -16px rgba(6,16,31,.22),
+        0 10px 20px -10px rgba(184,145,76,.22),
+        0 0 0 1px rgba(184,145,76,.10);
+      border-color: rgba(184,145,76,.18);
+    }
+    /* Corner decorators dorés — issus magic Features 10 */
+    .yc-corners {
+      position: absolute;
+      inset: 12px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .4s var(--ease-fluid);
+      z-index: 1;
+    }
+    .yc:hover .yc-corners { opacity: 1; }
+    .yc-corners::before,
+    .yc-corners::after,
+    .yc-corner-bl,
+    .yc-corner-br {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+    }
+    .yc-corners::before {
+      top: 0; left: 0;
+      border-top: 1.5px solid rgba(184,145,76,.55);
+      border-left: 1.5px solid rgba(184,145,76,.55);
+    }
+    .yc-corners::after {
+      top: 0; right: 0;
+      border-top: 1.5px solid rgba(184,145,76,.55);
+      border-right: 1.5px solid rgba(184,145,76,.55);
+    }
+    .yc-corner-bl {
+      bottom: 0; left: 0;
+      border-bottom: 1.5px solid rgba(184,145,76,.55);
+      border-left: 1.5px solid rgba(184,145,76,.55);
+    }
+    .yc-corner-br {
+      bottom: 0; right: 0;
+      border-bottom: 1.5px solid rgba(184,145,76,.55);
+      border-right: 1.5px solid rgba(184,145,76,.55);
+    }
+    .yc-bg-num {
+      transition: color .4s var(--ease-fluid), transform .5s var(--ease-fluid);
+    }
+    .yc:hover .yc-bg-num {
+      color: var(--gold-pale);
+      transform: scale(1.05) translateY(-3px);
+    }
+    .yc-badge {
+      transition: background .3s var(--ease-fluid), color .3s var(--ease-fluid);
+    }
+    .yc:hover .yc-badge {
+      background: var(--gold-pale);
+      color: var(--navy-900);
+    }
+    /* Hairline gold qui apparait au hover en haut */
+    .yc::after {
+      background: linear-gradient(90deg, transparent, var(--gold-light) 30%, var(--gold) 50%, var(--gold-light) 70%, transparent);
+      height: 1.5px;
+    }
+
+    /* ═══════════════════════════════════════════
+       PV-ITEM upgrade — hover gold accent
+    ═══════════════════════════════════════════ */
+    .pv-item {
+      transition: padding-left .35s var(--ease-fluid), border-color .3s var(--ease-fluid);
+    }
+    .pv-item:hover {
+      padding-left: .8rem;
+      border-bottom-color: rgba(184,150,78,.25);
+    }
+    .pv-item:hover .pv-num {
+      opacity: 1;
+      color: var(--gold);
+    }
+    .pv-num {
+      transition: opacity .35s var(--ease-fluid), color .35s var(--ease-fluid);
+    }
+
+    /* ═══════════════════════════════════════════
+       FINAL CTA — vers pages BUT 1/2/3 si scroll
+    ═══════════════════════════════════════════ */
+    .but-cta-band {
+      background: linear-gradient(135deg, var(--navy-900) 0%, #0E1E38 50%, var(--navy-800) 100%);
+      padding: 5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .but-cta-band::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 30% 30%, rgba(39,70,114,.4), transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(184,150,78,.10), transparent 60%);
+      pointer-events: none;
+    }
+    .but-cta-band::after {
+      content: '';
+      position: absolute; top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: min(560px, 80%);
+      height: 1px;
+      background: var(--hairline-gold);
+      opacity: .5;
+    }
+    .but-cta-band-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .but-cta-band h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: -.025em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(180deg, #fff 0%, #cfdcec 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .but-cta-band h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+      -webkit-text-fill-color: var(--gold);
+      background: none;
+    }
+    .but-cta-band p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--navy-200);
+      margin: 0 auto 2.2rem;
+      max-width: 540px;
+      line-height: 1.7;
+    }
+    .but-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .but-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.8rem;
+      font-family: var(--font-body);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      border: 1px solid rgba(184,145,76,.3);
+      background: rgba(184,145,76,.05);
+      color: var(--gold);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+    .but-cta-btn:hover {
+      background: rgba(184,145,76,.14);
+      border-color: rgba(184,145,76,.55);
+      transform: translateY(-2px);
+      color: var(--gold-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HERO ÉDITORIAL — typo monumentale empilée
+       Pattern issu MCP magic 21st.dev (Hero 03)
+       ═══════════════════════════════════════════ -->
+  <section class="but-hero">
+    <div class="but-hero-inner">
+      <div class="but-hero-meta">
+        <span>/ Parcours BUT TC</span>
+        <span class="but-hero-meta-line" aria-hidden="true"></span>
+        <span>IUT de Toulon · Promo 2024-2027</span>
+      </div>
+
+      <h1 class="but-hero-stack" aria-label="BUT Techniques de Commercialisation">
+        <span class="line">Techniques</span>
+        <span class="line">de Commerce</span>
+        <span class="line line-tc">&amp; Marketing</span>
+      </h1>
+
+      <p class="but-hero-tagline">
+        Trois années de formation à l'Université de Toulon —
+        parcours Marketing Digital, E-business &amp; Entrepreneuriat.
+      </p>
+
+      <div class="but-hero-bottom">
+        <div class="but-hero-bottom-left">
+          <span><strong>Parcours MDEE</strong> — choisi en BUT 2</span>
+          <span>5 compétences cœur · 11 unités d'enseignement · 2 stages</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="breadcrumbs">
+    <a href="index.html">Accueil</a>
+    <span class="separator">›</span>
+    <span>BUT TC</span>
+  </div>
+
+  <section class="section">
+
+    <!-- Stats strip — count-up animé -->
+    <div class="stats-strip fade-in">
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="3">3</span></div>
+        <div class="stat-label">Années de formation</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="11">11</span></div>
+        <div class="stat-label">Unités d'enseignement</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="2">2</span></div>
+        <div class="stat-label">Stages professionnels</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="5">5</span></div>
+        <div class="stat-label">Compétences cœur</div>
+      </div>
+    </div>
+
+    <!-- Programme intro — 2 colonnes symétriques -->
+    <div class="program-intro">
+      <div class="program-intro-text fade-in">
+        <span class="eyebrow" style="font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);display:inline-block;margin-bottom:1rem">Le programme</span>
+        <h2>Une formation complète en commerce & digital</h2>
+        <p>Le BUT Techniques de Commercialisation forme des professionnels polyvalents, capables d'intervenir sur l'ensemble de la chaîne commerciale — du marketing à la vente, de la communication au digital.</p>
+        <p>Le parcours <strong>MDEE</strong> (Marketing Digital, E-business & Entrepreneuriat), choisi dès la deuxième année, apporte une spécialisation stratégique en commerce numérique et création d'activité.</p>
+      </div>
+      <div class="program-visual fade-in stagger-2">
+        <div class="pv-item">
+          <span class="pv-num">01</span>
+          <span class="pv-label">Marketing — Conduire les actions marketing</span>
+        </div>
+        <div class="pv-item">
+          <span class="pv-num">02</span>
+          <span class="pv-label">Vente — Vendre une offre commerciale</span>
+        </div>
+        <div class="pv-item">
+          <span class="pv-num">03</span>
+          <span class="pv-label">Communication — Communiquer l'offre commerciale</span>
+        </div>
+        <div class="pv-item">
+          <span class="pv-num">04</span>
+          <span class="pv-label">Marketing digital — Gérer une activité digitale</span>
+        </div>
+        <div class="pv-item">
+          <span class="pv-num">05</span>
+          <span class="pv-label">E-business & Entrepreneuriat — Développer un projet</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section header -->
+    <div class="section-header fade-in">
+      <span class="eyebrow">Progression académique</span>
+      <h2>Trois années, une trajectoire</h2>
+      <p>Chaque année fait monter en puissance les compétences — du niveau fondamental jusqu'au niveau expert, en passant par une spécialisation progressive.</p>
+    </div>
+
+    <!-- 3 year cards — parfaitement symétriques -->
+    <div class="year-cards">
+
+      <div class="yc fade-in stagger-1">
+        <div class="yc-corners" aria-hidden="true">
+          <span class="yc-corner-bl"></span>
+          <span class="yc-corner-br"></span>
+        </div>
+        <span class="yc-bg-num">01</span>
+        <span class="yc-badge">Tronc commun</span>
+        <div class="yc-title">BUT 1</div>
+        <div class="yc-sub">Semestres 1 & 2 — Les fondations</div>
+        <div class="yc-ues">
+          <span class="yc-ue">Marketing N1</span>
+          <span class="yc-ue">Vente N1</span>
+          <span class="yc-ue">Communication N1</span>
+        </div>
+        <div class="yc-stage">Stage — SEMLORE, Les Orres</div>
+        <a href="but1.html" class="yc-link">
+          Découvrir le BUT 1
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="yc fade-in stagger-2">
+        <div class="yc-corners" aria-hidden="true">
+          <span class="yc-corner-bl"></span>
+          <span class="yc-corner-br"></span>
+        </div>
+        <span class="yc-bg-num">02</span>
+        <span class="yc-badge">Parcours MDEE</span>
+        <div class="yc-title">BUT 2</div>
+        <div class="yc-sub">Semestres 3 & 4 — Spécialisation</div>
+        <div class="yc-ues">
+          <span class="yc-ue">Marketing N2</span>
+          <span class="yc-ue">Vente N2</span>
+          <span class="yc-ue">Communication N2</span>
+          <span class="yc-ue">Mktg Digital N1</span>
+          <span class="yc-ue">E-business N1</span>
+        </div>
+        <div class="yc-stage">Stage — IUT de Toulon</div>
+        <a href="but2.html" class="yc-link">
+          Découvrir le BUT 2
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="yc fade-in stagger-3">
+        <div class="yc-corners" aria-hidden="true">
+          <span class="yc-corner-bl"></span>
+          <span class="yc-corner-br"></span>
+        </div>
+        <span class="yc-bg-num">03</span>
+        <span class="yc-badge">Expertise MDEE</span>
+        <div class="yc-title">BUT 3</div>
+        <div class="yc-sub">Semestres 5 & 6 — Autonomie</div>
+        <div class="yc-ues">
+          <span class="yc-ue">Marketing N3</span>
+          <span class="yc-ue">Vente N3</span>
+          <span class="yc-ue">Mktg Digital N2</span>
+          <span class="yc-ue">E-business N2</span>
+        </div>
+        <div class="yc-stage">Stage — Le Refuge Étoilé, Les Orres</div>
+        <a href="but3.html" class="yc-link">
+          Découvrir le BUT 3
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL — invitation à explorer chaque année
+       ═══════════════════════════════════════════ -->
+  <section class="but-cta-band">
+    <div class="but-cta-band-inner">
+      <h2>Plonger dans <em>le détail</em></h2>
+      <p>Chaque année a sa logique, ses unités d'enseignement et ses projets — découvre-les en profondeur.</p>
+      <div class="but-cta-actions">
+        <a href="but1.html" class="but-cta-btn">BUT 1</a>
+        <a href="but2.html" class="but-cta-btn">BUT 2</a>
+        <a href="but3.html" class="but-cta-btn">BUT 3</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+  <script>
+    createNav('but-tc');
+    createFooter();
+  </script>
+</body>
+</html>

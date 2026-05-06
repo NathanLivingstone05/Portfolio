@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compétences comportementales et interpersonnelles de Nathan Livingstone : écoute, rigueur, adaptabilité, leadership et sens du service client.">
+  <meta name="author" content="Nathan Livingstone">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <title>Soft Skills — Compétences Relationnelles | Nathan Livingstone</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Grille de catégories ── */
+    .soft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:2rem}
+
+    /* ── Bloc catégorie ── */
+    .soft-cat{background:var(--white);border-radius:var(--radius-lg);border:1px solid rgba(0,0,0,.05);overflow:hidden}
+    .soft-cat-header{display:flex;align-items:center;gap:1rem;padding:1.8rem 2rem;border-bottom:1px solid var(--light-gray)}
+    .soft-cat-icon{width:46px;height:46px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .soft-cat-icon.blue{background:linear-gradient(135deg,var(--navy-50),#dce8f5);color:var(--navy-600)}
+    .soft-cat-icon.gold{background:linear-gradient(135deg,var(--navy-50),var(--gold-pale));color:var(--navy-700)}
+    .soft-cat-icon.green{background:linear-gradient(135deg,var(--navy-50),#e0ede0);color:#3a6b3a}
+    .soft-cat-title{font-family:var(--font-display);font-size:1.3rem;font-weight:500;color:var(--navy-900)}
+    .soft-cat-count{margin-left:auto;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--gray)}
+
+    /* ── Liste d'items accordéon ── */
+    .skill-list{list-style:none;padding:0;margin:0}
+
+    .skill-item{}
+    .skill-item:not(:last-child){border-bottom:1px solid var(--light-gray)}
+
+    .skill-trigger{width:100%;background:none;border:none;cursor:pointer;padding:1.1rem 2rem;display:flex;align-items:center;gap:.9rem;text-align:left;transition:background .25s}
+    .skill-trigger:hover{background:var(--navy-50)}
+    .skill-trigger.open{background:var(--navy-50)}
+
+    .skill-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--navy-400),var(--gold));flex-shrink:0}
+    .skill-name{font-family:var(--font-body);font-size:.92rem;font-weight:600;color:var(--navy-800);flex:1}
+    .skill-chevron{width:16px;height:16px;flex-shrink:0;color:var(--gray);transition:transform .3s var(--ease)}
+    .skill-trigger.open .skill-chevron{transform:rotate(180deg)}
+
+    .skill-panel{max-height:0;overflow:hidden;transition:max-height .4s var(--ease-out)}
+    .skill-panel.open{max-height:200px}
+    .skill-panel-inner{padding:.2rem 2rem 1.3rem calc(2rem + 8px + .9rem);font-size:.88rem;color:var(--dark-gray);line-height:1.75;border-left:2px solid var(--gold-pale);margin-left:2rem}
+
+    @media(max-width:900px){.soft-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       SUBPAGE HERO — composant global éditorial
+       ═══════════════════════════════════════════ -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-inner">
+      <div class="subpage-hero-meta">
+        <span>/ Compétences humaines</span>
+        <span class="subpage-hero-meta-line" aria-hidden="true"></span>
+        <span>Soft Skills · 02/03</span>
+      </div>
+      <h1>Soft <em>Skills</em></h1>
+      <p class="subpage-hero-tagline">Les qualités relationnelles et comportementales — communication, écoute, organisation, leadership, adaptabilité — qui font la différence au quotidien.</p>
+      <a href="skills.html" class="subpage-hero-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Retour aux skills
+      </a>
+    </div>
+  </section>
+
+  <div class="breadcrumbs">
+    <a href="index.html">Accueil</a>
+    <span class="separator">›</span>
+    <a href="skills.html">Skills</a>
+    <span class="separator">›</span>
+    <span>Soft Skills</span>
+  </div>
+
+  <section class="section">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Qualités personnelles</span>
+      <h2>Compétences transversales</h2>
+      <p>Développées à travers mes études, mes expériences professionnelles et mes engagements. Clique sur chaque compétence pour voir comment je l'ai acquise.</p>
+    </div>
+
+    <div class="soft-grid">
+
+      <!-- ── COMMUNICATION & RELATIONNEL ── -->
+      <div class="soft-cat fade-in stagger-1">
+        <div class="soft-cat-header">
+          <div class="soft-cat-icon blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <div class="soft-cat-title">Communication</div>
+            <div style="font-size:.75rem;color:var(--gray);margin-top:.1rem">& Relationnel</div>
+          </div>
+          <span class="soft-cat-count">5 skills</span>
+        </div>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Écoute active</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Développée lors de mes entretiens de vente à la SEMLORE et lors des finales des Négociales, où comprendre les besoins réels de l'acheteur avant de parler était la clé pour adapter mon argumentaire en temps réel.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Aisance relationnelle</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Forgée au contact de publics variés : clients de la station des Orres, chefs de département TC lors de l'ACD, et interlocuteurs professionnels en prospection téléphonique. Chaque échange m'a appris à m'adapter rapidement à mon vis-à-vis.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Prise de parole en public</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Pratiquée intensément en BUT TC : présentations orales en jury, défense de la marque BANGA en stand, pitch des SAÉ, et surtout la finale nationale des Négociales où j'ai dû convaincre un acheteur professionnel face à un public.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Esprit d'équipe</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Cultivé dans chaque projet collectif du BUT (SAÉ Biscuits, Vélix, Delightz, ACD). Travailler en équipe de 4 à 6 personnes avec des délais serrés m'a appris à prendre ma place sans empiéter sur celle des autres, et à faire avancer le groupe même dans les moments de tension.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Sens du service</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Ancré dans mon Service Civique à la Direction Générale des Finances Publiques, où accompagner des usagers dans leurs démarches administratives m'a donné le goût d'un service rigoureux et humain. Une valeur que je retrouve dans mon projet de conseiller en gestion de patrimoine.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── ORGANISATION & MÉTHODE ── -->
+      <div class="soft-cat fade-in stagger-2">
+        <div class="soft-cat-header">
+          <div class="soft-cat-icon gold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <div class="soft-cat-title">Organisation</div>
+            <div style="font-size:.75rem;color:var(--gray);margin-top:.1rem">& Méthode</div>
+          </div>
+          <span class="soft-cat-count">5 skills</span>
+        </div>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Rigueur</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Exigée au quotidien lors de mon stage à la SEMLORE et renforcée par la construction de tableaux de bord dans le jeu Vélix, où une erreur de calcul avait un impact immédiat sur les résultats. La rigueur est aussi une discipline que j'associe à mon objectif de conseiller en gestion de patrimoine.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Autonomie</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Développée lors du stage ACD à l'IUT de Toulon, où notre équipe d'étudiants avait une grande liberté d'action. Gérer mes missions sans supervision constante m'a obligé à prendre des décisions seules et à en assumer les conséquences.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Gestion du temps</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Rodée par la charge des SAÉ simultanées en BUT TC : plusieurs projets en parallèle avec des deadlines serrées. La construction d'un rétroplanning dans le cadre du cahier des charges e-business m'a fourni une méthode concrète pour prioriser et anticiper.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Capacité d'adaptation</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Testée lors de la campagne AdopteUnMec en Espagne, où il a fallu repenser entièrement nos codes de communication pour coller à une culture étrangère, et à la SEMLORE face à des situations imprévues au guichet pendant les pics d'affluence hivernaux.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Gestion du stress</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">La finale des Négociales a été l'épreuve la plus exigeante : face à un acheteur professionnel, dans un contexte compétitif national, j'ai appris à transformer la pression en concentration. L'organisation de l'ACD m'a aussi confronté au stress logistique d'un événement à grande échelle.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── LEADERSHIP & INITIATIVE ── -->
+      <div class="soft-cat fade-in stagger-3">
+        <div class="soft-cat-header">
+          <div class="soft-cat-icon green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <div class="soft-cat-title">Leadership</div>
+            <div style="font-size:.75rem;color:var(--gray);margin-top:.1rem">& Initiative</div>
+          </div>
+          <span class="soft-cat-count">4 skills</span>
+        </div>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Ambition</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Traduite concrètement par mon projet de poursuivre en Master pour devenir conseiller en gestion de patrimoine, et par ma candidature active auprès de 17 établissements. L'ambition n'est pas un trait de caractère — c'est une discipline que j'entretiens quotidiennement.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Esprit d'initiative</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Illustré par la co-fondation du projet NutriShot avec deux associés, et par la conception spontanée du tableur de simulation de prix lors des Négociales — un outil que j'avais créé de ma propre initiative pour gagner en crédibilité pendant la négociation.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Persévérance</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">La vente m'a appris que le refus fait partie du jeu. Lors de la prospection téléphonique en SAÉ, enchaîner les appels infructueux tout en maintenant un discours de qualité m'a forgé une vraie résistance à l'échec, essentielle pour quiconque vise un métier de conseil et de clientèle.</div>
+            </div>
+          </li>
+          <li class="skill-item">
+            <button class="skill-trigger" onclick="toggleSkill(this)">
+              <span class="skill-dot"></span>
+              <span class="skill-name">Sens des responsabilités</span>
+              <svg class="skill-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="skill-panel">
+              <div class="skill-panel-inner">Endossé pleinement lors de l'organisation de l'ACD où notre équipe de six étudiants était responsable du bon déroulement d'un événement national. Être référent d'une mission devant une centaine de professionnels m'a donné une conscience aiguë de ce qu'implique tenir un engagement.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /soft-grid -->
+
+    <div style="text-align:center;margin-top:3rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="hard-skills.html" class="hero-cta" style="display:inline-flex;">
+        Hard Skills
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="mad-skills.html" class="hero-cta" style="display:inline-flex;background:var(--navy-700);color:var(--white);box-shadow:var(--shadow-md);">
+        Mad Skills
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+  <script>
+    createNav('soft');
+    createFooter();
+
+    function toggleSkill(btn) {
+      const panel = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      btn.classList.toggle('open', !isOpen);
+      panel.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>

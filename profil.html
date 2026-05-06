@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profil complet de Nathan Livingstone — étudiant en BUT TC MDEE, futur conseiller en gestion de patrimoine. Expériences, formation, compétences et projet professionnel.">
+  <meta name="author" content="Nathan Livingstone">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Profil — Nathan Livingstone | Futur CGP">
+  <meta property="og:description" content="CV complet : expériences professionnelles, formation BUT TC MDEE, finaliste Les Négociales 2025, projet Master CGP.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <title>Profil & CV — Nathan Livingstone | Futur Conseiller en Gestion de Patrimoine</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* ═══════════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════════ */
+    .profil-outer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem 6rem;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* ═══════════════════════════════════════════
+       SIDEBAR
+    ═══════════════════════════════════════════ */
+    .profil-sidebar {
+      position: sticky;
+      top: 92px;
+    }
+
+    /* Identité sidebar */
+    .sid-identity {
+      background: var(--navy-900);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem 1.6rem;
+      margin-bottom: 1.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .sid-identity::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 90% 60% at 100% 100%, rgba(184,145,76,.12), transparent);
+      pointer-events: none;
+    }
+    .sid-identity::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-pale), transparent);
+    }
+    .sid-name {
+      font-family: var(--font-display);
+      font-size: 1.55rem; font-weight: 400;
+      color: var(--white); line-height: 1.15;
+      margin-bottom: .4rem; letter-spacing: -.01em;
+    }
+    .sid-name span { color: var(--gold); }
+    .sid-title {
+      font-size: .72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--navy-400); line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .sid-avail {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: rgba(184,145,76,.12);
+      border: 1px solid rgba(184,145,76,.2);
+      padding: .3rem .8rem; border-radius: 50px;
+      font-size: .67rem; font-weight: 600;
+      color: var(--gold-light); letter-spacing: .05em;
+    }
+    .avail-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:.5; transform:scale(1.3); }
+    }
+
+    /* Blocs sidebar */
+    .sidebar-block { margin-bottom: 1.4rem; }
+
+    .sidebar-label {
+      font-size: .58rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .2em;
+      color: var(--gold); margin-bottom: .7rem;
+      display: flex; align-items: center; gap: .6rem;
+    }
+    .sidebar-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--gold-pale);
+    }
+
+    /* Contact */
+    .contact-item {
+      display: flex; align-items: center; gap: .7rem;
+      padding: .42rem 0; border-bottom: 1px solid var(--light-gray);
+      font-size: .81rem; color: var(--dark-gray);
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-item a { color: inherit; text-decoration: none; transition: var(--transition); }
+    .contact-item a:hover { color: var(--gold); }
+    .contact-icon {
+      width: 26px; height: 26px; border-radius: 6px;
+      background: var(--navy-50); display: flex;
+      align-items: center; justify-content: center;
+      color: var(--navy-600); flex-shrink: 0;
+    }
+
+    /* Langues */
+    .lang-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .5rem 0; border-bottom: 1px solid var(--light-gray);
+    }
+    .lang-row:last-child { border-bottom: none; }
+    .lang-row-name { font-size: .84rem; font-weight: 500; color: var(--navy-800); }
+    .lang-badge {
+      font-size: .62rem; font-weight: 700; color: var(--gold);
+      text-transform: uppercase; letter-spacing: .07em;
+      padding: .16rem .55rem;
+      background: var(--gold-pale); border-radius: 50px;
+    }
+
+    /* Skill chips */
+    .skill-chips { display: flex; flex-wrap: wrap; gap: .28rem; }
+    .skill-chip {
+      padding: .22rem .65rem;
+      background: var(--navy-50); color: var(--navy-700);
+      font-size: .67rem; font-weight: 500; border-radius: 50px;
+      border: 1px solid transparent; transition: var(--transition); cursor: default;
+    }
+    .skill-chip:hover { background: var(--gold-pale); color: var(--navy-900); }
+
+    /* Intérêts */
+    .interest-row {
+      display: flex; align-items: flex-start; gap: .55rem;
+      padding: .3rem 0; font-size: .8rem; color: var(--dark-gray); line-height: 1.5;
+    }
+    .interest-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy-400), var(--gold));
+      flex-shrink: 0; margin-top: .42rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       MAIN
+    ═══════════════════════════════════════════ */
+    .profil-main { min-width: 0; }
+
+    /* Print button */
+    .profil-actions { margin-bottom: 2.2rem; }
+    .btn-print {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .6rem 1.4rem;
+      background: var(--navy-900); color: var(--white);
+      font-family: var(--font-body); font-size: .73rem;
+      font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+      border-radius: 50px; cursor: pointer; border: none;
+      transition: var(--transition);
+    }
+    .btn-print:hover { background: var(--navy-700); color: var(--gold); box-shadow: var(--shadow-gold); }
+    .btn-print svg { width: 13px; height: 13px; }
+
+    /* Bande identité */
+    .identity-strip {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 0; border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.06);
+      margin-bottom: 2.4rem;
+    }
+    .id-stat {
+      padding: 1.2rem 1.4rem;
+      background: var(--white); text-align: center;
+      border-right: 1px solid rgba(0,0,0,.06);
+    }
+    .id-stat:last-child { border-right: none; }
+    .id-val {
+      font-family: var(--font-display); font-size: 1.55rem;
+      font-weight: 400; color: var(--navy-900); line-height: 1;
+      margin-bottom: .25rem; letter-spacing: -.02em;
+    }
+    .id-val sup { font-size: .7em; vertical-align: super; }
+    .id-val .gold { color: var(--gold); }
+    .id-label {
+      font-size: .65rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--gray); line-height: 1.4;
+    }
+
+    /* Section titre */
+    .profil-section { margin-bottom: 3rem; }
+    .profil-section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-family: var(--font-display); font-size: 1.45rem;
+      font-weight: 400; color: var(--navy-900);
+      margin-bottom: 1.5rem; padding-bottom: .8rem;
+      border-bottom: 1px solid var(--light-gray);
+      display: flex; align-items: center; gap: .8rem;
+      letter-spacing: -.01em;
+    }
+    .section-title::before {
+      content: ''; width: 3px; height: 1.1em;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-pale));
+      border-radius: 2px; flex-shrink: 0;
+    }
+
+    /* Présentation */
+    .intro-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 1.8rem 2rem;
+      border: 1px solid rgba(6,16,31,.05);
+      border-left: 3px solid var(--gold-pale);
+    }
+    .intro-card p {
+      font-size: .92rem; color: var(--dark-gray);
+      line-height: 1.88; margin: 0 0 1rem; max-width: 100%;
+    }
+    .intro-card p:last-of-type { margin-bottom: 0; }
+    .quality-row {
+      display: flex; gap: .4rem; flex-wrap: wrap; margin-top: 1.2rem;
+    }
+    .quality-tag {
+      padding: .26rem .8rem;
+      background: linear-gradient(135deg, var(--navy-50), var(--gold-pale));
+      color: var(--navy-700); font-size: .68rem; font-weight: 700;
+      border-radius: 50px; text-transform: uppercase; letter-spacing: .07em;
+    }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1.8rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: .35rem;
+      top: .6rem; bottom: .6rem; width: 1px;
+      background: linear-gradient(to bottom, var(--gold-pale), var(--light-gray) 80%, transparent);
+    }
+
+    .tl-item { position: relative; padding-bottom: 2.2rem; }
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-dot {
+      position: absolute; left: -1.53rem; top: .45rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--gold); border: 2px solid var(--off-white);
+      box-shadow: 0 0 0 2px var(--gold-pale); transition: var(--transition);
+    }
+    .tl-item:hover .tl-dot { box-shadow: 0 0 0 4px var(--gold-pale); transform: scale(1.2); }
+
+    .tl-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 1rem;
+      margin-bottom: .4rem;
+    }
+    .tl-company {
+      font-size: .98rem; font-weight: 700;
+      color: var(--navy-900); line-height: 1.3;
+    }
+    .tl-date {
+      font-size: .67rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--gold); white-space: nowrap; flex-shrink: 0;
+      margin-top: .1rem;
+    }
+    .tl-role {
+      font-size: .9rem; font-style: italic;
+      color: var(--gray); margin-bottom: .6rem;
+    }
+    .tl-desc {
+      font-size: .85rem; color: var(--dark-gray);
+      line-height: 1.82; margin: 0; max-width: 100%;
+    }
+    .tl-tags { display: flex; flex-wrap: wrap; gap: .28rem; margin-top: .65rem; }
+    .tl-tag {
+      padding: .16rem .58rem;
+      background: var(--navy-50); color: var(--navy-600);
+      font-size: .62rem; font-weight: 600;
+      border-radius: 50px; letter-spacing: .04em; text-transform: uppercase;
+    }
+    .tl-tag.accent { background: var(--gold-pale); color: var(--navy-800); }
+
+    /* Réalisation */
+    .achievement-card {
+      background: var(--navy-900); border-radius: var(--radius-lg);
+      padding: 2.2rem 2.6rem; position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 110px 1fr;
+      gap: 2rem; align-items: center;
+    }
+    .achievement-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 0% 60%, rgba(184,145,76,.14), transparent);
+      pointer-events: none;
+    }
+    .achievement-card::after {
+      content: ''; position: absolute; top: .8rem; right: .8rem;
+      width: 28px; height: 28px;
+      border-top: 1.5px solid rgba(184,145,76,.22);
+      border-right: 1.5px solid rgba(184,145,76,.22);
+    }
+    .ach-rank {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 3.6rem; font-weight: 300;
+      color: var(--gold); line-height: 1;
+    }
+    .ach-rank sup { font-size: 1.3rem; vertical-align: super; }
+    .ach-rank-sub {
+      font-size: .62rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--navy-400); margin-top: .2rem; text-align: center;
+    }
+    .ach-badge {
+      display: inline-block; padding: .18rem .65rem;
+      background: rgba(184,145,76,.13); color: var(--gold-light);
+      font-size: .6rem; font-weight: 700; border-radius: 50px;
+      letter-spacing: .1em; text-transform: uppercase;
+      margin-bottom: .55rem; border: 1px solid rgba(184,145,76,.2);
+    }
+    .ach-title {
+      color: var(--white); font-family: var(--font-display);
+      font-size: 1.45rem; font-weight: 400; margin-bottom: .35rem; line-height: 1.2;
+    }
+    .ach-desc {
+      color: var(--navy-300); font-size: .85rem;
+      line-height: 1.75; margin: 0; max-width: 100%;
+    }
+
+    /* Projet pro */
+    .project-card {
+      background: linear-gradient(135deg, var(--navy-50) 0%, var(--cream) 100%);
+      border-radius: var(--radius-lg); padding: 2rem 2.2rem;
+      border: 1px solid rgba(184,145,76,.1); position: relative;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-pale), transparent);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .project-items { display: flex; flex-direction: column; gap: 1.4rem; }
+    .project-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .project-icon {
+      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+      background: var(--white); border: 1px solid rgba(184,145,76,.15);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); margin-top: .1rem;
+    }
+    .project-content {}
+    .project-name {
+      font-size: .9rem; font-weight: 700; color: var(--navy-900);
+      margin-bottom: .25rem; line-height: 1.3;
+    }
+    .project-desc {
+      font-size: .83rem; color: var(--dark-gray);
+      line-height: 1.78; margin: 0; max-width: 100%;
+    }
+    .pp-tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: 1.4rem; }
+    .pp-tag {
+      padding: .22rem .7rem;
+      background: var(--white); color: var(--navy-700);
+      font-size: .67rem; font-weight: 600; border-radius: 50px;
+      border: 1px solid rgba(6,16,31,.07);
+    }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media(max-width:960px) {
+      .profil-outer { grid-template-columns: 1fr; gap: 2.5rem; }
+      .profil-sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; }
+      .sid-identity { grid-column: 1/-1; }
+      .identity-strip { grid-template-columns: repeat(2,1fr); }
+      .achievement-card { grid-template-columns: 1fr; gap: 1.4rem; }
+      .ach-rank { text-align: left; display: inline; font-size: 2.8rem; }
+      .ach-rank-sub { display: inline; margin-left: .4rem; font-size: .6rem; }
+    }
+    @media(max-width:640px) {
+      .profil-outer { padding: 1.8rem 1.2rem 4rem; }
+      .profil-sidebar { grid-template-columns: 1fr; }
+      .identity-strip { grid-template-columns: 1fr 1fr; }
+      .achievement-card { padding: 1.6rem; }
+    }
+    @media(max-width:420px) {
+      .identity-strip { grid-template-columns: 1fr; }
+      .id-stat { border-right: none; border-bottom: 1px solid rgba(0,0,0,.06); }
+      .id-stat:last-child { border-bottom: none; }
+    }
+
+    /* ═══════════════════════════════════════════
+       ÉDITORIAL HERO — typography monumentale
+       Pattern issu MCP magic 21st.dev
+    ═══════════════════════════════════════════ */
+    .profil-hero {
+      background: linear-gradient(180deg, var(--navy-900) 0%, #0A1626 70%, var(--navy-800) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 2.5rem 4.5rem;
+      isolation: isolate;
+    }
+    /* Grid pattern subtil avec mask radial */
+    .profil-hero::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(184,150,78,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,150,78,.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent 80%);
+      pointer-events: none;
+    }
+    /* Gradient mesh ambient */
+    .profil-hero::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 80% 20%, rgba(184,150,78,.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(39,70,114,.40), transparent 60%);
+      pointer-events: none;
+    }
+    .profil-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .profil-hero-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+      font-family: var(--font-body);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .profil-hero-meta-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,145,76,.35), transparent);
+    }
+    .profil-hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3.8rem, 11vw, 9rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: .92;
+      letter-spacing: -.045em;
+      margin: 0;
+      background: linear-gradient(180deg, #fff 0%, #b9c8da 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .profil-hero-name .first {
+      display: block;
+    }
+    .profil-hero-name .last {
+      display: block;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+      -webkit-text-fill-color: var(--gold);
+      background: none;
+      padding-left: clamp(.5rem, 4vw, 4rem);
+    }
+    .profil-hero-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      color: var(--navy-200);
+      max-width: 660px;
+      margin-top: 2.4rem;
+      line-height: 1.55;
+      letter-spacing: -.005em;
+    }
+    .profil-hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .profil-hero-bottom-left {
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      font-family: var(--font-body);
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--navy-300);
+      font-weight: 500;
+    }
+    .profil-hero-bottom-left strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .profil-hero-anchor {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      font-family: var(--font-body);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: .65rem 1.4rem;
+      border: 1px solid rgba(184,145,76,.3);
+      border-radius: 50px;
+      background: rgba(184,145,76,.05);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+    .profil-hero-anchor:hover {
+      background: rgba(184,145,76,.12);
+      border-color: rgba(184,145,76,.5);
+      transform: translateY(-2px);
+    }
+    .profil-hero-anchor svg {
+      width: 12px; height: 12px;
+      transition: transform .35s var(--ease-fluid);
+    }
+    .profil-hero-anchor:hover svg { transform: translateY(3px); }
+    @media (max-width: 768px) {
+      .profil-hero { padding: 6rem 1.5rem 3.5rem; }
+      .profil-hero-meta { margin-bottom: 2.5rem; flex-direction: column; align-items: flex-start; }
+      .profil-hero-meta-line { display: none; }
+      .profil-hero-tagline { margin-top: 1.6rem; }
+      .profil-hero-bottom { margin-top: 2.4rem; }
+    }
+
+    /* ═══════════════════════════════════════════
+       RECOMMANDATION — quote block éditorial
+    ═══════════════════════════════════════════ */
+    .reco-block {
+      background: linear-gradient(135deg, var(--navy-50) 0%, var(--gold-pale) 100%);
+      border-radius: var(--radius-lg);
+      padding: 2.4rem 2.6rem;
+      position: relative;
+      border: 1px solid rgba(184,145,76,.12);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .reco-block::before {
+      content: '"';
+      position: absolute;
+      top: -1.5rem;
+      left: 1.4rem;
+      font-family: var(--font-display);
+      font-size: 9rem;
+      color: var(--gold);
+      opacity: .18;
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .reco-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: var(--navy-800);
+      line-height: 1.65;
+      max-width: 100%;
+      margin: 0 0 1.3rem;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -.005em;
+    }
+    .reco-cite {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(184,145,76,.18);
+      position: relative;
+      z-index: 1;
+    }
+    .reco-cite-name {
+      font-family: var(--font-body);
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+    .reco-cite-role {
+      font-family: var(--font-body);
+      font-size: .72rem;
+      font-weight: 500;
+      color: var(--navy-600);
+      font-style: italic;
+    }
+    .reco-cite-divider {
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════
+       TIMELINE UPGRADE — glow + premium hover
+    ═══════════════════════════════════════════ */
+    .tl-item {
+      transition: transform .35s var(--ease-fluid);
+    }
+    .tl-item:hover {
+      transform: translateX(3px);
+    }
+    .tl-dot {
+      box-shadow: 0 0 0 2px var(--gold-pale), 0 0 12px rgba(184,150,78,.5);
+      transition: all .35s var(--ease-fluid);
+    }
+    .tl-item:hover .tl-dot {
+      box-shadow: 0 0 0 4px var(--gold-pale), 0 0 20px rgba(184,150,78,.8);
+      transform: scale(1.25);
+    }
+    .tl-company {
+      transition: color .25s var(--ease-fluid);
+    }
+    .tl-item:hover .tl-company {
+      color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════
+       ACHIEVEMENT CARD — grandeur du 212e
+    ═══════════════════════════════════════════ */
+    .ach-rank {
+      font-size: clamp(3.6rem, 7vw, 5rem);
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 70%, #8B6A33 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 24px rgba(184,145,76,.25));
+    }
+
+    /* ═══════════════════════════════════════════
+       INTRO CARD — quality tags micro-shine
+    ═══════════════════════════════════════════ */
+    .quality-tag {
+      transition: transform .25s var(--ease-fluid), background .3s var(--ease-fluid), color .25s var(--ease-fluid);
+      cursor: default;
+    }
+    .quality-tag:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--gold-pale), var(--gold-light));
+      color: var(--navy-900);
+    }
+
+    /* Print */
+    @media print {
+      .nav, .footer, .scroll-top, .nav-overlay, .breadcrumbs, .profil-actions, .profil-hero-anchor { display: none !important; }
+      .profil-hero { padding: 1.5rem; min-height: auto; background: white; color: black; }
+      .profil-hero::before, .profil-hero::after { display: none; }
+      .profil-hero-name, .profil-hero-name .first, .profil-hero-name .last {
+        color: black !important;
+        -webkit-text-fill-color: black !important;
+        background: none !important;
+        font-size: 2.5rem !important;
+      }
+      .profil-outer { padding: 1rem; gap: 2rem; grid-template-columns: 210px 1fr; }
+      .profil-sidebar { position: static; display: block; }
+      .tl-item, .achievement-card, .project-card, .intro-card, .reco-block { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HERO ÉDITORIAL — typographie monumentale
+       Pattern issu MCP magic 21st.dev (adapté vanilla)
+       ═══════════════════════════════════════════ -->
+  <section class="profil-hero">
+    <div class="profil-hero-inner">
+      <div class="profil-hero-meta">
+        <span>/ Profil &amp; CV</span>
+        <span class="profil-hero-meta-line" aria-hidden="true"></span>
+        <span>2026 · La Garde, Var</span>
+      </div>
+
+      <h1 class="profil-hero-name">
+        <span class="first">Nathan</span>
+        <span class="last">Livingstone</span>
+      </h1>
+
+      <p class="profil-hero-tagline">
+        Étudiant en commerce, finaliste national des Négociales 2025,
+        futur conseiller en gestion de patrimoine.
+      </p>
+
+      <div class="profil-hero-bottom">
+        <div class="profil-hero-bottom-left">
+          <span><strong>BUT TC · MDEE</strong> — IUT de Toulon</span>
+          <span>Ouvert aux opportunités · Master alternance</span>
+        </div>
+        <a href="#presentation" class="profil-hero-anchor">
+          Lire le profil
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="breadcrumbs">
+    <a href="index.html">Accueil</a><span class="separator">›</span>
+    <span>Profil</span>
+  </div>
+
+  <div class="profil-outer">
+
+    <!-- ══════════════════════════════
+         SIDEBAR
+    ══════════════════════════════ -->
+    <aside class="profil-sidebar fade-in">
+
+      <!-- Identité -->
+      <div class="sid-identity">
+        <div class="sid-name">Nathan<br><span>Livingstone</span></div>
+        <div class="sid-title">Futur Conseiller<br>en Gestion de Patrimoine</div>
+        <div class="sid-avail">
+          <span class="avail-dot"></span>
+          Ouvert aux opportunités
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="sidebar-block">
+        <div class="sidebar-label">Contact</div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.41 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span>06 45 20 77 86</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <a href="mailto:livingstonenat@gmail.com">livingstonenat@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span>La Garde, Var (83)</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+          </div>
+          <span>Né le 24 novembre 2004 · 21 ans</span>
+        </div>
+      </div>
+
+      <!-- Langues -->
+      <div class="sidebar-block">
+        <div class="sidebar-label">Langues</div>
+        <div class="lang-row">
+          <span class="lang-row-name">Français</span>
+          <span class="lang-badge">Natif</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-row-name">Anglais</span>
+          <span class="lang-badge">B2</span>
+        </div>
+      </div>
+
+      <!-- Compétences clés -->
+      <div class="sidebar-block">
+        <div class="sidebar-label">Compétences clés</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Négociation B2B</span>
+          <span class="skill-chip">Marketing stratégique</span>
+          <span class="skill-chip">SEO & Audit digital</span>
+          <span class="skill-chip">Vente conseil</span>
+          <span class="skill-chip">Modélisation financière</span>
+          <span class="skill-chip">CRM</span>
+          <span class="skill-chip">Gestion de projet</span>
+          <span class="skill-chip">Pack Office</span>
+          <span class="skill-chip">Canva</span>
+          <span class="skill-chip">WordPress</span>
+          <span class="skill-chip">Relation client</span>
+          <span class="skill-chip">Événementiel</span>
+        </div>
+      </div>
+
+      <!-- Centres d'intérêt -->
+      <div class="sidebar-block">
+        <div class="sidebar-label">Centres d'intérêt</div>
+        <div class="interest-row">
+          <span class="interest-dot"></span>
+          <span><strong>Sport</strong> — ski, vélo, randonnée, natation, musculation</span>
+        </div>
+        <div class="interest-row">
+          <span class="interest-dot"></span>
+          <span><strong>Informatique</strong> — assemblage PC, nouvelles technologies</span>
+        </div>
+        <div class="interest-row">
+          <span class="interest-dot"></span>
+          <span><strong>Finance & marchés</strong> — investissement, crypto-actifs</span>
+        </div>
+        <div class="interest-row">
+          <span class="interest-dot"></span>
+          <span><strong>Voyages</strong> — séjour linguistique à Malte, été 2026 (EF Education)</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ══════════════════════════════
+         MAIN
+    ══════════════════════════════ -->
+    <main class="profil-main">
+
+      <!-- Bouton imprimer -->
+      <div class="profil-actions">
+        <button class="btn-print" onclick="window.print()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+          Imprimer / Exporter PDF
+        </button>
+      </div>
+
+      <!-- Bande d'identité -->
+      <div class="identity-strip fade-in">
+        <div class="id-stat">
+          <div class="id-val"><span data-count="21">21</span> <span style="font-size:.9rem">ans</span></div>
+          <div class="id-label">La Garde · Var (83)</div>
+        </div>
+        <div class="id-stat">
+          <div class="id-val" style="font-size:1.2rem">BUT TC</div>
+          <div class="id-label">Parcours MDEE · IUT Toulon</div>
+        </div>
+        <div class="id-stat">
+          <div class="id-val"><span data-count="212">212</span><sup>e</sup></div>
+          <div class="id-label">Négociales 2025 · /600</div>
+        </div>
+        <div class="id-stat">
+          <div class="id-val" style="font-size:1.15rem;color:var(--gold)">MBFA</div>
+          <div class="id-label">Projet Master · Alternance</div>
+        </div>
+      </div>
+
+      <!-- ─── Présentation ─── -->
+      <div class="profil-section fade-in" id="presentation">
+        <div class="section-title">Présentation</div>
+        <div class="intro-card">
+          <p>Titulaire d'un Baccalauréat STMG <strong>mention Bien</strong>, je termine en 2026 un <strong>BUT Techniques de Commercialisation</strong> à l'IUT de Toulon, spécialité <strong>Marketing Digital, E-business & Entrepreneuriat</strong>. Trois ans de formation intensive combinant projets réels, stages professionnels et concours nationaux m'ont donné une vision complète du cycle commercial — de l'analyse de marché à la négociation B2B.</p>
+          <p>Mon projet est clair : intégrer un <strong>Master en Gestion de Patrimoine</strong> en alternance pour devenir conseiller patrimonial. Un métier qui réunit ma passion pour la finance, mon goût du conseil personnalisé et la rigueur que j'ai développée depuis mon Service Civique aux Finances Publiques.</p>
+          <div class="quality-row">
+            <span class="quality-tag">Ambitieux</span>
+            <span class="quality-tag">Logique</span>
+            <span class="quality-tag">Honnête</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── Recommandation — moment éditorial ─── -->
+      <div class="profil-section fade-in stagger-1">
+        <div class="reco-block">
+          <p class="reco-quote">Nathan a fait preuve d'une grande rigueur, d'une réelle capacité d'écoute et d'un sens du service qui ont marqué l'ensemble de l'équipe — qualités que je rencontre rarement chez un volontaire de cet âge.</p>
+          <div class="reco-cite">
+            <span class="reco-cite-name">Mme Colette Gaillard</span>
+            <span class="reco-cite-divider" aria-hidden="true"></span>
+            <span class="reco-cite-role">Cheffe des impôts des entreprises · DGFIP Embrun</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── Expériences ─── -->
+      <div class="profil-section fade-in stagger-1">
+        <div class="section-title">Expériences professionnelles</div>
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-company">IUT de Toulon — Département TC</div>
+              <div class="tl-date">Avr. → Juin 2025</div>
+            </div>
+            <div class="tl-role">Chargé de projet événementiel — Stage BUT 2</div>
+            <p class="tl-desc">Organisation complète de l'<strong>Assemblée des Chefs de Département TC</strong>, événement national réunissant plus d'une centaine de responsables pédagogiques de toute la France. En équipe de 6 : réalisation d'un faux journal télévisé multi-chaînes monté sur <strong>Adobe Premiere Pro</strong> (~20h de montage), parcours de visite guidée de Toulon, livret d'accueil, signalétique et gestion des flux. Pilotage via matrice RACI et rétroplanning.</p>
+            <div class="tl-tags">
+              <span class="tl-tag accent">Gestion de projet</span>
+              <span class="tl-tag">Adobe Premiere Pro</span>
+              <span class="tl-tag">Événementiel</span>
+              <span class="tl-tag">Communication</span>
+              <span class="tl-tag">Travail en équipe</span>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-company">SEMLORE — Station des Orres (05)</div>
+              <div class="tl-date">Janv. 2024 → Aujourd'hui</div>
+            </div>
+            <div class="tl-role">Employé polyvalent saisonnier</div>
+            <p class="tl-desc">Vente, conseil client et animation lors des vacances scolaires, à la suite du stage. Interventions polyvalentes sur plusieurs postes selon les besoins opérationnels, dans un environnement à fort volume de clientèle française et internationale. Développement d'une vraie polyvalence commerciale en environnement touristique de montagne.</p>
+            <div class="tl-tags">
+              <span class="tl-tag accent">Vente</span>
+              <span class="tl-tag">Accueil</span>
+              <span class="tl-tag">Relation client</span>
+              <span class="tl-tag">Tourisme & loisirs</span>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-company">SEMLORE — Station des Orres (05)</div>
+              <div class="tl-date">2 → 27 janv. 2024 · 1 mois</div>
+            </div>
+            <div class="tl-role">Stagiaire commercial — Stage de vente BUT 1</div>
+            <p class="tl-desc">Premier stage en entreprise au sein de la Société d'Économie Mixte Locale des Orres (CA hiver 22/23 : 11 M€). Immersion dans les techniques de vente en environnement touristique de montagne, compréhension de la stratégie commerciale d'un opérateur multiactivités et construction d'une première posture professionnelle.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Vente terrain</span>
+              <span class="tl-tag">Tourisme</span>
+              <span class="tl-tag">Relation client</span>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-company">Direction Générale des Finances Publiques — Embrun (05)</div>
+              <div class="tl-date">Déc. 2022 → Août 2023 · 9 mois</div>
+            </div>
+            <div class="tl-role">Volontaire en Service Civique</div>
+            <p class="tl-desc">Accueil et accompagnement des usagers au <strong>Centre des Finances Publiques d'Embrun</strong> dans leurs démarches administratives. Positionné à la <strong>Maison France Services</strong> d'Embrun en avril-mai pour guider les contribuables lors de leur déclaration d'impôts en ligne. Première immersion dans l'univers financier et fiscal — exigence de rigueur et de pédagogie face à un public très hétérogène. Mission valorisée par une lettre de recommandation de <em>Mme Colette Gaillard</em>, cheffe des impôts des entreprises.</p>
+            <div class="tl-tags">
+              <span class="tl-tag accent">Finances publiques</span>
+              <span class="tl-tag">Médiation numérique</span>
+              <span class="tl-tag">Service public</span>
+              <span class="tl-tag">Accueil usagers</span>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-company">Le Refuge Étoilé — Les Orres (05)</div>
+              <div class="tl-date">Déc. 2021 → Août 2023</div>
+            </div>
+            <div class="tl-role">Agent polyvalent en restauration</div>
+            <p class="tl-desc">Service en salle, bar et cuisine les week-ends et lors des vacances scolaires. Premier contact avec l'exigence du service client en environnement de montagne — endurance, réactivité et sens du détail dans un cadre à fort volume et sous pression.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Restauration</span>
+              <span class="tl-tag">Service client</span>
+              <span class="tl-tag">Polyvalence</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ─── Formation ─── -->
+      <div class="profil-section fade-in stagger-2">
+        <div class="section-title">Formation</div>
+        <div class="timeline">
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-company">IUT de Toulon — Université de Toulon</div>
+              <div class="tl-date">2022 → 2025</div>
+            </div>
+            <div class="tl-role">BUT Techniques de Commercialisation — Parcours MDEE</div>
+            <p class="tl-desc">Formation bac+3 spécialisée en marketing, vente, marketing digital et e-business & entrepreneuriat. Deux stages professionnels, 11 unités d'enseignement couvrant l'ensemble du cycle commercial. Finaliste au concours national <strong>Les Négociales 2025</strong> (36ème édition).</p>
+            <div class="tl-tags">
+              <span class="tl-tag accent">Marketing</span>
+              <span class="tl-tag accent">Vente</span>
+              <span class="tl-tag">Marketing digital</span>
+              <span class="tl-tag">E-business</span>
+              <span class="tl-tag">Entrepreneuriat</span>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <div class="tl-company">Lycée Honoré Romane — Embrun (05)</div>
+              <div class="tl-date">2019 → 2022</div>
+            </div>
+            <div class="tl-role">Baccalauréat STMG — Option Mercatique &nbsp;·&nbsp; <span style="color:var(--gold);font-weight:700;font-style:normal">Mention Bien</span></div>
+            <p class="tl-desc">Baccalauréat Technologique Sciences et Technologies du Management et de la Gestion, spécialité Mercatique. Obtenu avec mention Bien en 2022 — premier diplôme ancrant une orientation résolue vers le commerce, le marketing et la gestion.</p>
+            <div class="tl-tags">
+              <span class="tl-tag accent">Mention Bien</span>
+              <span class="tl-tag">Mercatique</span>
+              <span class="tl-tag">Management</span>
+              <span class="tl-tag">Gestion</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ─── Réalisation ─── -->
+      <div class="profil-section fade-in stagger-3">
+        <div class="section-title">Réalisation marquante</div>
+        <div class="achievement-card">
+          <div>
+            <div class="ach-rank"><span data-count="212">212</span><sup>e</sup></div>
+            <div class="ach-rank-sub">sur 600 finalistes</div>
+          </div>
+          <div>
+            <span class="ach-badge">Concours national · 36ème édition · 2025</span>
+            <div class="ach-title">Les Négociales</div>
+            <p class="ach-desc">Qualifié et finaliste du plus grand concours national de vente étudiant en France. Parmi les <strong style="color:var(--gold-light)">600 finalistes</strong> venus de toute la France, j'ai obtenu le <strong style="color:var(--gold-light)">212ème rang</strong> — une performance qui témoigne d'une maîtrise concrète des techniques de négociation B2B face à des acheteurs professionnels, sous pression et dans un format de compétition exigeant.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── Projet professionnel ─── -->
+      <div class="profil-section fade-in stagger-4">
+        <div class="section-title">Projet professionnel</div>
+        <div class="project-card">
+          <div class="project-items">
+
+            <div class="project-item">
+              <div class="project-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div class="project-content">
+                <div class="project-name">Master en Gestion de Patrimoine — Alternance</div>
+                <p class="project-desc">Mon objectif à l'issue du BUT TC est d'intégrer un <strong>Master en gestion de patrimoine ou en banque privée</strong> en alternance. Je vise une formation qui me permettra de conjuguer apprentissage théorique et immersion professionnelle dans le secteur financier, sans me fermer de portes sur la structure d'accueil ni la localisation géographique.</p>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <div class="project-content">
+                <div class="project-name">Séjour linguistique à Malte — EF Education First</div>
+                <p class="project-desc">Du <strong>5 juillet au 29 août</strong>, je pars à Malte avec l'école <strong>EF Education First</strong> pour suivre des cours d'anglais intensifs et travailler sur place. L'objectif : consolider mon niveau B2, progresser vers le C1 et acquérir une expérience internationale concrète — compétence essentielle dans le secteur de la gestion de patrimoine haut de gamme.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="pp-tags">
+            <span class="pp-tag">Master Gestion de Patrimoine</span>
+            <span class="pp-tag">Banque Privée</span>
+            <span class="pp-tag">Alternance</span>
+            <span class="pp-tag">Conseil patrimonial</span>
+            <span class="pp-tag">Malte · EF Education</span>
+            <span class="pp-tag">Anglais B2 → C1</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="nav.js"></script>
+  <script>
+    createNav('profil');
+    createFooter();
+  </script>
+</body>
+</html>

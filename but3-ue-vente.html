@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apprentissages critiques en vente complexe niveau 3 : négociation acheteur/fournisseur, facturation, codes sectoriels. Traces commentées BUT 3.">
+  <meta name="author" content="Nathan Livingstone">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <title>Vente — Niveau 3 | Nathan Livingstone</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Trace commentée */
+    .trace-doc{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--light-gray)}
+    .trace-doc-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:.5rem}
+    .trace-block{margin-top:.8rem}
+    .trace-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:600;color:var(--navy-500);text-transform:uppercase;letter-spacing:.06em;padding:.5rem 0;transition:var(--transition)}
+    .trace-toggle:hover{color:var(--gold)}
+    .trace-toggle svg{transition:transform .3s var(--ease);flex-shrink:0}
+    .trace-toggle.open svg{transform:rotate(180deg)}
+    .trace-panel{max-height:0;overflow:hidden;transition:max-height .45s var(--ease-out)}
+    .trace-panel.open{max-height:600px}
+    .trace-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem;padding:.8rem;background:var(--navy-50);border-radius:var(--radius-md);border-left:3px solid var(--gold-pale)}
+    .trace-item-full{grid-column:1/-1}
+    .trace-item-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--navy-600);margin-bottom:.4rem}
+    .trace-item-text{font-size:.84rem;color:var(--dark-gray);line-height:1.7;margin:0;max-width:100%}
+    /* BUT3 card accent */
+    .ac-card-but3{border-left:3px solid transparent;transition:var(--transition),border-left-color .3s}
+    .ac-card-but3:hover{border-left-color:var(--gold)}
+    @media(max-width:768px){.trace-grid{grid-template-columns:1fr}.trace-item-full{grid-column:1}}
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <span class="eyebrow">BUT 3 — UE 2</span>
+    <h1>Vente — Niveau 3</h1>
+    <p>Vendre une offre commerciale — Pour mener une vente complexe</p>
+  </div>
+  <div class="breadcrumbs">
+    <a href="index.html">Accueil</a><span class="separator">›</span>
+    <a href="but3.html">BUT 3</a><span class="separator">›</span>
+    <span>Vente — Niveau 3</span>
+  </div>
+  <div class="ue-content">
+    <div class="ue-block fade-in">
+      <h2>Présentation</h2>
+      <p style="max-width:100%">Au niveau 3 de la compétence Vente, l'enjeu est de maîtriser la vente complexe dans ses dimensions les plus exigeantes : comprendre les stratégies d'achat de l'acheteur professionnel, construire des outils de gestion adaptés (factures, devis, échéanciers), et s'approprier les codes et spécificités d'univers particuliers — finance, industrie, achat, international. Ce niveau correspond à une posture de vendeur expert capable de s'imposer face à des interlocuteurs aguerris.</p>
+    </div>
+    <h2 class="ac-section-title fade-in">Apprentissages critiques & traces commentées</h2>
+    <div class="ac-grid">
+          <div class="ac-card ac-card-but3 fade-in stagger-1">
+            <div class="ac-num">AC 1</div>
+            <h3>Identifier les techniques d'achat employées par un acheteur professionnel</h3>
+            <p>Reconnaissance et analyse des méthodes et tactiques utilisées par les acheteurs professionnels — négociation par le prix, mise en concurrence, déstabilisation, appel d'offres — pour adapter sa propre posture de vente en conséquence.</p>
+            
+              <div class="trace-doc">
+                <div class="trace-doc-label">Trace commentée</div>
+                <!-- =============================================
+                     FICHIER : dépose Cas_klean_kanteen_2026_Acheteur_Fournisseur.pdf dans le dossier du site
+                     ============================================= -->
+                <a href="Cas_klean_kanteen_2026_Acheteur_Fournisseur.pdf" target="_blank" class="ac-doc" id="trace-1">
+                  📄 Cas_klean_kanteen_2026_Acheteur_Fournisseur.pdf
+                </a>
+                <p class="trace-missing" id="missing-1" style="display:none;font-size:.78rem;color:var(--gray);font-style:italic;margin-top:.4rem">
+                  ⚠️ Fichier non encore ajouté — déposez Cas_klean_kanteen_2026_Acheteur_Fournisseur.pdf dans le dossier
+                </p>
+              </div>
+            
+              <div class="trace-block">
+                <button class="trace-toggle" onclick="toggleTrace(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  Trace commentée — analyse critique
+                </button>
+                <div class="trace-panel">
+                  <div class="trace-grid">
+                    <div class="trace-item">
+                      <div class="trace-item-label">Contexte</div>
+                      <p class="trace-item-text">Cas Klean Kanteen chez Patagonia — simulation de négociation acheteur/fournisseur en BUT 3. Patagonia (CA 1,5 Md$ en 2023-2024, siège européen Amsterdam) souhaite s'approvisionner en 2 600 gourdes (3 références) pour ses 7 Retail stores et 40 Partner stores. Conditions : taux de marque objectif 30%, paiement à 60 jours, livraison au 01/03/2026.</p>
+                    </div>
+                    <div class="trace-item">
+                      <div class="trace-item-label">Démarche & actions</div>
+                      <p class="trace-item-text">Analyse de l'offre commerciale de Scalata Concept en réponse à la demande de Patagonia, calcul des taux de marque global et produit par produit, préparation de l'entretien de négociation. Identification des techniques d'achat employées : mise en concurrence fournisseurs, négociation sur le taux de marque, conditionnalité des délais de livraison, clauses de paiement à 60 jours comme levier de pression.</p>
+                    </div>
+                    <div class="trace-item trace-item-full">
+                      <div class="trace-item-label">Bilan critique</div>
+                      <p class="trace-item-text">Ce cas démontre la capacité à se placer dans la posture d'un acheteur professionnel et à décrypter ses leviers de pression. La maîtrise des calculs de taux de marque et l'analyse fine de l'offre fournisseur sont des compétences directement opérationnelles en vente complexe B2B — indispensables pour anticiper les objections et adapter sa stratégie de négociation.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="ac-card ac-card-but3 fade-in stagger-2">
+            <div class="ac-num">AC 2</div>
+            <h3>Elaborer des outils de gestion et de calcul efficaces (facture, échéancier, devis) pour la vente complexe</h3>
+            <p>Conception d'outils opérationnels de gestion commerciale adaptés à des ventes complexes — devis détaillé, échéancier de paiement, facturation conforme — garantissant la rigueur commerciale et juridique des engagements.</p>
+            
+              <div class="trace-doc">
+                <div class="trace-doc-label">Trace commentée</div>
+                <!-- =============================================
+                     FICHIER : dépose facture_time_on_target.pdf dans le dossier du site
+                     ============================================= -->
+                <a href="facture_time_on_target.pdf" target="_blank" class="ac-doc" id="trace-2">
+                  📄 facture_time_on_target.pdf
+                </a>
+                <p class="trace-missing" id="missing-2" style="display:none;font-size:.78rem;color:var(--gray);font-style:italic;margin-top:.4rem">
+                  ⚠️ Fichier non encore ajouté — déposez facture_time_on_target.pdf dans le dossier
+                </p>
+              </div>
+            
+              <div class="trace-block">
+                <button class="trace-toggle" onclick="toggleTrace(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  Trace commentée — analyse critique
+                </button>
+                <div class="trace-panel">
+                  <div class="trace-grid">
+                    <div class="trace-item">
+                      <div class="trace-item-label">Contexte</div>
+                      <p class="trace-item-text">Facture pro forma émise par "Time on Target" (M. Léonard) — entreprise spécialisée en teambuilding nature-aventure — pour le séminaire "WILD & SUMBAWA" destiné au client KOOI-M.GRAZINI (Lanester). Facture N°F-2026-02-KOOI-001 du 13/04/2026 : 50 participants, 2 jours/1 nuit dans le massif de la Chartreuse.</p>
+                    </div>
+                    <div class="trace-item">
+                      <div class="trace-item-label">Démarche & actions</div>
+                      <p class="trace-item-text">Élaboration d'une facture pro forma multi-lignes conforme : forfait activités 2J/1N (50 pers. × 150€ = 7 500€ HT, encadrement 5 moniteurs inclus), forfait repas (50 pers. × 29€ = 1 450€ HT, 3 repas), frais d'encadrement supplémentaire (5 moniteurs × 140€ = 700€ HT). Intégration des mentions légales obligatoires, numérotation séquentielle, coordonnées émetteur/client et conditions de règlement.</p>
+                    </div>
+                    <div class="trace-item trace-item-full">
+                      <div class="trace-item-label">Bilan critique</div>
+                      <p class="trace-item-text">Ce document démontre la maîtrise des outils de gestion commerciale en vente complexe multi-prestations. La décomposition rigoureuse par ligne de prestation et la conformité des mentions légales illustrent une compétence administrative directement transférable — indispensable pour sécuriser juridiquement et financièrement les engagements commerciaux.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="ac-card ac-card-but3 fade-in stagger-3">
+            <div class="ac-num">AC 3</div>
+            <h3>Maîtriser les codes propres à l'univers spécifique rencontré : achat, finances, industrie, international, etc.</h3>
+            <p>Appropriation des codes, vocabulaire, pratiques et contraintes propres à un secteur spécifique — pour se positionner comme un interlocuteur crédible et légitime dans des environnements professionnels exigeants.</p>
+            
+              <div class="trace-doc">
+                <div class="trace-doc-label">Trace commentée</div>
+                <!-- =============================================
+                     FICHIER : dépose Nego_Sketch_Retali.pdf dans le dossier du site
+                     ============================================= -->
+                <a href="Nego_Sketch_Retali.pdf" target="_blank" class="ac-doc" id="trace-3">
+                  📄 Nego_Sketch_Retali.pdf
+                </a>
+                <p class="trace-missing" id="missing-3" style="display:none;font-size:.78rem;color:var(--gray);font-style:italic;margin-top:.4rem">
+                  ⚠️ Fichier non encore ajouté — déposez Nego_Sketch_Retali.pdf dans le dossier
+                </p>
+              </div>
+            
+              <div class="trace-block">
+                <button class="trace-toggle" onclick="toggleTrace(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  Trace commentée — analyse critique
+                </button>
+                <div class="trace-panel">
+                  <div class="trace-grid">
+                    <div class="trace-item">
+                      <div class="trace-item-label">Contexte</div>
+                      <p class="trace-item-text">Nego Sketch encadré par M. Retali en BUT 3 — jeu de rôle de négociation dans un contexte de crise atypique : un chasseur (Jean-Dominique, joué par Alexis) prend en otage une boulangerie après une impolitesse du boulanger (Nathan). Rôles : négociatrice Nesrine, négociateur Anatole, policière Manon. Univers : médiation de crise et négociation sous tension.</p>
+                    </div>
+                    <div class="trace-item">
+                      <div class="trace-item-label">Démarche & actions</div>
+                      <p class="trace-item-text">Application des techniques de négociation de crise : prise de contact non-menaçante, découverte des besoins profonds (frustration, manque de respect, reconnaissance), reformulation empathique, gestion des émotions et de la tension, proposition de sorties de crise acceptables pour toutes les parties. Adaptation du registre de communication aux codes de l'univers (vocabulaire émotionnel, écoute active, gestion des silences).</p>
+                    </div>
+                    <div class="trace-item trace-item-full">
+                      <div class="trace-item-label">Bilan critique</div>
+                      <p class="trace-item-text">Ce sketch démontre la capacité à s'approprier rapidement les codes d'un univers de négociation exigeant — ici la médiation de crise — et à y adapter sa posture et son discours. La maîtrise de l'écoute active, de la reformulation et de la gestion de la pression sont des compétences directement transférables à la vente complexe face à des interlocuteurs difficiles ou des situations tendues.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="but3.html" class="hero-cta" style="display:inline-flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Retour au BUT 3
+      </a>
+    </div>
+  </div>
+  <script src="nav.js"></script>
+  <script>
+    createNav('but3');
+    createFooter();
+    
+    function toggleTrace(btn) {
+      const panel = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      btn.classList.toggle('open', !isOpen);
+      panel.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>

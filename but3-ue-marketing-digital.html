@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apprentissages critiques en marketing digital niveau 2 : exploiter les données, piloter la relation client digitale, cahier des charges e-business. Traces BUT 3.">
+  <meta name="author" content="Nathan Livingstone">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <title>Marketing Digital — Niveau 2 | Nathan Livingstone</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Trace commentée */
+    .trace-doc{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--light-gray)}
+    .trace-doc-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:.5rem}
+    .trace-block{margin-top:.8rem}
+    .trace-toggle{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:600;color:var(--navy-500);text-transform:uppercase;letter-spacing:.06em;padding:.5rem 0;transition:var(--transition)}
+    .trace-toggle:hover{color:var(--gold)}
+    .trace-toggle svg{transition:transform .3s var(--ease);flex-shrink:0}
+    .trace-toggle.open svg{transform:rotate(180deg)}
+    .trace-panel{max-height:0;overflow:hidden;transition:max-height .45s var(--ease-out)}
+    .trace-panel.open{max-height:600px}
+    .trace-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.8rem;padding:.8rem;background:var(--navy-50);border-radius:var(--radius-md);border-left:3px solid var(--gold-pale)}
+    .trace-item-full{grid-column:1/-1}
+    .trace-item-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--navy-600);margin-bottom:.4rem}
+    .trace-item-text{font-size:.84rem;color:var(--dark-gray);line-height:1.7;margin:0;max-width:100%}
+    /* BUT3 card accent */
+    .ac-card-but3{border-left:3px solid transparent;transition:var(--transition),border-left-color .3s}
+    .ac-card-but3:hover{border-left-color:var(--gold)}
+    @media(max-width:768px){.trace-grid{grid-template-columns:1fr}.trace-item-full{grid-column:1}}
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <span class="eyebrow">BUT 3 — UE 4</span>
+    <h1>Marketing digital — Niveau 2</h1>
+    <p>Gérer une activité digitale — Pour développer le projet digital en tant qu'initiateur</p>
+  </div>
+  <div class="breadcrumbs">
+    <a href="index.html">Accueil</a><span class="separator">›</span>
+    <a href="but3.html">BUT 3</a><span class="separator">›</span>
+    <span>Marketing digital — Niveau 2</span>
+  </div>
+  <div class="ue-content">
+    <div class="ue-block fade-in">
+      <h2>Présentation</h2>
+      <p style="max-width:100%">En troisième année, la compétence Marketing digital passe au niveau 2 : je ne suis plus simplement participant au projet digital, mais initiateur. Cela implique d'exploiter des données de masse, de piloter une stratégie digitale complète, d'élaborer un cahier des charges e-business solide, d'optimiser la relation client par les indicateurs de performance, et de proposer des solutions logistiques adaptées au e-commerce.</p>
+    </div>
+    <h2 class="ac-section-title fade-in">Apprentissages critiques & traces commentées</h2>
+    <div class="ac-grid">
+          <div class="ac-card ac-card-but3 fade-in stagger-1">
+            <div class="ac-num">AC 1</div>
+            <h3>Exploiter les données de masse en mobilisant les bons outils de traitement de l'information</h3>
+            <p>Sélection et utilisation des outils adaptés pour collecter, traiter et analyser des données en volume — tableurs avancés, outils analytics, IA — afin d'en extraire des insights actionnables pour la stratégie digitale.</p>
+            
+              <div class="trace-doc">
+                <div class="trace-doc-label">Trace commentée</div>
+                <!-- =============================================
+                     FICHIER : dépose Dossier_analyse_trois_IA_Tons.pdf dans le dossier du site
+                     ============================================= -->
+                <a href="Dossier_analyse_trois_IA_Tons.pdf" target="_blank" class="ac-doc" id="trace-1">
+                  📄 Dossier_analyse_trois_IA_Tons.pdf
+                </a>
+                <p class="trace-missing" id="missing-1" style="display:none;font-size:.78rem;color:var(--gray);font-style:italic;margin-top:.4rem">
+                  ⚠️ Fichier non encore ajouté — déposez Dossier_analyse_trois_IA_Tons.pdf dans le dossier
+                </p>
+              </div>
+            
+              <div class="trace-block">
+                <button class="trace-toggle" onclick="toggleTrace(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  Trace commentée — analyse critique
+                </button>
+                <div class="trace-panel">
+                  <div class="trace-grid">
+                    <div class="trace-item">
+                      <div class="trace-item-label">Contexte</div>
+                      <p class="trace-item-text">Dossier d'analyse comparative de trois IA (Gemini, Claude, et une troisième) selon quatre tons de prompt distincts : dénigrant, neutre, poli, impératif. Étude quantitative sur 6 pages avec grille de scoring KPI — performance technique (richesse, créativité, qualité des explications, max 30 pts) et forme (usage du langage, max 10 pts).</p>
+                    </div>
+                    <div class="trace-item">
+                      <div class="trace-item-label">Démarche & actions</div>
+                      <p class="trace-item-text">Conception d'une grille de scoring reproductible, tests systématiques de chaque ton sur chaque IA, analyse comparative des résultats. Résultat clé : le ton "dénigrant/exigeant" produit le meilleur contenu technique (Gemini : 27,6/30 ; Claude : 28/30), tandis que le ton "poli" maximise la forme (score parfait) — la performance technique et la qualité formelle sont inversement corrélées au niveau d'exigence du prompt.</p>
+                    </div>
+                    <div class="trace-item trace-item-full">
+                      <div class="trace-item-label">Bilan critique</div>
+                      <p class="trace-item-text">Ce dossier illustre la capacité à traiter des données de façon structurée et à en extraire des insights actionnables pour le marketing. La démarche scientifique (grille reproductible, interprétation nuancée, recommandations opérationnelles) démontre une maîtrise des outils d'analyse appliqués à l'IA — compétence clé pour exploiter les données de masse dans tout projet digital.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="ac-card ac-card-but3 fade-in stagger-2">
+            <div class="ac-num">AC 2</div>
+            <h3>Mettre en œuvre des spécificités du marketing digital</h3>
+            <p>Application concrète des leviers propres au digital — SEO, SEA, réseaux sociaux, UX, content marketing, automation — dans une stratégie cohérente et mesurable orientée conversion et fidélisation.</p>
+            
+              <div class="trace-doc">
+                <div class="trace-doc-label">Trace commentée</div>
+                <a href="https://natpl4y.github.io/RoseRouge/index.html" target="_blank" class="ac-doc">
+                  🔗 Site RoseRouge — natpl4y.github.io
+                </a>
+              </div>
+            
+              <div class="trace-block">
+                <button class="trace-toggle" onclick="toggleTrace(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  Trace commentée — analyse critique
+                </button>
+                <div class="trace-panel">
+                  <div class="trace-grid">
+                    <div class="trace-item">
+                      <div class="trace-item-label">Contexte</div>
+                      <p class="trace-item-text">Projet RoseRouge — création d'un site web complet en BUT 3, hébergé sur GitHub Pages. Projet mettant en application les spécificités du marketing digital : architecture de l'information, expérience utilisateur, stratégie de contenu et identité visuelle cohérente.</p>
+                    </div>
+                    <div class="trace-item">
+                      <div class="trace-item-label">Démarche & actions</div>
+                      <p class="trace-item-text">Conception UX (arborescence, wireframes, parcours utilisateur), développement front-end (HTML/CSS/JS), rédaction éditoriale orientée SEO, mise en ligne et déploiement via GitHub Pages. Choix techniques et éditoriaux justifiés par les objectifs de conversion et de fidélisation propres au marketing digital.</p>
+                    </div>
+                    <div class="trace-item trace-item-full">
+                      <div class="trace-item-label">Bilan critique</div>
+                      <p class="trace-item-text">RoseRouge est la preuve concrète de la maîtrise des leviers digitaux clés — UX, contenu, SEO on-page, déploiement. La cohérence entre l'identité visuelle, la stratégie de contenu et l'expérience utilisateur démontre une vision intégrée du marketing digital, au-delà de la simple connaissance théorique des outils.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="ac-card ac-card-but3 fade-in stagger-3">
+            <div class="ac-num">AC 3</div>
+            <h3>Elaborer un cahier des charges e-business</h3>
+            <p>Rédaction d'un cahier des charges complet pour un projet e-business — définition des besoins fonctionnels et techniques, planning, ressources, indicateurs de succès — servant de référentiel au pilotage du projet.</p>
+            
+              <div class="trace-doc">
+                <div class="trace-doc-label">Trace commentée</div>
+                <!-- =============================================
+                     FICHIER : dépose CDC_Dalmasso_Livingstone_Lodier_Merlo.pdf dans le dossier du site
+                     ============================================= -->
+                <a href="CDC_Dalmasso_Livingstone_Lodier_Merlo.pdf" target="_blank" class="ac-doc" id="trace-3">
+                  📄 CDC_Dalmasso_Livingstone_Lodier_Merlo.pdf
+                </a>
+                <p class="trace-missing" id="missing-3" style="display:none;font-size:.78rem;color:var(--gray);font-style:italic;margin-top:.4rem">
+                  ⚠️ Fichier non encore ajouté — déposez CDC_Dalmasso_Livingstone_Lodier_Merlo.pdf dans le dossier
+                </p>
+              </div>
+            
+              <div class="trace-block">
+                <button class="trace-toggle" onclick="toggleTrace(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  Trace commentée — analyse critique
+                </button>
+                <div class="trace-panel">
+                  <div class="trace-grid">
+                    <div class="trace-item">
+                      <div class="trace-item-label">Contexte</div>
+                      <p class="trace-item-text">Cahier des charges pour le déploiement d'un CRM au sein de TechSolutions (PME en forte croissance, +25% CA sur deux ans, projet d'expansion internationale). Document structurant les besoins fonctionnels et techniques d'une solution digitale complète. Réalisé en groupe (Dalmasso, Lodier, Merlo, Livingstone) en 2025-2026.</p>
+                    </div>
+                    <div class="trace-item">
+                      <div class="trace-item-label">Démarche & actions</div>
+                      <p class="trace-item-text">Structuration en deux phases (Phase 1 indispensable : base contacts, pipeline, automatisation marketing, intégrations API Outlook/ERP, conformité RGPD ; Phase 2 souhaitable : scoring automatique multi-critères). Définition des indicateurs de succès, des critères de sélection de la solution, et gestion anticipée des risques (résistance au changement, qualité des données, intégration technique).</p>
+                    </div>
+                    <div class="trace-item trace-item-full">
+                      <div class="trace-item-label">Bilan critique</div>
+                      <p class="trace-item-text">Ce CDC démontre la capacité à structurer les besoins d'un projet e-business de façon complète et réaliste. L'articulation entre fonctionnalités métier, contraintes techniques et conformité RGPD illustre une vision à 360° du cahier des charges digital — compétence directement applicable dans tout projet de transformation numérique en entreprise.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="ac-card ac-card-but3 fade-in stagger-4">
+            <div class="ac-num">AC 4</div>
+            <h3>S'appuyer sur les indicateurs de performances pour améliorer la relation client digitalisée</h3>
+            <p>Définition, suivi et analyse des KPIs digitaux — taux de conversion, taux de rebond, LTV, NPS digital — pour identifier les points de friction et optimiser en continu l'expérience et la relation client en ligne.</p>
+            
+              <div class="trace-doc">
+                <div class="trace-doc-label">Trace commentée</div>
+                <!-- =============================================
+                     FICHIER : dépose Chronodrive_groupe3.pdf dans le dossier du site
+                     ============================================= -->
+                <a href="Chronodrive_groupe3.pdf" target="_blank" class="ac-doc" id="trace-4">
+                  📄 Chronodrive_groupe3.pdf
+                </a>
+                <p class="trace-missing" id="missing-4" style="display:none;font-size:.78rem;color:var(--gray);font-style:italic;margin-top:.4rem">
+                  ⚠️ Fichier non encore ajouté — déposez Chronodrive_groupe3.pdf dans le dossier
+                </p>
+              </div>
+            
+              <div class="trace-block">
+                <button class="trace-toggle" onclick="toggleTrace(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  Trace commentée — analyse critique
+                </button>
+                <div class="trace-panel">
+                  <div class="trace-grid">
+                    <div class="trace-item">
+                      <div class="trace-item-label">Contexte</div>
+                      <p class="trace-item-text">Exposé "Marketing des services chez Chronodrive" — étude complète à l'attention de Mme Perrin et M. Retali. Chronodrive : pionnier du drive alimentaire en France (créé 2004, 57 magasins, CA ~462M€, 3 700 collaborateurs). Réalisé par Dalmasso, Livingstone, Lodier, Ciappara, Osmanovic (Groupe 3 MDEBE).</p>
+                    </div>
+                    <div class="trace-item">
+                      <div class="trace-item-label">Démarche & actions</div>
+                      <p class="trace-item-text">Application complète des outils du marketing des services : 7P, servuction, 10 dimensions de qualité, analyse de la satisfaction client et personnel, blueprints de service, fidélité et récupération de service. Évaluation des KPIs relationnels de Chronodrive face à sa promesse client : commande en ligne → préparation en 30 min → chargement en 5 min.</p>
+                    </div>
+                    <div class="trace-item trace-item-full">
+                      <div class="trace-item-label">Bilan critique</div>
+                      <p class="trace-item-text">Ce travail illustre la maîtrise des indicateurs de performance de la relation client digitalisée. La capacité à appliquer les blueprints et les 7P à un acteur réel du e-commerce démontre une aptitude concrète à piloter la relation client par la mesure — et à traduire des données de satisfaction en recommandations d'amélioration opérationnelles.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="ac-card ac-card-but3 fade-in stagger-1">
+            <div class="ac-num">AC 5</div>
+            <h3>Proposer des solutions adaptées aux spécificités de la chaîne logistique du e-commerce</h3>
+            <p>Identification et recommandation de solutions logistiques adaptées aux contraintes du e-commerce — gestion des stocks, prestataires de livraison, retours, logistique du dernier kilomètre — pour optimiser l'expérience d'achat.</p>
+            
+              <div class="trace-doc">
+                <div class="trace-doc-label">Trace commentée</div>
+                <!-- =============================================
+                     FICHIER : dépose NutriShot_Pitch_deck.pdf dans le dossier du site
+                     ============================================= -->
+                <a href="NutriShot_Pitch_deck.pdf" target="_blank" class="ac-doc" id="trace-5">
+                  📄 NutriShot_Pitch_deck.pdf
+                </a>
+                <p class="trace-missing" id="missing-5" style="display:none;font-size:.78rem;color:var(--gray);font-style:italic;margin-top:.4rem">
+                  ⚠️ Fichier non encore ajouté — déposez NutriShot_Pitch_deck.pdf dans le dossier
+                </p>
+              </div>
+            
+              <div class="trace-block">
+                <button class="trace-toggle" onclick="toggleTrace(this)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  Trace commentée — analyse critique
+                </button>
+                <div class="trace-panel">
+                  <div class="trace-grid">
+                    <div class="trace-item">
+                      <div class="trace-item-label">Contexte</div>
+                      <p class="trace-item-text">Pitch deck NutriShot — la section logistique et distribution du business model adresse les contraintes spécifiques du e-commerce de compléments alimentaires : format 50ml, conservation, réglementation, livraison du dernier kilomètre. Projet co-fondé avec Dalmasso et Lodier en BUT 3.</p>
+                    </div>
+                    <div class="trace-item">
+                      <div class="trace-item-label">Démarche & actions</div>
+                      <p class="trace-item-text">Identification des spécificités logistiques des shots (conservation, format, réglementation compléments alimentaires), choix des canaux de distribution (site e-commerce direct + marketplaces + pharmacies partenaires), proposition de solutions de fulfillment adaptées (prestataire 3PL, click & collect pharmacies). Estimation et intégration des coûts logistiques dans le modèle financier FISY.</p>
+                    </div>
+                    <div class="trace-item trace-item-full">
+                      <div class="trace-item-label">Bilan critique</div>
+                      <p class="trace-item-text">L'intégration des contraintes logistiques dans le pitch NutriShot démontre la capacité à penser la chaîne e-commerce de bout en bout — de la commande au dernier kilomètre — en cohérence avec le modèle d'affaires et les contraintes réglementaires du secteur. C'est cette vision systémique qui distingue un projet e-business crédible d'un simple concept.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="but3.html" class="hero-cta" style="display:inline-flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Retour au BUT 3
+      </a>
+    </div>
+  </div>
+  <script src="nav.js"></script>
+  <script>
+    createNav('but3');
+    createFooter();
+    
+    function toggleTrace(btn) {
+      const panel = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      btn.classList.toggle('open', !isOpen);
+      panel.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>

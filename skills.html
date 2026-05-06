@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tour d'horizon des compétences de Nathan Livingstone : hard skills commerciaux et digitaux, soft skills relationnels et mad skills différenciants.">
+  <meta name="author" content="Nathan Livingstone">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <title>Compétences — Hard, Soft & Mad Skills | Nathan Livingstone</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Stats strip repris de but-tc */
+    .stats-strip{background:var(--navy-900);border-radius:var(--radius-xl);padding:3rem 3.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin:0 0 5rem;position:relative;overflow:hidden}
+    .stats-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(184,150,78,.07),transparent);pointer-events:none}
+    .stat-item{text-align:center;position:relative}
+    .stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:15%;bottom:15%;width:1px;background:rgba(255,255,255,.08)}
+    .stat-num{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;color:var(--gold);line-height:1;margin-bottom:.4rem}
+    .stat-label{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--navy-300)}
+
+    /* Skill overview cards */
+    .skill-overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:2rem}
+    .skill-ov-card{background:var(--white);border-radius:var(--radius-xl);padding:3rem 2.5rem;border:1px solid rgba(0,0,0,.05);position:relative;overflow:hidden;transition:var(--transition);display:flex;flex-direction:column}
+    .skill-ov-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold-pale),transparent);opacity:0;transition:var(--transition)}
+    .skill-ov-card:hover{box-shadow:var(--shadow-xl);transform:translateY(-6px)}
+    .skill-ov-card:hover::before{opacity:1}
+    .sk-icon{width:64px;height:64px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:1.8rem;transition:var(--transition)}
+    .sk-icon-hard{background:linear-gradient(135deg,var(--navy-50),#dce8f5)}
+    .sk-icon-soft{background:linear-gradient(135deg,var(--navy-50),var(--gold-pale))}
+    .sk-icon-mad{background:linear-gradient(135deg,var(--navy-50),#e8f0e8)}
+    .skill-ov-card:hover .sk-icon{box-shadow:0 8px 24px rgba(184,150,78,.15)}
+    .sk-title{font-family:var(--font-display);font-size:1.9rem;font-weight:500;color:var(--navy-900);margin-bottom:.5rem}
+    .sk-sub{font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1.2rem}
+    .sk-desc{font-size:.92rem;color:var(--gray);line-height:1.75;flex:1;margin-bottom:1.8rem}
+    .sk-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.8rem}
+    .sk-tag{padding:.22rem .7rem;background:var(--navy-50);color:var(--navy-600);font-size:.68rem;font-weight:600;border-radius:50px;letter-spacing:.04em;text-transform:uppercase}
+    .sk-link{display:inline-flex;align-items:center;gap:.45rem;font-size:.8rem;font-weight:600;color:var(--navy-600);text-transform:uppercase;letter-spacing:.05em;margin-top:auto;transition:var(--transition)}
+    .sk-link:hover{color:var(--gold)}
+    .sk-link svg{width:13px;height:13px;transition:var(--transition)}
+    .sk-link:hover svg{transform:translateX(4px)}
+
+    /* Philosophy block */
+    .philosophy{background:var(--navy-900);border-radius:var(--radius-xl);padding:4rem;margin-top:5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden}
+    .philosophy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 20% 80%,rgba(184,150,78,.06),transparent),radial-gradient(ellipse 50% 50% at 80% 20%,rgba(39,70,114,.15),transparent);pointer-events:none}
+    .philosophy-text{position:relative}
+    .philosophy-text h2{color:var(--white);margin-bottom:1.2rem}
+    .philosophy-text p{color:var(--navy-300);line-height:1.85;max-width:100%}
+    .philosophy-photo{position:relative}
+    .philosophy-photo .photo-frame{height:320px}
+
+    /* Photo placeholder label */
+    .photo-name{position:absolute;bottom:-1.8rem;left:0;right:0;text-align:center;font-size:.68rem;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-body)}
+
+    @media(max-width:900px){
+      .skill-overview-grid{grid-template-columns:1fr}
+      .philosophy{grid-template-columns:1fr}
+      .philosophy-photo{display:none}
+      .stats-strip{grid-template-columns:repeat(2,1fr)}
+      .stat-item:nth-child(2)::after,.stat-item:nth-child(4)::after{display:none}
+    }
+    @media(max-width:600px){
+      .stats-strip{padding:2rem 1.5rem;border-radius:var(--radius-lg)}
+    }
+
+    /* ═══════════════════════════════════════════
+       SKILLS HERO ÉDITORIAL — typo monumentale empilée
+       Pattern issu MCP magic 21st.dev (Hero 03)
+    ═══════════════════════════════════════════ */
+    .skills-hero {
+      background: linear-gradient(180deg, var(--navy-900) 0%, #0A1626 75%, var(--navy-800) 100%);
+      position: relative; overflow: hidden;
+      padding: 7rem 2.5rem 4.5rem; isolation: isolate;
+    }
+    .skills-hero::before {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(184,150,78,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,150,78,.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black, transparent 80%);
+      pointer-events: none;
+    }
+    .skills-hero::after {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 55% 60% at 75% 30%, rgba(184,150,78,.10), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 25% 80%, rgba(39,70,114,.40), transparent 60%);
+      pointer-events: none;
+    }
+    .skills-hero-inner { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+    .skills-hero-meta {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 1.2rem; margin-bottom: 3rem;
+      font-family: var(--font-body); font-size: .68rem; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+    }
+    .skills-hero-meta-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(184,145,76,.35), transparent); }
+    .skills-hero-stack {
+      display: block; font-family: var(--font-display);
+      font-size: clamp(3rem, 9vw, 7.5rem); font-weight: 300;
+      line-height: .92; letter-spacing: -.045em; color: var(--white);
+    }
+    .skills-hero-stack .line {
+      display: block;
+      background: linear-gradient(180deg, #fff 0%, #b9c8da 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .skills-hero-stack .line-mad {
+      font-style: italic; font-weight: 400; color: var(--gold);
+      -webkit-text-fill-color: var(--gold); background: none;
+      padding-left: clamp(.5rem, 4vw, 4rem);
+    }
+    .skills-hero-tagline {
+      font-family: var(--font-display); font-style: italic;
+      font-size: clamp(1.05rem, 1.9vw, 1.5rem); color: var(--navy-200);
+      max-width: 700px; margin-top: 2.4rem;
+      line-height: 1.55; letter-spacing: -.005em;
+    }
+    .skills-hero-bottom {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 2rem; margin-top: 3.5rem; flex-wrap: wrap;
+    }
+    .skills-hero-bottom-left {
+      display: flex; flex-direction: column; gap: .55rem;
+      font-family: var(--font-body); font-size: .72rem;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--navy-300); font-weight: 500;
+    }
+    .skills-hero-bottom-left strong { color: var(--white); font-weight: 600; }
+    @media(max-width: 768px){
+      .skills-hero { padding: 5rem 1.5rem 3.5rem; }
+      .skills-hero-meta { margin-bottom: 2rem; flex-wrap: wrap; }
+      .skills-hero-meta-line { display: none; }
+      .skills-hero-tagline { margin-top: 1.6rem; }
+      .skills-hero-bottom { margin-top: 2.4rem; }
+    }
+
+    /* ═══════════════════════════════════════════
+       STATS-STRIP gold gradient + count-up
+    ═══════════════════════════════════════════ */
+    .stat-num {
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 70%, #8B6A33 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 12px rgba(184,145,76,.18));
+    }
+
+    /* ═══════════════════════════════════════════
+       SKILL-OV-CARD UPGRADE — corner decorators + premium lift
+       Pattern issu MCP magic Features 10
+    ═══════════════════════════════════════════ */
+    .skill-ov-card {
+      transition: transform .35s var(--ease-fluid), box-shadow .45s var(--ease-fluid), border-color .35s var(--ease-fluid);
+      isolation: isolate;
+    }
+    .skill-ov-card:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.5) inset,
+        0 24px 60px -16px rgba(6,16,31,.22),
+        0 10px 20px -10px rgba(184,145,76,.22),
+        0 0 0 1px rgba(184,145,76,.10);
+      border-color: rgba(184,145,76,.18);
+    }
+    .skill-ov-card::before {
+      background: linear-gradient(90deg, transparent, var(--gold-light) 30%, var(--gold) 50%, var(--gold-light) 70%, transparent);
+      height: 1.5px;
+    }
+    .sk-corners {
+      position: absolute; inset: 12px;
+      pointer-events: none; opacity: 0;
+      transition: opacity .4s var(--ease-fluid);
+      z-index: 1;
+    }
+    .skill-ov-card:hover .sk-corners { opacity: 1; }
+    .sk-corners::before, .sk-corners::after,
+    .sk-corner-bl, .sk-corner-br {
+      content: ''; position: absolute; width: 12px; height: 12px;
+    }
+    .sk-corners::before { top: 0; left: 0; border-top: 1.5px solid rgba(184,145,76,.55); border-left: 1.5px solid rgba(184,145,76,.55); }
+    .sk-corners::after  { top: 0; right: 0; border-top: 1.5px solid rgba(184,145,76,.55); border-right: 1.5px solid rgba(184,145,76,.55); }
+    .sk-corner-bl       { bottom: 0; left: 0; border-bottom: 1.5px solid rgba(184,145,76,.55); border-left: 1.5px solid rgba(184,145,76,.55); }
+    .sk-corner-br       { bottom: 0; right: 0; border-bottom: 1.5px solid rgba(184,145,76,.55); border-right: 1.5px solid rgba(184,145,76,.55); }
+    /* Icon scale + glow au hover */
+    .sk-icon {
+      transition: transform .4s var(--ease-fluid), box-shadow .4s var(--ease-fluid), background .4s var(--ease-fluid);
+    }
+    .skill-ov-card:hover .sk-icon {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 12px 32px rgba(184,150,78,.22);
+    }
+    /* Sub-titre passe en gold-light au hover */
+    .sk-sub { transition: color .35s var(--ease-fluid); }
+    .skill-ov-card:hover .sk-sub { color: var(--gold-light); }
+    /* Tags — micro-shine au hover */
+    .sk-tag {
+      transition: background .3s var(--ease-fluid), color .3s var(--ease-fluid), transform .3s var(--ease-fluid);
+    }
+    .sk-tag:hover {
+      background: var(--gold-pale);
+      color: var(--navy-900);
+      transform: translateY(-1px);
+    }
+
+    /* ═══════════════════════════════════════════
+       PHILOSOPHY block — refinement
+    ═══════════════════════════════════════════ */
+    .philosophy {
+      isolation: isolate;
+    }
+    .philosophy::after {
+      content: '"';
+      position: absolute;
+      top: -1.8rem; right: 2.5rem;
+      font-family: var(--font-display);
+      font-size: 12rem;
+      color: var(--gold);
+      opacity: .08;
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .philosophy-text { z-index: 1; }
+    .philosophy-text h2 {
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: -.02em;
+      background: linear-gradient(180deg, #fff 0%, #cfdcec 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ═══════════════════════════════════════════
+       SKILLS-CTA-BAND — final CTA vers les 3 sous-pages
+    ═══════════════════════════════════════════ */
+    .skills-cta-band {
+      background: linear-gradient(135deg, var(--navy-900) 0%, #0E1E38 50%, var(--navy-800) 100%);
+      padding: 5rem 2.5rem;
+      position: relative; overflow: hidden;
+      text-align: center; margin-top: 5rem;
+    }
+    .skills-cta-band::before {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 30% 30%, rgba(39,70,114,.4), transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(184,150,78,.10), transparent 60%);
+      pointer-events: none;
+    }
+    .skills-cta-band::after {
+      content: ''; position: absolute; top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: min(560px, 80%); height: 1px;
+      background: var(--hairline-gold); opacity: .5;
+    }
+    .skills-cta-band-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .skills-cta-band h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 300; color: var(--white);
+      letter-spacing: -.025em; line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(180deg, #fff 0%, #cfdcec 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .skills-cta-band h2 em {
+      font-style: italic; font-weight: 400;
+      color: var(--gold);
+      -webkit-text-fill-color: var(--gold);
+      background: none;
+    }
+    .skills-cta-band p {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 1.05rem; color: var(--navy-200);
+      margin: 0 auto 2.2rem; max-width: 540px; line-height: 1.7;
+    }
+    .skills-cta-actions {
+      display: flex; justify-content: center;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .skills-cta-btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .85rem 1.8rem;
+      font-family: var(--font-body); font-size: .78rem;
+      font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      border-radius: 50px;
+      border: 1px solid rgba(184,145,76,.3);
+      background: rgba(184,145,76,.05);
+      color: var(--gold);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+    .skills-cta-btn:hover {
+      background: rgba(184,145,76,.14);
+      border-color: rgba(184,145,76,.55);
+      transform: translateY(-2px);
+      color: var(--gold-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HERO ÉDITORIAL — typo monumentale empilée
+       Pattern issu MCP magic 21st.dev
+       ═══════════════════════════════════════════ -->
+  <section class="skills-hero">
+    <div class="skills-hero-inner">
+      <div class="skills-hero-meta">
+        <span>/ Compétences &amp; profil</span>
+        <span class="skills-hero-meta-line" aria-hidden="true"></span>
+        <span>3 dimensions · 1 ambition</span>
+      </div>
+
+      <h1 class="skills-hero-stack" aria-label="Hard Soft Mad Skills">
+        <span class="line">Hard.</span>
+        <span class="line">Soft.</span>
+        <span class="line line-mad">Mad.</span>
+      </h1>
+
+      <p class="skills-hero-tagline">
+        Trois dimensions complémentaires — du savoir-faire technique à
+        l'intelligence relationnelle, en passant par ce qui me rend différent.
+      </p>
+
+      <div class="skills-hero-bottom">
+        <div class="skills-hero-bottom-left">
+          <span><strong>20+ compétences</strong> · 3 années de pratique</span>
+          <span>BUT TC · MDEE · Concours national · Service civique</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="breadcrumbs">
+    <a href="index.html">Accueil</a>
+    <span class="separator">›</span>
+    <span>Skills</span>
+  </div>
+
+  <section class="section">
+
+    <!-- Stats strip — count-up animé -->
+    <div class="stats-strip fade-in">
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="3">3</span></div>
+        <div class="stat-label">Catégories de skills</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="20">20</span><span style="font-size:1.5rem">+</span></div>
+        <div class="stat-label">Compétences listées</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span data-count="3">3</span></div>
+        <div class="stat-label">Années de pratique</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">B2<span style="font-size:1.2rem">+</span></div>
+        <div class="stat-label">Niveau d'anglais</div>
+      </div>
+    </div>
+
+    <!-- Section header -->
+    <div class="section-header fade-in">
+      <span class="eyebrow">Vue d'ensemble</span>
+      <h2>Trois dimensions, un profil</h2>
+      <p>Chaque catégorie de compétences reflète une facette complémentaire de mon profil — du savoir-faire technique à l'intelligence relationnelle, en passant par ce qui me rend unique.</p>
+    </div>
+
+    <!-- Cards overview -->
+    <div class="skill-overview-grid">
+
+      <div class="skill-ov-card fade-in stagger-1">
+        <div class="sk-corners" aria-hidden="true">
+          <span class="sk-corner-bl"></span>
+          <span class="sk-corner-br"></span>
+        </div>
+        <div class="sk-icon sk-icon-hard">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="sk-title">Hard Skills</div>
+        <div class="sk-sub">Savoir-faire techniques</div>
+        <p class="sk-desc">Les compétences techniques et opérationnelles acquises au fil de ma formation et de mes expériences — marketing, digital, vente, outils et langues.</p>
+        <div class="sk-tags">
+          <span class="sk-tag">Marketing digital</span>
+          <span class="sk-tag">SEO / SEA</span>
+          <span class="sk-tag">Google Analytics</span>
+          <span class="sk-tag">Négociation</span>
+          <span class="sk-tag">Anglais B2+</span>
+        </div>
+        <a href="hard-skills.html" class="sk-link">
+          Voir les hard skills
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="skill-ov-card fade-in stagger-2">
+        <div class="sk-corners" aria-hidden="true">
+          <span class="sk-corner-bl"></span>
+          <span class="sk-corner-br"></span>
+        </div>
+        <div class="sk-icon sk-icon-soft">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="sk-title">Soft Skills</div>
+        <div class="sk-sub">Intelligence relationnelle</div>
+        <p class="sk-desc">Les qualités humaines et comportementales qui font la différence au quotidien — communication, organisation, leadership et adaptabilité.</p>
+        <div class="sk-tags">
+          <span class="sk-tag">Écoute active</span>
+          <span class="sk-tag">Rigueur</span>
+          <span class="sk-tag">Autonomie</span>
+          <span class="sk-tag">Esprit d'équipe</span>
+          <span class="sk-tag">Persévérance</span>
+        </div>
+        <a href="soft-skills.html" class="sk-link">
+          Voir les soft skills
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="skill-ov-card fade-in stagger-3">
+        <div class="sk-corners" aria-hidden="true">
+          <span class="sk-corner-bl"></span>
+          <span class="sk-corner-br"></span>
+        </div>
+        <div class="sk-icon sk-icon-mad">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="sk-title">Mad Skills</div>
+        <div class="sk-sub">Ce qui me rend unique</div>
+        <p class="sk-desc">Les compétences atypiques et expériences singulières qui révèlent une personnalité différenciante — compétition, engagement civique et ouverture internationale.</p>
+        <div class="sk-tags">
+          <span class="sk-tag">Finaliste Négociales</span>
+          <span class="sk-tag">Service Civique</span>
+          <span class="sk-tag">Immersion Angleterre</span>
+        </div>
+        <a href="mad-skills.html" class="sk-link">
+          Voir les mad skills
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Philosophy / photo block -->
+    <div class="philosophy fade-in">
+      <div class="philosophy-text">
+        <span class="eyebrow" style="font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);display:inline-block;margin-bottom:1rem">Ma philosophie</span>
+        <h2>Des compétences au service d'un projet</h2>
+        <p>Chaque compétence que j'ai développée s'inscrit dans une trajectoire claire : devenir conseiller en gestion de patrimoine. La rigueur analytique des hard skills, la qualité relationnelle des soft skills, et l'énergie compétitive des mad skills forment un profil cohérent orienté conseil et accompagnement client.</p>
+      </div>
+      <div class="philosophy-photo" style="position:relative">
+        <!-- =============================================
+             PHOTO : enregistre ton image sous le nom
+             photo-skills.jpg dans le dossier du site
+             ============================================= -->
+        <div class="photo-frame landscape">
+          <img src="photo-skills.jpg" alt="Photo skills" onerror="this.parentElement.innerHTML='<div class=\'photo-frame-placeholder\'><svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\'><rect width=\'18\' height=\'18\' x=\'3\' y=\'3\' rx=\'2\'/><circle cx=\'9\' cy=\'9\' r=\'2\'/><path d=\'m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\'/></svg><span>photo-skills.jpg</span></div>'">
+        </div>
+        <div class="photo-name">photo-skills.jpg</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL — vers les 3 sous-pages
+       ═══════════════════════════════════════════ -->
+  <section class="skills-cta-band">
+    <div class="skills-cta-band-inner">
+      <h2>Explorer <em>chaque dimension</em></h2>
+      <p>Plonger dans le détail de chaque catégorie — outils maîtrisés, qualités humaines, expériences uniques.</p>
+      <div class="skills-cta-actions">
+        <a href="hard-skills.html" class="skills-cta-btn">Hard Skills</a>
+        <a href="soft-skills.html" class="skills-cta-btn">Soft Skills</a>
+        <a href="mad-skills.html" class="skills-cta-btn">Mad Skills</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+  <script>
+    createNav('skills');
+    createFooter();
+  </script>
+</body>
+</html>
