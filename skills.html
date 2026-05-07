@@ -44,20 +44,15 @@
 
     /* Philosophy block */
     .philosophy{background:var(--navy-900);border-radius:var(--radius-xl);padding:4rem;margin-top:5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden}
+    .philosophy-photo{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;}
+    .philosophy-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.9) contrast(1.05);}
+    @media(max-width:900px){.philosophy{grid-template-columns:1fr}.philosophy-photo{aspect-ratio:16/9}}
     .philosophy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 20% 80%,rgba(184,150,78,.06),transparent),radial-gradient(ellipse 50% 50% at 80% 20%,rgba(39,70,114,.15),transparent);pointer-events:none}
-    .philosophy-text{position:relative}
     .philosophy-text h2{color:var(--white);margin-bottom:1.2rem}
-    .philosophy-text p{color:var(--navy-300);line-height:1.85;max-width:100%}
-    .philosophy-photo{position:relative}
-    .philosophy-photo .photo-frame{height:320px}
-
-    /* Photo placeholder label */
-    .photo-name{position:absolute;bottom:-1.8rem;left:0;right:0;text-align:center;font-size:.68rem;font-weight:600;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-body)}
+    .philosophy-text p{color:var(--navy-300);line-height:1.85;max-width:720px}
 
     @media(max-width:900px){
       .skill-overview-grid{grid-template-columns:1fr}
-      .philosophy{grid-template-columns:1fr}
-      .philosophy-photo{display:none}
       .stats-strip{grid-template-columns:repeat(2,1fr)}
       .stat-item:nth-child(2)::after,.stat-item:nth-child(4)::after{display:none}
     }
@@ -440,7 +435,7 @@
         <div class="sk-tags">
           <span class="sk-tag">Finaliste Négociales</span>
           <span class="sk-tag">Service Civique</span>
-          <span class="sk-tag">Immersion Angleterre</span>
+          <span class="sk-tag">Séjour Malte</span>
         </div>
         <a href="mad-skills.html" class="sk-link">
           Voir les mad skills
@@ -450,22 +445,15 @@
 
     </div>
 
-    <!-- Philosophy / photo block -->
+    <!-- Philosophy block -->
     <div class="philosophy fade-in">
       <div class="philosophy-text">
         <span class="eyebrow" style="font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);display:inline-block;margin-bottom:1rem">Ma philosophie</span>
         <h2>Des compétences au service d'un projet</h2>
         <p>Chaque compétence que j'ai développée s'inscrit dans une trajectoire claire : bâtir une carrière dans le secteur bancaire, via le Master MBFA en alternance. La rigueur analytique des hard skills, la qualité relationnelle des soft skills, et l'énergie compétitive des mad skills forment un profil cohérent orienté conseil, finance et accompagnement client.</p>
       </div>
-      <div class="philosophy-photo" style="position:relative">
-        <!-- =============================================
-             PHOTO : enregistre ton image sous le nom
-             photo-skills.jpg dans le dossier du site
-             ============================================= -->
-        <div class="photo-frame landscape">
-          <img src="photo-skills.jpg" alt="Photo skills" onerror="this.parentElement.innerHTML='<div class=\'photo-frame-placeholder\'><svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1.5\'><rect width=\'18\' height=\'18\' x=\'3\' y=\'3\' rx=\'2\'/><circle cx=\'9\' cy=\'9\' r=\'2\'/><path d=\'m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\'/></svg><span>photo-skills.jpg</span></div>'">
-        </div>
-        <div class="photo-name">photo-skills.jpg</div>
+      <div class="philosophy-photo">
+        <img src="photo-piano.jpg" alt="Environnement raffiné — l'univers du conseil et de la finance">
       </div>
     </div>
 

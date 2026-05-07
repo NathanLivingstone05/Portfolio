@@ -157,19 +157,32 @@
     ═══════════════════════════════════════════ */
     .profil-main { min-width: 0; }
 
-    /* Print button */
-    .profil-actions { margin-bottom: 2.2rem; }
-    .btn-print {
+    /* Action buttons (Print / Download CV) */
+    .profil-actions { margin-bottom: 2.2rem; display: flex; flex-wrap: wrap; gap: .7rem; }
+    .btn-print, .btn-cv {
       display: inline-flex; align-items: center; gap: .5rem;
       padding: .6rem 1.4rem;
-      background: var(--navy-900); color: var(--white);
       font-family: var(--font-body); font-size: .73rem;
       font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
       border-radius: 50px; cursor: pointer; border: none;
       transition: var(--transition);
+      text-decoration: none;
+    }
+    .btn-print {
+      background: var(--navy-900); color: var(--white);
     }
     .btn-print:hover { background: var(--navy-700); color: var(--gold); box-shadow: var(--shadow-gold); }
-    .btn-print svg { width: 13px; height: 13px; }
+    .btn-cv {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy-900);
+      box-shadow: 0 4px 18px rgba(184,150,78,.22);
+    }
+    .btn-cv:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184,150,78,.32);
+      color: var(--navy-900);
+    }
+    .btn-print svg, .btn-cv svg { width: 13px; height: 13px; }
 
     /* Bande identité */
     .identity-strip {
@@ -827,9 +840,13 @@
 
       <!-- Bouton imprimer -->
       <div class="profil-actions">
+        <a href="CV-Nathan-Livingstone.pdf" download class="btn-cv">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          Télécharger mon CV
+        </a>
         <button class="btn-print" onclick="window.print()">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
-          Imprimer / Exporter PDF
+          Imprimer la page
         </button>
       </div>
 
@@ -864,6 +881,16 @@
             <span class="quality-tag">Logique</span>
             <span class="quality-tag">Honnête</span>
           </div>
+        </div>
+      </div>
+
+      <!-- ─── Photo de ville — Toulon, ma ville d'études ─── -->
+      <div class="fade-in" style="margin-bottom:3rem;border-radius:var(--radius-xl);overflow:hidden;position:relative;aspect-ratio:21/8;">
+        <img src="photo-toulon.jpg" alt="Vue panoramique de Toulon — ville d'études de Nathan Livingstone"
+             style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;bottom:1.2rem;left:1.4rem;background:rgba(6,16,31,.65);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:50px;padding:.35rem 1rem;display:inline-flex;align-items:center;gap:.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B8964E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span style="font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);">Toulon · Var · IUT de Toulon</span>
         </div>
       </div>
 
@@ -1059,6 +1086,17 @@
             <span class="pp-tag">Malte · EF Education</span>
             <span class="pp-tag">Anglais B2 → C1</span>
           </div>
+        </div>
+      </div>
+
+      <!-- ─── Photo voyage nuit — ouverture & curiosité ─── -->
+      <div class="fade-in" style="margin-top:3rem;border-radius:var(--radius-xl);overflow:hidden;position:relative;aspect-ratio:16/7;">
+        <img src="photo-nuit.jpg" alt="Vue nocturne d'une ville en voyage — curiosité et ouverture de Nathan Livingstone"
+             style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(6,16,31,.55) 0%,transparent 55%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:1.2rem;left:1.4rem;right:1.4rem;display:flex;align-items:center;gap:.6rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B8964E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span style="font-family:var(--font-body);font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);">Curiosité · Voyages · Ouverture au monde</span>
         </div>
       </div>
 

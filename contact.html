@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez Nathan Livingstone, étudiant en BUT TC et futur conseiller en gestion de patrimoine. Disponible pour alternance, stage ou échange professionnel.">
+  <meta name="description" content="Contactez Nathan Livingstone, étudiant en BUT TC préparant un Master MBFA à Toulon. Disponible pour une alternance dans le secteur bancaire — banque de détail, banque privée, conseil financier.">
   <meta name="author" content="Nathan Livingstone">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
-  <title>Contact — Nathan Livingstone | Futur CGP</title>
+  <title>Contact — Nathan Livingstone | Master MBFA · Alternance bancaire</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
   <style>
     .form-group{margin-bottom:1.4rem}
@@ -43,15 +45,164 @@
     .availability-item .pulse{width:8px;height:8px;border-radius:50%;background:#4caf50;flex-shrink:0;animation:pulse 2s ease-in-out infinite}
     @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(76,175,80,.4)}50%{box-shadow:0 0 0 6px rgba(76,175,80,0)}}
     @media(max-width:768px){.form-row{grid-template-columns:1fr}.contact-card{padding:2rem}}
+
+    /* ═══════════════════════════════════════════
+       FORM REFINEMENT — focus ring premium + textarea
+    ═══════════════════════════════════════════ */
+    .form-input, .form-textarea {
+      transition: border-color .25s var(--ease-fluid), box-shadow .3s var(--ease-fluid), background .25s var(--ease-fluid);
+    }
+    .form-input:focus, .form-textarea:focus {
+      box-shadow: 0 0 0 4px rgba(184,150,78,.14), 0 4px 16px rgba(184,150,78,.12);
+    }
+    .form-input:hover, .form-textarea:hover {
+      border-color: rgba(184,145,76,.35);
+    }
+    .form-label {
+      transition: color .25s var(--ease-fluid);
+    }
+    .form-group:focus-within .form-label {
+      color: var(--gold);
+    }
+    /* Submit button — shimmer effect */
+    .form-submit {
+      position: relative; overflow: hidden;
+    }
+    .form-submit::before {
+      content: ''; position: absolute; top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.55) 50%, transparent 80%);
+      transition: left .9s var(--ease-fluid);
+      pointer-events: none;
+    }
+    .form-submit:hover::before { left: 100%; }
+    .form-submit:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    /* ═══════════════════════════════════════════
+       CONTACT CARD UPGRADE — corner decorators + glow
+    ═══════════════════════════════════════════ */
+    .contact-card {
+      isolation: isolate;
+      transition: box-shadow .4s var(--ease-fluid), transform .4s var(--ease-fluid);
+    }
+    .contact-card:hover {
+      box-shadow:
+        0 24px 60px -16px rgba(6,16,31,.35),
+        0 10px 24px -10px rgba(184,145,76,.20),
+        0 0 0 1px rgba(184,145,76,.12);
+    }
+    /* Hairline gold au sommet */
+    .contact-card::after {
+      content: ''; position: absolute;
+      top: 0; left: 12px; right: 12px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light) 30%, var(--gold) 50%, var(--gold-light) 70%, transparent);
+      opacity: .6; pointer-events: none;
+    }
+    /* Corner decorators dorés en permanence (pattern features 10) */
+    .cc-corners {
+      position: absolute; inset: 12px;
+      pointer-events: none; z-index: 1;
+    }
+    .cc-corners::before, .cc-corners::after,
+    .cc-corner-bl, .cc-corner-br {
+      content: ''; position: absolute;
+      width: 14px; height: 14px;
+      border-color: rgba(184,150,78,.35);
+    }
+    .cc-corners::before { top: 0; left: 0; border-top: 1.5px solid; border-left: 1.5px solid; }
+    .cc-corners::after  { top: 0; right: 0; border-top: 1.5px solid; border-right: 1.5px solid; }
+    .cc-corner-bl       { bottom: 0; left: 0; border-bottom: 1.5px solid; border-left: 1.5px solid; }
+    .cc-corner-br       { bottom: 0; right: 0; border-bottom: 1.5px solid; border-right: 1.5px solid; }
+    /* Hover state on link items — premium feedback */
+    .contact-link-item {
+      transition: padding-left .35s var(--ease-fluid), border-top-color .25s var(--ease-fluid);
+    }
+    .contact-link-item:hover {
+      padding-left: .8rem;
+      border-top-color: rgba(184,145,76,.18);
+    }
+    .cl-icon {
+      transition: background .35s var(--ease-fluid), transform .35s var(--ease-fluid);
+    }
+    .contact-link-item:hover .cl-icon {
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+    /* ═══════════════════════════════════════════
+       QUICK ACTIONS — 3 boutons glass après le form
+    ═══════════════════════════════════════════ */
+    .quick-actions {
+      margin-top: 2.4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--light-gray);
+    }
+    .quick-actions-label {
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .quick-actions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+    }
+    .quick-action {
+      display: flex; align-items: center; gap: .7rem;
+      padding: .8rem 1.1rem;
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--navy-700);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .quick-action:hover {
+      border-color: rgba(184,145,76,.4);
+      background: var(--gold-pale);
+      color: var(--navy-900);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -6px rgba(184,145,76,.18);
+    }
+    .quick-action svg {
+      width: 14px; height: 14px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    @media(max-width: 768px){
+      .quick-actions-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="page-header">
-    <span class="eyebrow">Prenons contact</span>
-    <h1>Me contacter</h1>
-    <p>N'hésitez pas à me joindre pour toute question ou opportunité professionnelle.</p>
-  </div>
+  <!-- ═══════════════════════════════════════════
+       SUBPAGE HERO — composant global éditorial
+       ═══════════════════════════════════════════ -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-inner">
+      <div class="subpage-hero-meta">
+        <span>/ Prenons contact</span>
+        <span class="subpage-hero-meta-line" aria-hidden="true"></span>
+        <span>Disponible · Rentrée 2026</span>
+      </div>
+      <h1>Travaillons <em>ensemble</em></h1>
+      <p class="subpage-hero-tagline">Stage, alternance, opportunité, simple discussion — toute proposition mérite réflexion. Je vous réponds sous 48h.</p>
+      <a href="index.html" class="subpage-hero-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Retour à l'accueil
+      </a>
+    </div>
+  </section>
 
   <div class="breadcrumbs">
     <a href="index.html">Accueil</a>
@@ -92,11 +243,34 @@
           </button>
           <div class="form-status" id="formStatus"></div>
         </form>
+
+        <!-- Quick actions — accès rapide -->
+        <div class="quick-actions">
+          <span class="quick-actions-label">Ou plus rapide</span>
+          <div class="quick-actions-grid">
+            <a href="mailto:livingstonenat@gmail.com" class="quick-action">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Email direct
+            </a>
+            <a href="tel:+33645207786" class="quick-action">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Téléphone
+            </a>
+            <a href="https://www.linkedin.com/in/nathan-livingstone-0997a12a3" target="_blank" rel="noopener" class="quick-action">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Coordonnées -->
       <div class="fade-in stagger-2">
         <div class="contact-card">
+          <div class="cc-corners" aria-hidden="true">
+            <span class="cc-corner-bl"></span>
+            <span class="cc-corner-br"></span>
+          </div>
           <h3>Nathan Livingstone</h3>
           <p>Étudiant en BUT 3 Techniques de Commercialisation — Parcours MDEE</p>
 
@@ -142,7 +316,6 @@
 
           <div class="availability">
             <div class="availability-label">Disponibilité</div>
-            </div>
             <div class="availability-item">
               <span class="pulse"></span>
               <span><strong style="color:var(--gold)">Rentrée 2026</strong> — Disponible pour un Master en alternance</span>

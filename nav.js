@@ -53,12 +53,28 @@ function createNav(activePage) {
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('navLinks');
 
+  // iOS-safe scroll lock : évite le bug iOS Safari où overflow:hidden
+  // sur le body bloque les touch events sur les éléments fixed.
+  let scrollY = 0;
+  function lockScroll() {
+    scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+  }
+  function unlockScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollY);
+  }
+
   function openMenu() {
     navLinks.classList.add('open');
     overlay.classList.add('open');
     hamburger.setAttribute('aria-expanded','true');
     hamburger.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    lockScroll();
   }
 
   function closeMenu() {
@@ -66,7 +82,7 @@ function createNav(activePage) {
     overlay.classList.remove('open');
     hamburger.setAttribute('aria-expanded','false');
     hamburger.classList.remove('open');
-    document.body.style.overflow = '';
+    unlockScroll();
     document.querySelectorAll('.dropdown').forEach(d => d.style.display = '');
     document.querySelectorAll('.nav-links > li.open').forEach(li => li.classList.remove('open'));
   }
@@ -81,7 +97,7 @@ function createNav(activePage) {
     if (e.key === 'Escape') closeMenu();
   });
 
-  // Mobile : toggle dropdown. Desktop : suit le href.
+  // Mobile/Tablet : toggle dropdown. Desktop : suit le href.
   document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       if (window.innerWidth <= 768) {
