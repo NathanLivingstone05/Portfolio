@@ -20,21 +20,25 @@
        LAYOUT
     ═══════════════════════════════════════════ */
     .profil-outer {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 3rem 2.5rem 6rem;
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 4rem;
-      align-items: start;
     }
 
     /* ═══════════════════════════════════════════
-       SIDEBAR
+       PROFIL CARD STRIP (ex-sidebar horizontal)
     ═══════════════════════════════════════════ */
-    .profil-sidebar {
-      position: sticky;
-      top: 92px;
+    .profil-card-strip {
+      display: grid;
+      grid-template-columns: 240px 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .profil-card-details,
+    .profil-card-extra {
+      display: flex;
+      flex-direction: column;
     }
 
     /* Identité sidebar */
@@ -386,18 +390,17 @@
     /* ═══════════════════════════════════════════
        RESPONSIVE
     ═══════════════════════════════════════════ */
-    @media(max-width:960px) {
-      .profil-outer { grid-template-columns: 1fr; gap: 2.5rem; }
-      .profil-sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem; }
-      .sid-identity { grid-column: 1/-1; }
+    @media(max-width:800px) {
+      .profil-card-strip { grid-template-columns: 1fr 1fr; }
+      .sid-identity { grid-column: 1 / -1; }
       .identity-strip { grid-template-columns: repeat(2,1fr); }
       .achievement-card { grid-template-columns: 1fr; gap: 1.4rem; }
       .ach-rank { text-align: left; display: inline; font-size: 2.8rem; }
       .ach-rank-sub { display: inline; margin-left: .4rem; font-size: .6rem; }
     }
-    @media(max-width:640px) {
+    @media(max-width:540px) {
       .profil-outer { padding: 1.8rem 1.2rem 4rem; }
-      .profil-sidebar { grid-template-columns: 1fr; }
+      .profil-card-strip { grid-template-columns: 1fr; }
       .identity-strip { grid-template-columns: 1fr 1fr; }
       .achievement-card { padding: 1.6rem; }
     }
@@ -684,8 +687,8 @@
         background: none !important;
         font-size: 2.5rem !important;
       }
-      .profil-outer { padding: 1rem; gap: 2rem; grid-template-columns: 210px 1fr; }
-      .profil-sidebar { position: static; display: block; }
+      .profil-outer { padding: 1rem; }
+      .profil-card-strip { grid-template-columns: 1fr 1fr 1fr; }
       .tl-item, .achievement-card, .project-card, .intro-card, .reco-block { page-break-inside: avoid; }
     }
   </style>
@@ -737,9 +740,9 @@
     <!-- ══════════════════════════════
          SIDEBAR
     ══════════════════════════════ -->
-    <aside class="profil-sidebar fade-in">
+    <div class="profil-card-strip fade-in">
 
-      <!-- Identité -->
+      <!-- COL 1 — Identité -->
       <div class="sid-identity">
         <div class="sid-name">Nathan<br><span>Livingstone</span></div>
         <div class="sid-title">Master MBFA<br>Alternance bancaire</div>
@@ -749,7 +752,8 @@
         </div>
       </div>
 
-      <!-- Contact -->
+      <!-- COL 2 — Contact + Langues -->
+      <div class="profil-card-details">
       <div class="sidebar-block">
         <div class="sidebar-label">Contact</div>
         <div class="contact-item">
@@ -791,7 +795,10 @@
         </div>
       </div>
 
-      <!-- Compétences clés -->
+      </div><!-- /profil-card-details -->
+
+      <!-- COL 3 — Compétences + Intérêts -->
+      <div class="profil-card-extra">
       <div class="sidebar-block">
         <div class="sidebar-label">Compétences clés</div>
         <div class="skill-chips">
@@ -831,7 +838,9 @@
         </div>
       </div>
 
-    </aside>
+      </div><!-- /profil-card-extra -->
+
+    </div><!-- /profil-card-strip -->
 
     <!-- ══════════════════════════════
          MAIN
@@ -914,17 +923,50 @@
           <div class="tl-item">
             <div class="tl-dot"></div>
             <div class="tl-header">
+              <div class="tl-company">One Shot Production</div>
+              <div class="tl-date">Été 2026</div>
+            </div>
+            <div class="tl-role">Renfort technique — Pyrotechnie & événementiel</div>
+            <div style="display:flex;gap:1.2rem;align-items:flex-start;">
+              <div style="flex:1;min-width:0;">
+                <p class="tl-desc" style="margin:0 0 .65rem;">Quelques jours en renfort pour la conception et la mise en place de feux d'artifices sur plusieurs sites : <strong>Savines-le-Lac</strong>, <strong>Saint-Raphaël</strong> et le <strong>Golf de Bayard</strong> (au-dessus de Gap). Une expérience rare au cœur de la logistique événementielle pyrotechnique — rigueur, sécurité et travail en conditions réelles sur des sites publics à fort impact visuel.</p>
+                <div class="tl-tags">
+                  <span class="tl-tag accent">Pyrotechnie</span>
+                  <span class="tl-tag">Événementiel</span>
+                  <span class="tl-tag">Logistique terrain</span>
+                  <span class="tl-tag">Travail en équipe</span>
+                  <span class="tl-tag">Gestion des risques</span>
+                </div>
+              </div>
+              <div style="width:160px;flex-shrink:0;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;">
+                <img src="photo-feux.jpg" alt="Feux d'artifices — One Shot Production, été 2026"
+                     style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
               <div class="tl-company">IUT de Toulon — Département TC</div>
               <div class="tl-date">Avr. → Juin 2025</div>
             </div>
             <div class="tl-role">Chargé de projet événementiel — Stage BUT 2</div>
-            <p class="tl-desc">Organisation complète de l'<strong>Assemblée des Chefs de Département TC</strong>, événement national réunissant plus d'une centaine de responsables pédagogiques de toute la France. En équipe de 6 : réalisation d'un faux journal télévisé multi-chaînes monté sur <strong>Adobe Premiere Pro</strong> (~20h de montage), parcours de visite guidée de Toulon, livret d'accueil, signalétique et gestion des flux. Pilotage via matrice RACI et rétroplanning.</p>
-            <div class="tl-tags">
-              <span class="tl-tag accent">Gestion de projet</span>
-              <span class="tl-tag">Adobe Premiere Pro</span>
-              <span class="tl-tag">Événementiel</span>
-              <span class="tl-tag">Communication</span>
-              <span class="tl-tag">Travail en équipe</span>
+            <div style="display:flex;gap:1.2rem;align-items:flex-start;">
+              <div style="flex:1;min-width:0;">
+                <p class="tl-desc" style="margin:0 0 .65rem;">Organisation complète de l'<strong>Assemblée des Chefs de Département TC</strong>, événement national réunissant plus d'une centaine de responsables pédagogiques de toute la France. En équipe de 6 : réalisation d'un faux journal télévisé multi-chaînes monté sur <strong>Adobe Premiere Pro</strong> (~20h de montage), parcours de visite guidée de Toulon, livret d'accueil, signalétique et gestion des flux. Pilotage via matrice RACI et rétroplanning.</p>
+                <div class="tl-tags">
+                  <span class="tl-tag accent">Gestion de projet</span>
+                  <span class="tl-tag">Adobe Premiere Pro</span>
+                  <span class="tl-tag">Événementiel</span>
+                  <span class="tl-tag">Communication</span>
+                  <span class="tl-tag">Travail en équipe</span>
+                </div>
+              </div>
+              <div style="width:160px;flex-shrink:0;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;">
+                <img src="photo-iut.jpg" alt="Campus de l'IUT de Toulon — cadre de ma formation BUT TC"
+                     style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
             </div>
           </div>
 
@@ -966,12 +1008,20 @@
               <div class="tl-date">Déc. 2022 → Août 2023 · 9 mois</div>
             </div>
             <div class="tl-role">Volontaire en Service Civique</div>
-            <p class="tl-desc">Accueil et accompagnement des usagers au <strong>Centre des Finances Publiques d'Embrun</strong> dans leurs démarches administratives. Positionné à la <strong>Maison France Services</strong> d'Embrun en avril-mai pour guider les contribuables lors de leur déclaration d'impôts en ligne. Première immersion dans l'univers financier et fiscal — exigence de rigueur et de pédagogie face à un public très hétérogène. Mission valorisée par une lettre de recommandation de <em>Mme Colette Gaillard</em>, cheffe des impôts des entreprises.</p>
-            <div class="tl-tags">
-              <span class="tl-tag accent">Finances publiques</span>
-              <span class="tl-tag">Médiation numérique</span>
-              <span class="tl-tag">Service public</span>
-              <span class="tl-tag">Accueil usagers</span>
+            <div style="display:flex;gap:1.2rem;align-items:flex-start;">
+              <div style="flex:1;min-width:0;">
+                <p class="tl-desc" style="margin:0 0 .65rem;">Accueil et accompagnement des usagers au <strong>Centre des Finances Publiques d'Embrun</strong> dans leurs démarches administratives. Positionné à la <strong>Maison France Services</strong> d'Embrun en avril-mai pour guider les contribuables lors de leur déclaration d'impôts en ligne. Première immersion dans l'univers financier et fiscal — exigence de rigueur et de pédagogie face à un public très hétérogène. Mission valorisée par une lettre de recommandation de <em>Mme Colette Gaillard</em>, cheffe des impôts des entreprises.</p>
+                <div class="tl-tags">
+                  <span class="tl-tag accent">Finances publiques</span>
+                  <span class="tl-tag">Médiation numérique</span>
+                  <span class="tl-tag">Service public</span>
+                  <span class="tl-tag">Accueil usagers</span>
+                </div>
+              </div>
+              <div style="width:160px;flex-shrink:0;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;">
+                <img src="photo-dgfip.jpg" alt="Centre des Finances Publiques d'Embrun — lieu de mon Service Civique"
+                     style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
             </div>
           </div>
 
@@ -982,11 +1032,19 @@
               <div class="tl-date">Déc. 2021 → Août 2023</div>
             </div>
             <div class="tl-role">Agent polyvalent en restauration</div>
-            <p class="tl-desc">Service en salle, bar et cuisine les week-ends et lors des vacances scolaires. Premier contact avec l'exigence du service client en environnement de montagne — endurance, réactivité et sens du détail dans un cadre à fort volume et sous pression.</p>
-            <div class="tl-tags">
-              <span class="tl-tag">Restauration</span>
-              <span class="tl-tag">Service client</span>
-              <span class="tl-tag">Polyvalence</span>
+            <div style="display:flex;gap:1.2rem;align-items:flex-start;">
+              <div style="flex:1;min-width:0;">
+                <p class="tl-desc" style="margin:0 0 .65rem;">Service en salle, bar et cuisine les week-ends et lors des vacances scolaires. Premier contact avec l'exigence du service client en environnement de montagne — endurance, réactivité et sens du détail dans un cadre à fort volume et sous pression.</p>
+                <div class="tl-tags">
+                  <span class="tl-tag">Restauration</span>
+                  <span class="tl-tag">Service client</span>
+                  <span class="tl-tag">Polyvalence</span>
+                </div>
+              </div>
+              <div style="width:160px;flex-shrink:0;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;">
+                <img src="photo-refuge.jpg" alt="Le Refuge Étoilé — Les Orres, établissement où j'ai travaillé"
+                     style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
             </div>
           </div>
 
